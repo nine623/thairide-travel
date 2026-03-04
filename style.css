@@ -14,10 +14,6 @@ background:#0d2d4a;
 color:white;
 }
 
-.logo img{
-height:70px;
-}
-
 nav a{
 color:white;
 margin-left:25px;
@@ -39,106 +35,61 @@ object-fit:cover;
 /* CAR SECTION */
 .car-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:20px;
 padding:40px;
 }
 
-.car-grid img{
+.car{
+background:white;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
+.car img{
 width:100%;
 border-radius:12px;
-height:220px;
-object-fit:cover;
 }
 
-/* DESTINATION GRID */
-.grid-3{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-padding:40px;
-}
-
-.grid-3 img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:12px;
-transition:0.3s;
-}
-
-.grid-3 img:hover{
-transform:scale(1.05);
-}
-
-/* REVIEW MARQUEE */
+/* REVIEW */
 .reviews{
 background:#0d2d4a;
+color:white;
 overflow:hidden;
 white-space:nowrap;
+padding:15px;
 }
 
 .review-track{
 display:inline-block;
-padding:15px;
-color:white;
 animation:slide 20s linear infinite;
-font-weight:bold;
 }
 
 @keyframes slide{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
+0%{transform:translateX(100%);}
+100%{transform:translateX(-100%);}
 }
 
-/* SIDEBAR WIDGET */
+/* WIDGET */
 .widget{
 position:fixed;
-left:20px;
 top:150px;
+right:15px;
 background:white;
-padding:20px;
+padding:15px;
 border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,0.2);
 width:220px;
-z-index:1000;
 }
 
 #clock{
 font-size:20px;
 font-weight:bold;
-margin-top:10px;
-animation:flip 1s infinite alternate;
+margin-bottom:10px;
 }
 
-@keyframes flip{
-from{transform:rotateX(0deg)}
-to{transform:rotateX(15deg)}
-}
-
-.plane-icon{
-width:100%;
-margin-top:15px;
-}
-
-/* FOOTER */
-footer{
-background:#0d2d4a;
-color:white;
-text-align:center;
-padding:40px;
-}
-
-.btn-book{
-background:#00B900;
-color:white;
-padding:12px 25px;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-}
-
-/* FLOAT LINE */
+/* FLOAT BUTTON */
 .line-float{
 position:fixed;
 bottom:20px;
@@ -150,4 +101,13 @@ border-radius:50px;
 text-decoration:none;
 font-weight:bold;
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-book{
+background:#00B900;
+color:white;
+padding:12px 25px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
 }
