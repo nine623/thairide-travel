@@ -3,95 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ThaiRide Travel - Booking</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+<title>ติดต่อจองรถ | Thai Ride Travel</title>
+
+<meta name="description" content="จองรถ VIP Airport Transfer และ Private Tour ผ่าน LINE Official Account ได้ทันที">
+<meta name="keywords" content="จองรถ, รถรับส่งสนามบิน, Private Tour Thailand">
+<meta name="author" content="Thai Ride Travel">
+<meta name="google-site-verification" content="G-V9XCVN1N0W">
+
+<link rel="stylesheet" href="style.css">
 
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Prompt', sans-serif;
-}
+<script>
+(function(){
+emailjs.init("YOUR_PUBLIC_KEY"); 
+})();
 
-body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-background:
-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1500&q=80');
-background-size:cover;
-background-position:center;
-}
+function sendMail(e){
+e.preventDefault();
 
-.form-container{
-background:#ffffff;
-width:100%;
-max-width:600px;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.4);
+emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",e.target)
+.then(function(){
+alert("ส่งข้อมูลเรียบร้อยแล้ว ✅");
+e.target.reset();
+}, function(error){
+alert("เกิดข้อผิดพลาด ❌");
+});
 }
+</script>
 
-h2{
-text-align:center;
-margin-bottom:25px;
-}
-
-label{
-display:block;
-margin-top:15px;
-font-weight:500;
-}
-
-input, select, textarea{
-width:100%;
-padding:12px;
-margin-top:5px;
-border-radius:10px;
-border:1px solid #ccc;
-font-size:15px;
-}
-
-textarea{
-resize:none;
-height:80px;
-}
-
-button{
-margin-top:25px;
-width:100%;
-padding:15px;
-background:#00c853;
-border:none;
-border-radius:30px;
-font-size:18px;
-color:white;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#00b44a;
-}
-
-</style>
 </head>
 
 <body>
 
-<div class="form-container">
-<h2>แบบฟอร์มจองรถ</h2>
+<!-- HEADER -->
+<header>
+<h2>Thai Ride Travel</h2>
+<nav>
+<a href="index.html">หน้าแรก</a>
+<a href="tour.html">สถานที่ท่องเที่ยว</a>
+<a href="contact.html">ติดต่อเรา</a>
+</nav>
+</header>
 
-<form id="bookingForm">
+<!-- HERO -->
+<section class="hero">
+<img src="contact-header.png" alt="Contact Thai Ride Travel">
+</section>
+
+<section style="padding:40px;text-align:center;">
+
+<h2>ติดต่อจองรถ</h2>
+<p style="font-size:18px;margin-bottom:20px;">
+งานด่วน กรุณาทัก LINE Official Account เท่านั้น
+</p>
+
+<!-- QR CODE -->
+<div style="margin-bottom:30px;">
+<img src="line-qr.png" alt="LINE QR" style="width:220px;border-radius:15px;">
+<br><br>
+<a href="https://lin.ee/zmoafDZ" class="book-btn">ทัก LINE เพื่อจองรถ</a>
+</div>
+
+<!-- FORM -->
+<form onsubmit="sendMail(event)" style="max-width:600px;margin:0 auto;text-align:left;">
 
 <label>ชื่อผู้จอง</label>
 <input type="text" name="name" required>
@@ -109,41 +86,41 @@ background:#00b44a;
 <input type="text" name="dropoff" required>
 
 <label>ประเภทรถ</label>
-<select name="car">
+<select name="car" required>
 <option>Alphard</option>
 <option>Camry</option>
-<option>Fortuner</option>
+<option>SUV</option>
 <option>Van</option>
 </select>
 
 <label>จำนวนผู้โดยสาร</label>
-<input type="number" name="passenger" required>
+<input type="number" name="passenger" min="1" required>
 
 <label>หมายเหตุเพิ่มเติม</label>
-<textarea name="note"></textarea>
+<textarea name="note" rows="4"></textarea>
 
-<button type="submit">ส่งข้อมูล</button>
+<button type="submit" class="book-btn" style="width:100%;margin-top:20px;">
+ส่งข้อมูล
+</button>
 
 </form>
+
+</section>
+
+<!-- SIDEBAR WATCH -->
+<div class="sidebar">
+<div id="date"></div>
+<div id="time"></div>
+<div id="visits"></div>
+<div id="country"></div>
+<div id="calendar"></div>
+<div style="text-align:center;margin-top:10px;">✈️</div>
 </div>
 
-<script>
-(function(){
-emailjs.init("YOUR_PUBLIC_KEY"); // ใส่ Public Key ของคุณ
-})();
-
-document.getElementById("bookingForm").addEventListener("submit", function(e){
-e.preventDefault();
-
-emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",this)
-.then(function(){
-alert("ส่งข้อมูลสำเร็จ");
-document.getElementById("bookingForm").reset();
-}, function(error){
-alert("เกิดข้อผิดพลาด");
-});
-});
-</script>
+<!-- FOOTER -->
+<footer>
+<p>© 2025 Thai Ride Travel</p>
+</footer>
 
 </body>
 </html>
