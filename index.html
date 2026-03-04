@@ -3,161 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ThaiRide Travel | รถเช่าพร้อมคนขับ กรุงเทพ</title>
-<meta name="description" content="บริการรถ SUV พร้อมคนขับ รับส่งสนามบิน เที่ยวกรุงเทพ พัทยา อยุธยา จองออนไลน์ได้ทันที">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Thai Ride Travel</title>
 
 <style>
-body,html{
-margin:0;
-padding:0;
-font-family:'Kanit',sans-serif;
-color:white;
-overflow-x:hidden;
-background:black;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-video{
-position:fixed;
-right:0;
-bottom:0;
-min-width:100%;
-min-height:100%;
-z-index:-1;
-object-fit:cover;
-filter:brightness(40%);
+/* HERO HEADER */
+.hero {
+    position: relative;
+    height: 450px; /* ไม่เต็มจอ */
+    background: url('hero_01.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
-.container{
-text-align:center;
-padding:120px 20px;
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
 }
 
-h1{
-font-size:42px;
-margin-bottom:10px;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
-button{
-padding:15px 30px;
-font-size:18px;
-border:none;
-border-radius:30px;
-background:gold;
-cursor:pointer;
-font-weight:bold;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-.section{
-background:#111;
-padding:60px 20px;
-text-align:center;
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
 }
 
-.review{
-animation:scroll 25s linear infinite;
-white-space:nowrap;
+.hero-buttons a {
+    text-decoration: none;
+    padding: 12px 24px;
+    margin: 0 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
 }
 
-@keyframes scroll{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
+.btn-green {
+    background: #28a745;
+    color: white;
 }
 
-form input, form select, textarea{
-padding:12px;
-margin:10px;
-width:260px;
-border-radius:10px;
-border:none;
+.btn-blue {
+    background: #007bff;
+    color: white;
 }
 
-.footer{
-background:black;
-padding:30px;
-text-align:center;
-font-size:14px;
+.btn-green:hover,
+.btn-blue:hover {
+    opacity: 0.85;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Luxury Background Video -->
-<video autoplay muted loop>
-<source src="https://cdn.coverr.co/videos/coverr-luxury-car-driving-1573/1080p.mp4" type="video/mp4">
-</video>
-
-<div class="container">
-<h1>ThaiRide Travel</h1>
-<p>Luxury SUV พร้อมคนขับมืออาชีพ</p>
-<button onclick="document.getElementById('booking').scrollIntoView()">จองรถตอนนี้</button>
-</div>
-
-<div class="section">
-<h2>รีวิวลูกค้า</h2>
-<div class="review">
-⭐ บริการดีมาก ⭐ รถสะอาด ⭐ ตรงเวลา ⭐ คนขับสุภาพ ⭐ ประทับใจมาก ⭐ จะใช้บริการอีกแน่นอน ⭐
-</div>
-</div>
-
-<div class="section" id="booking">
-<h2>จองวันเวลา</h2>
-
-<form action="https://formsubmit.co/nine623@gmail.com" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="มีลูกค้าจองรถใหม่ ThaiRide">
-
-<input type="text" name="ชื่อลูกค้า" placeholder="ชื่อลูกค้า" required><br>
-
-<input type="tel" name="เบอร์ติดต่อกลับ" placeholder="เบอร์ติดต่อกลับ" required><br>
-
-<input type="text" name="สถานที่รับ" placeholder="สถานที่รับ (โรงแรม/สนามบิน)" required><br>
-
-<input type="text" name="เบอร์ห้อง" placeholder="เบอร์ห้อง (ถ้ามี)"><br>
-
-<input type="date" name="วันที่เดินทาง" required><br>
-
-<input type="time" name="เวลาเดินทาง" required><br>
-
-<select name="เส้นทาง" required>
-<option value="">เลือกเส้นทาง</option>
-<option>สนามบินสุวรรณภูมิ</option>
-<option>พัทยา</option>
-<option>อยุธยา</option>
-</select><br>
-
-<textarea name="หมายเหตุ" placeholder="หมายเหตุเพิ่มเติม"></textarea><br>
-
-<button type="submit">จองและส่งข้อมูล</button>
-</form>
-
-</div>
-
-<div class="section">
-<h2>ชำระมัดจำออนไลน์</h2>
-<p>โอนผ่าน QR ด้านล่าง และส่งสลิปทาง LINE</p>
-
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ThaiRideDeposit"
-style="margin:20px;border-radius:20px;">
-
-<p>LINE: nine623</p>
-</div>
-
-<div class="footer">
-© 2026 ThaiRide Travel | รถเช่าพร้อมคนขับ กรุงเทพ
-</div>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Safari World Bangkok</h1>
+        <p>Wild Adventure Awaits</p>
+        <div class="hero-buttons">
+            <a href="#" class="btn-green">View Attractions</a>
+            <a href="#" class="btn-blue">Show Schedule</a>
+        </div>
+    </div>
+</header>
 
 </body>
 </html>
