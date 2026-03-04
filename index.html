@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chiang Mai Airport Taxi</title>
+<title>Airport Transfer Service</title>
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f0f0f;
   color: white;
 }
 
@@ -19,51 +24,75 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75));
   padding: 20px;
 }
 
 .hero-content {
   max-width: 500px;
+  width: 100%;
 }
 
-h1 {
-  font-size: 34px;
-  margin-bottom: 10px;
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
-p {
+.hero p {
   font-size: 18px;
-  margin-bottom: 25px;
-  color: #ccc;
+  margin-bottom: 30px;
+  color: #cccccc;
 }
 
 .cta-btn {
-  background: #e60000;
-  color: white;
-  padding: 15px 35px;
+  display: inline-block;
+  background-color: #e60000;
+  color: #ffffff;
+  padding: 15px 40px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
-  display: inline-block;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .cta-btn:hover {
-  background: #cc0000;
+  background-color: #cc0000;
   transform: scale(1.05);
 }
 
-.qr-box {
-  margin-top: 35px;
+.qr-section {
+  margin-top: 40px;
 }
 
-.qr-box img {
+.qr-section p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #dddddd;
+}
+
+.qr-section img {
   width: 220px;
-  border-radius: 15px;
   background: white;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .cta-btn {
+    font-size: 16px;
+    padding: 13px 30px;
+  }
+
+  .qr-section img {
+    width: 180px;
+  }
 }
 </style>
 </head>
@@ -73,15 +102,15 @@ p {
 <section class="hero">
   <div class="hero-content">
 
-    <h1>Chiang Mai Airport Taxi</h1>
-    <p>Private VIP Transfer Service</p>
+    <h1>Airport Transfer Service</h1>
+    <p>Private VIP Transportation</p>
 
     <!-- 🔴 ปุ่มแดงเปิด LINE -->
     <a href="https://line.me/ti/p/XXXXXXXX" target="_blank" class="cta-btn">
       CALL TAXI NOW
     </a>
 
-    <div class="qr-box">
+    <div class="qr-section">
       <p>Scan to Book via LINE</p>
       <img src="line-qr.png" alt="LINE QR Code">
     </div>
