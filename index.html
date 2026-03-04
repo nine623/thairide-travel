@@ -14,20 +14,43 @@ body{
     text-align:center;
 }
 
+/* HERO SECTION */
+.hero{
+    background:url('hero_01.png') center/cover no-repeat;
+    height:280px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:28px;
+    margin:0;
+}
+
+.hero p{
+    margin:5px 0 0 0;
+    opacity:0.9;
+}
+
+/* BUTTON SECTION */
 .container{
-    padding:40px 20px;
+    padding:30px 20px;
 }
 
-h1{
-    color:#00ff88;
-}
-
-.subtitle{
-    margin-bottom:30px;
-    opacity:0.8;
-}
-
-/* BUTTON STYLE */
 .btn{
     display:block;
     width:90%;
@@ -48,11 +71,10 @@ h1{
     border:1px solid #00ff88;
 }
 
-/* FORM SECTION */
+/* FORM */
 .form-section{
     background:#111;
     padding:40px 20px;
-    margin-top:40px;
 }
 
 input, select{
@@ -79,7 +101,6 @@ button{
 
 footer{
     padding:20px;
-    background:#000;
     font-size:14px;
     opacity:0.7;
 }
@@ -88,41 +109,60 @@ footer{
 
 <body>
 
-<div class="container">
-    <h1>ThaiRide</h1>
-    <div class="subtitle">บริการรับส่งสนามบินระดับพรีเมียม</div>
-
-    <a href="tel:0800000000" class="btn red">📞 โทรตอนนี้</a>
-    <a href="#" class="btn green">💬 จองผ่าน LINE</a>
-    <a href="#booking" class="btn blue">📍 นำทางไปสนามบิน</a>
-    <a href="#booking" class="btn dark">📄 ดูราคา</a>
-    <a href="#booking" class="btn dark">🚗 เลือกรถ</a>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>ThaiRide Travel</h1>
+        <p>บริการรับส่งสนามบินระดับพรีเมียม</p>
+    </div>
 </div>
 
+<!-- MENU BUTTONS -->
+<div class="container">
+
+    <a href="tel:0800000000" class="btn red">📞 โทรตอนนี้</a>
+
+    <a href="https://line.me/" class="btn green">💬 จองผ่าน LINE</a>
+
+    <a href="#booking" class="btn blue">📍 จองรถตอนนี้</a>
+
+    <a href="#booking" class="btn dark">📄 ดูราคา</a>
+
+    <a href="#booking" class="btn dark">🚗 เลือกรถ</a>
+
+    <p>สแกน QR เพื่อจองผ่าน LINE</p>
+    <img src="line-qr.png" width="120">
+
+</div>
+
+<!-- BOOKING FORM -->
 <div class="form-section" id="booking">
-    <h2>จองวันเวลา</h2>
 
-    <form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
+<h2>จองวันเวลา</h2>
 
-        <input type="text" name="name" placeholder="ชื่อของคุณ" required>
-        <input type="tel" name="phone" placeholder="เบอร์โทร" required>
+<form action="https://formsubmit.co/701ccff07f0e8ba67ba495a336f05c45" method="POST">
 
-        <select name="route" required>
-            <option value="">เลือกเส้นทาง</option>
-            <option>สนามบิน → กรุงเทพ</option>
-            <option>กรุงเทพ → สนามบิน</option>
-        </select>
+<input type="text" name="name" placeholder="ชื่อของคุณ" required>
 
-        <select name="car" required>
-            <option value="">เลือกรถ</option>
-            <option>Sedan</option>
-            <option>SUV</option>
-            <option>Van</option>
-        </select>
+<input type="tel" name="phone" placeholder="เบอร์โทร" required>
 
-        <button type="submit">จองและชำระมัดจำ</button>
+<select name="route" required>
+<option value="">เลือกเส้นทาง</option>
+<option>สนามบิน → กรุงเทพ</option>
+<option>กรุงเทพ → สนามบิน</option>
+</select>
 
-    </form>
+<select name="car" required>
+<option value="">เลือกรถ</option>
+<option>Sedan</option>
+<option>SUV</option>
+<option>Van</option>
+</select>
+
+<button type="submit">จองและชำระมัดจำ</button>
+
+</form>
+
 </div>
 
 <footer>
