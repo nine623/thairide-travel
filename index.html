@@ -4,111 +4,151 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ThaiRide Travel | รถรับส่งสนามบิน รถเช่าพร้อมคนขับ ทัวร์ทั่วไทย</title>
+<title>ThaiRide Travel | Airport Transfer & Private Tour Thailand</title>
 
-<meta name="description" content="ThaiRide Travel บริการรถรับส่งสนามบิน รถเช่าพร้อมคนขับ และทัวร์ทั่วประเทศไทย รถ VIP สะอาด ปลอดภัย บริการมืออาชีพ">
-<meta name="keywords" content="รถรับส่งสนามบิน, รถเช่าพร้อมคนขับ, ทัวร์ไทย, รถ VIP, airport transfer thailand">
-<meta name="author" content="ThaiRide Travel">
+<meta name="description" content="ThaiRide Travel บริการรถรับส่งสนามบิน รถเช่าพร้อมคนขับ และทัวร์ทั่วประเทศไทย บริการระดับมืออาชีพ">
+<meta name="keywords" content="รถรับส่งสนามบิน, รถเช่าพร้อมคนขับ, thailand airport transfer, private tour thailand">
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Prompt', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Prompt',sans-serif;}
+
+body{background:#f4f6f9;color:#333;}
+
+nav{
+background:#0d1b2a;
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
 }
 
-body {
-    background: #f4f6f9;
-    color: #333;
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size:15px;
 }
 
-/* HERO SECTION */
-.hero {
-    height: 100vh;
-    background: linear-gradient(135deg, #0d1b2a, #1b263b);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
+.hero{
+height:100vh;
+background:linear-gradient(135deg,#0d1b2a,#1b263b);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+margin-top:60px;
 }
 
-.hero h1 {
-    font-size: 48px;
-    font-weight: 600;
+.hero h1{font-size:48px;}
+.hero p{font-size:20px;margin:20px 0;max-width:700px;}
+
+.btn{
+padding:15px 35px;
+background:#e63946;
+color:white;
+text-decoration:none;
+font-size:18px;
+border-radius:50px;
+transition:.3s;
 }
 
-.hero p {
-    font-size: 20px;
-    margin: 20px 0;
-    max-width: 700px;
+.btn:hover{background:#c1121f;}
+
+.section{
+padding:80px 20px;
+text-align:center;
+background:white;
 }
 
-.btn {
-    padding: 15px 35px;
-    background: #e63946;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 50px;
-    transition: 0.3s;
+.section h2{font-size:32px;margin-bottom:30px;}
+
+.review{
+background:#f1f1f1;
+padding:60px 20px;
+text-align:center;
 }
 
-.btn:hover {
-    background: #c1121f;
+footer{
+background:#0d1b2a;
+color:white;
+text-align:center;
+padding:25px;
 }
 
-/* SERVICES */
-.section {
-    padding: 80px 20px;
-    text-align: center;
-    background: white;
+/* Floating Buttons */
+.line-btn{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#00c300;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:18px;
 }
 
-.section h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-.services p {
-    font-size: 18px;
-    margin: 12px 0;
-}
-
-/* FOOTER */
-footer {
-    background: #0d1b2a;
-    color: white;
-    text-align: center;
-    padding: 25px;
+.whatsapp-btn{
+position:fixed;
+bottom:30px;
+right:20px;
+background:#25d366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:18px;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+<div><strong>ThaiRide Travel</strong></div>
+<div>
+<a href="#services">บริการ</a>
+<a href="#review">รีวิว</a>
+<a href="tel:0812345678">ติดต่อ</a>
+</div>
+</nav>
+
 <div class="hero">
-    <h1>ThaiRide Travel</h1>
-    <p>บริการรถรับส่งสนามบิน รถเช่าพร้อมคนขับ และทัวร์ทั่วประเทศไทย บริการมืออาชีพ รถสะอาด ปลอดภัย</p>
-    <a href="tel:0812345678" class="btn">โทรหาเรา</a>
+<h1>ThaiRide Travel</h1>
+<p>Professional Airport Transfer & Private Tour Service in Thailand</p>
+<a href="tel:0812345678" class="btn">โทรหาเรา</a>
 </div>
 
-<div class="section services">
-    <h2>บริการของเรา</h2>
-    <p>✔ รถรับส่งสนามบิน (Airport Transfer)</p>
-    <p>✔ รถเช่าพร้อมคนขับ มืออาชีพ</p>
-    <p>✔ ทัวร์ส่วนตัวทั่วไทย</p>
-    <p>✔ รถ VIP สำหรับลูกค้าระดับองค์กร</p>
+<div id="services" class="section">
+<h2>บริการของเรา</h2>
+<p>✔ Airport Transfer</p>
+<p>✔ Private Driver</p>
+<p>✔ VIP Transport</p>
+<p>✔ Private Tour Thailand</p>
+</div>
+
+<div id="review" class="review">
+<h2>รีวิวจากลูกค้า</h2>
+<p>⭐️⭐️⭐️⭐️⭐️ บริการดีมาก ตรงเวลา รถสะอาด</p>
+<p>⭐️⭐️⭐️⭐️⭐️ คนขับสุภาพ มืออาชีพ</p>
 </div>
 
 <footer>
-    © 2026 ThaiRide Travel | Professional Transport Service Thailand
+© 2026 ThaiRide Travel | Professional Transport Thailand
 </footer>
+
+<a href="#" class="line-btn">LINE</a>
+<a href="#" class="whatsapp-btn">WA</a>
 
 </body>
 </html>
