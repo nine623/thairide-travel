@@ -1,103 +1,45 @@
-// ===============================
-// AUTO LANGUAGE DETECT
-// ===============================
-const userLang = navigator.language || navigator.userLanguage;
-document.documentElement.lang = userLang;
+function updateClock(){
 
+const now = new Date();
 
-// ===============================
-// DATE + TIME DIGITAL CLOCK
-// ===============================
-function updateDateTime(){
-    const now = new Date();
+const date = now.toLocaleDateString("th-TH");
+const time = now.toLocaleTimeString("th-TH");
 
-    document.getElementById("date").innerHTML =
-        "วันที่: " + now.toLocaleDateString();
+document.getElementById("date").innerHTML="📅 "+date;
+document.getElementById("time").innerHTML="⏰ "+time;
 
-    document.getElementById("time").innerHTML =
-        "เวลา: " + now.toLocaleTimeString();
 }
 
-setInterval(updateDateTime,1000);
-updateDateTime();
+setInterval(updateClock,1000);
 
+function sendToLine(){
 
-// ===============================
-// VISITOR COUNTER (LOCAL)
-// ===============================
-let visitCount = localStorage.getItem("visitCount");
+let name=document.getElementById("name").value;
+let date=document.getElementById("dateTravel").value;
+let time=document.getElementById("timeTravel").value;
+let pickup=document.getElementById("pickup").value;
+let drop=document.getElementById("drop").value;
+let car=document.getElementById("car").value;
+let people=document.getElementById("people").value;
+let note=document.getElementById("note").value;
 
-if(!visitCount){
-    visitCount = 1;
-}else{
-    visitCount = parseInt(visitCount) + 1;
+let msg=
+`จองรถ ThaiRide Travel
+
+ชื่อ: ${name}
+วันที่: ${date}
+เวลา: ${time}
+
+รับ: ${pickup}
+ส่ง: ${drop}
+
+รถ: ${car}
+ผู้โดยสาร: ${people}
+
+หมายเหตุ: ${note}
+`;
+
+let url="https://line.me/R/share?text="+encodeURIComponent(msg);
+
+window.open(url);
 }
-
-localStorage.setItem("visitCount", visitCount);
-
-if(document.getElementById("visits")){
-    document.getElementById("visits").innerHTML =
-        "ผู้เข้าชม: " + visitCount;
-}
-
-
-// ===============================
-// COUNTRY DETECT (IP API)
-// ===============================
-fetch("https://ipapi.co/json/")
-.then(response => response.json())
-.then(data => {
-    if(document.getElementById("country")){
-        document.getElementById("country").innerHTML =
-            "ประเทศ: " + data.country_name;
-    }
-})
-.catch(()=>{
-    if(document.getElementById("country")){
-        document.getElementById("country").innerHTML =
-            "ประเทศ: ไม่ทราบ";
-    }
-});
-
-
-// ===============================
-// SIMPLE CALENDAR
-// ===============================
-function generateCalendar(){
-    const calendar = document.getElementById("calendar");
-    if(!calendar) return;
-
-    const now = new Date();
-    const month = now.getMonth();
-    const year = now.getFullYear();
-
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    let table = "<table style='width:100%;color:#00ff88;text-align:center;font-size:12px;'>";
-    table += "<tr>";
-
-    const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-    for(let d of days){
-        table += "<th>"+d+"</th>";
-    }
-
-    table += "</tr><tr>";
-
-    for(let i=0;i<firstDay;i++){
-        table += "<td></td>";
-    }
-
-    for(let day=1; day<=daysInMonth; day++){
-        if((firstDay + day -1) % 7 === 0){
-            table += "</tr><tr>";
-        }
-        table += "<td>"+day+"</td>";
-    }
-
-    table += "</tr></table>";
-
-    calendar.innerHTML = table;
-}
-
-generateCalendar();
