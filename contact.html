@@ -1,48 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
+
 <meta charset="UTF-8">
-<title>ติดต่อ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>จองรถ | ThaiRide Travel</title>
+
+<meta name="description" content="จองรถ VIP Airport Transfer และ Private Tour กรุงเทพ">
+
 <link rel="stylesheet" href="style.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V9XCVN1N0W');
+</script>
+
 </head>
 
-<body onload="updateTime()">
+<body>
 
-<div class="hero">
-ติดต่อจองรถ
-</div>
+<header>
 
-<div class="navbar">
+<h2>ThaiRide Travel</h2>
 
-<div><b>ThaiRide Travel</b></div>
-
-<div class="menu">
+<nav>
 <a href="index.html">หน้าแรก</a>
 <a href="travel.html">สถานที่ท่องเที่ยว</a>
-<a href="contact.html">ติดต่อ</a>
-</div>
+<a href="contact.html">จองรถ</a>
+</nav>
+
+</header>
+
+
+<section class="container">
+
+<h1>จองรถ</h1>
+
+
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="ชื่อผู้จอง" required>
+
+<label>วันที่เดินทาง</label>
+<input type="date" id="date" required>
+
+<label>เวลาเดินทาง</label>
+<input type="time" id="time" required>
+
+<input type="text" id="pickup" placeholder="จุดรับ" required>
+
+<input type="text" id="dropoff" placeholder="จุดส่ง" required>
+
+
+<select id="car">
+
+<option>Alphard</option>
+<option>Camry</option>
+<option>SUV</option>
+<option>Van</option>
+
+</select>
+
+
+<input type="number" id="passengers" placeholder="จำนวนผู้โดยสาร" required>
+
+
+<textarea id="note" placeholder="หมายเหตุเพิ่มเติม"></textarea>
+
+
+<button type="submit" class="line-btn">
+
+ส่งข้อมูลไป LINE
+
+</button>
+
+</form>
+
+</section>
+
+
+<div class="clockBox">
+
+<div id="dateNow"></div>
+
+<div id="timeNow"></div>
 
 </div>
 
-<div class="container">
-
-<h2>สแกน QR ติดต่อ LINE</h2>
-
-<img src="qr-line.png" class="qr">
-
-<a class="line-btn" href="https://line.me/ti/p/@775hjmvl">
-เปิด LINE เพื่อจองรถ
-</a>
-
-</div>
 
 <footer>
 
-<div id="datetime"></div>
-
-<p>© ThaiRide Travel</p>
+© ThaiRide Travel
 
 </footer>
+
 
 <script src="script.js"></script>
 
