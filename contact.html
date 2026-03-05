@@ -1,88 +1,84 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contact - ThaiRide Travel</title>
+<title>ติดต่อจองรถ | ThaiRide Travel</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
+font-family: Arial;
 margin:0;
-background:#f5f5f5;
+background:#f2f2f2;
 }
 
-.header{
+header{
 background:#0d6efd;
 color:white;
 text-align:center;
-padding:40px 20px;
-}
-
-.header h1{
-margin:0;
-font-size:32px;
+padding:25px;
 }
 
 .container{
-max-width:800px;
+max-width:700px;
 margin:auto;
 padding:20px;
 }
 
 .card{
 background:white;
-padding:30px;
+padding:25px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-input,textarea{
+label{
+display:block;
+margin-top:15px;
+}
+
+input,select,textarea{
 width:100%;
 padding:12px;
-margin-top:10px;
-margin-bottom:20px;
+margin-top:5px;
 border:1px solid #ccc;
 border-radius:6px;
-font-size:16px;
 }
 
 button{
 width:100%;
-padding:14px;
-background:#06c755;
+padding:16px;
+background:#06C755;
 color:white;
 border:none;
-font-size:18px;
 border-radius:8px;
+font-size:18px;
+margin-top:20px;
 cursor:pointer;
 }
 
 button:hover{
-background:#05b04c;
+background:#05a94f;
 }
 
-.linebtn{
+.line-btn{
 display:block;
 text-align:center;
-background:#06c755;
-color:white;
-padding:16px;
-border-radius:10px;
-font-size:20px;
-text-decoration:none;
 margin-top:20px;
+padding:16px;
+background:#06C755;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-size:18px;
 }
 
-.linebtn:hover{
-background:#05b04c;
-}
-
-.note{
+footer{
 text-align:center;
-margin-top:10px;
+padding:20px;
 color:#777;
 }
 
@@ -91,10 +87,10 @@ color:#777;
 
 <body>
 
-<div class="header">
-<h1>จองรถกับ ThaiRide Travel</h1>
-<p>กรอกข้อมูล แล้วกดส่งไป LINE</p>
-</div>
+<header>
+<h2>ThaiRide Travel</h2>
+<p>จองรถ Airport Transfer และ Private Tour</p>
+</header>
 
 <div class="container">
 
@@ -105,19 +101,30 @@ color:#777;
 <label>ชื่อผู้จอง</label>
 <input type="text" id="name" required>
 
-<label>วันที่ใช้รถ</label>
+<label>วันที่เดินทาง</label>
 <input type="date" id="date" required>
 
-<label>สถานที่รับ</label>
-<input type="text" id="pickup">
+<label>เวลาเดินทาง</label>
+<input type="time" id="time" required>
 
-<label>สถานที่ส่ง</label>
-<input type="text" id="drop">
+<label>จุดรับ</label>
+<input type="text" id="pickup" required>
+
+<label>จุดส่ง</label>
+<input type="text" id="drop" required>
+
+<label>ประเภทรถ</label>
+<select id="car">
+<option>Alphard</option>
+<option>Camry</option>
+<option>SUV</option>
+<option>Van</option>
+</select>
 
 <label>จำนวนผู้โดยสาร</label>
-<input type="number" id="people">
+<input type="number" id="people" min="1">
 
-<label>รายละเอียดเพิ่มเติม</label>
+<label>หมายเหตุเพิ่มเติม</label>
 <textarea id="note"></textarea>
 
 <button type="submit">
@@ -126,19 +133,19 @@ color:#777;
 
 </form>
 
-<a class="linebtn"
+<a class="line-btn"
 href="https://line.me/ti/p/@775hjmvl"
 target="_blank">
-แชท LINE ThaiRide ทันที
+แชท LINE ThaiRide
 </a>
 
-<p class="note">
-งานด่วน กรุณาทัก LINE
-</p>
-
 </div>
 
 </div>
+
+<footer>
+© 2025 ThaiRide Travel
+</footer>
 
 <script>
 
@@ -148,23 +155,27 @@ e.preventDefault();
 
 var name=document.getElementById("name").value;
 var date=document.getElementById("date").value;
+var time=document.getElementById("time").value;
 var pickup=document.getElementById("pickup").value;
 var drop=document.getElementById("drop").value;
+var car=document.getElementById("car").value;
 var people=document.getElementById("people").value;
 var note=document.getElementById("note").value;
 
-var message=
+var message =
 "จองรถ ThaiRide Travel%0A"+
 "ชื่อ : "+name+"%0A"+
 "วันที่ : "+date+"%0A"+
+"เวลา : "+time+"%0A"+
 "รับจาก : "+pickup+"%0A"+
 "ส่งที่ : "+drop+"%0A"+
+"รถ : "+car+"%0A"+
 "ผู้โดยสาร : "+people+" คน%0A"+
-"รายละเอียด : "+note;
+"หมายเหตุ : "+note;
 
-var lineURL="https://line.me/R/msg/text/?"+message;
+var url="https://line.me/R/msg/text/?"+message;
 
-window.open(lineURL);
+window.open(url);
 
 });
 
