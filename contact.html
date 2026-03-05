@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | ThaiRide Travel</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>จองรถ</title>
+
 <link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+
 </head>
 
 <body>
 
-<div class="hero">
+<section class="hero">
 <img src="contact-header.png">
-</div>
+</section>
 
-<div class="navbar">
-<div class="nav-container">
+<div class="topbar">
 
-<div class="logo">
-ThaiRide Travel
-</div>
+<div class="logo">ThaiRide Travel</div>
 
-<div class="menu">
+<nav>
 <a href="index.html">หน้าแรก</a>
 <a href="tour.html">สถานที่ท่องเที่ยว</a>
-<a href="contact.html">ติดต่อจองรถ</a>
-</div>
+<a href="contact.html">จองรถ</a>
+</nav>
 
-</div>
 </div>
 
 <div class="container">
 
 <h2>จองรถ</h2>
 
-<form id="bookingForm">
+<input id="name" placeholder="ชื่อผู้จอง">
 
-<input type="text" id="name" placeholder="ชื่อผู้จอง" required>
+<label>วันที่เดินทาง</label>
+<input type="date" id="dateTravel">
 
-<input type="date" id="date" required>
+<label>เวลาเดินทาง</label>
+<input type="time" id="timeTravel">
 
-<input type="time" id="time" required>
+<input id="pickup" placeholder="จุดรับ">
 
-<input type="text" id="pickup" placeholder="จุดรับ">
-
-<input type="text" id="drop" placeholder="จุดส่ง">
+<input id="drop" placeholder="จุดส่ง">
 
 <select id="car">
 <option>Alphard</option>
@@ -52,56 +53,17 @@ ThaiRide Travel
 <option>Van</option>
 </select>
 
-<input type="number" id="people" placeholder="จำนวนผู้โดยสาร">
+<input id="people" placeholder="จำนวนผู้โดยสาร">
 
 <textarea id="note" placeholder="หมายเหตุ"></textarea>
 
-<button type="submit">
-ส่งข้อมูลไป LINE
-</button>
-
-</form>
+<button onclick="sendToLine()">ส่งข้อมูลไป LINE</button>
 
 </div>
 
 <footer>
 © ThaiRide Travel
 </footer>
-
-<script>
-
-document.getElementById("bookingForm")
-.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-var name=document.getElementById("name").value;
-var date=document.getElementById("date").value;
-var time=document.getElementById("time").value;
-var pickup=document.getElementById("pickup").value;
-var drop=document.getElementById("drop").value;
-var car=document.getElementById("car").value;
-var people=document.getElementById("people").value;
-var note=document.getElementById("note").value;
-
-var msg=
-"จองรถ ThaiRide Travel%0A"+
-"ชื่อ : "+name+"%0A"+
-"วันที่ : "+date+"%0A"+
-"เวลา : "+time+"%0A"+
-"รับจาก : "+pickup+"%0A"+
-"ส่งที่ : "+drop+"%0A"+
-"รถ : "+car+"%0A"+
-"ผู้โดยสาร : "+people+"%0A"+
-"หมายเหตุ : "+note;
-
-window.open(
-"https://line.me/R/msg/text/?"+msg
-);
-
-});
-
-</script>
 
 </body>
 </html>
