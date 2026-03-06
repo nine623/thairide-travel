@@ -19,32 +19,31 @@
 
 <section class="hero">
 
-<img id="photo" style="width:100%">
+<img id="photo">
 
 </section>
 
-<section>
+<section class="qr">
 
-<h2>Add us on LINE</h2>
+<img src="line-qr.png">
 
-<a href="https://line.me/ti/p/@775hjmvl">
-<img src="line-qr.png" width="200">
-</a>
+<br>
+
+<a href="https://line.me/R/ti/p/@775hjmvl">Contact via LINE</a>
 
 </section>
 
 <footer>
 
-<p>© 2026 ThaiRide</p>
+©2026 ThaiRide
 
 </footer>
 
 <script>
 
-const urlParams = new URLSearchParams(window.location.search);
+const params=new URLSearchParams(window.location.search);
 
-document.getElementById("photo").src =
-urlParams.get("img");
+document.getElementById("photo").src=params.get("img");
 
 </script>
 
