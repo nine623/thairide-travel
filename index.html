@@ -3,197 +3,243 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>ThaiRide Travel | Bangkok Airport Transfer</title>
 
-<meta name="description" content="Bangkok Airport Transfer Private Car Safari World Floating Market">
-<meta name="keywords" content="Bangkok Taxi Airport Transfer Private Tour Thailand">
+<meta name="description" content="Bangkok Airport Transfer, Safari World, Floating Market Private Tour">
+<meta name="keywords" content="Bangkok Airport Taxi, Private Transfer Bangkok, Safari World Tour">
 
-<style>
+<!-- SEO -->
+<meta name="robots" content="index,follow">
 
-body{
-font-family:Arial;
-margin:0;
-background:#f4f6fb;
-}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V9XCVN1N0W');
+</script>
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
+<link rel="stylesheet" href="style.css">
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.hero{
-position:relative;
-height:420px;
-overflow:hidden;
-border-radius:10px;
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-animation:slide 15s infinite;
-}
-
-@keyframes slide{
-0%{opacity:1}
-33%{opacity:0}
-66%{opacity:0}
-100%{opacity:1}
-}
-
-.review{
-background:#0b3d6d;
-color:white;
-padding:10px;
-margin-top:10px;
-overflow:hidden;
-}
-
-.review span{
-display:inline-block;
-padding-left:100%;
-animation:review 20s linear infinite;
-}
-
-@keyframes review{
-0%{transform:translateX(0)}
-100%{transform:translateX(-100%)}
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-margin-top:30px;
-}
-
-.gallery img{
-width:100%;
-height:420px;
-object-fit:cover;
-border-radius:8px;
-}
-
-.lineFloat{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#06c755;
-padding:12px 16px;
-border-radius:50px;
-color:white;
-font-weight:bold;
-text-decoration:none;
-}
-
-footer{
-margin-top:40px;
-background:#0b3d6d;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-.clock{
-position:absolute;
-top:20px;
-right:20px;
-background:#0b3d6d;
-color:white;
-padding:10px;
-border-radius:8px;
-}
-
-</style>
 </head>
 
 <body>
 
-<div class="container">
-
 <header>
 
-<h2>ThaiRide Travel</h2>
+<div class="logo">
+
+<img src="logo.png">
+
+<span>ThaiRide Travel</span>
+
+</div>
 
 <nav>
-Home | Fleet | Gallery | Contact
+
+<a href="#">Home</a>
+<a href="#fleet">Fleet</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+
 </nav>
 
 </header>
 
-<div class="hero">
 
-<img src="hero1.jpg" class="slide">
-<img src="hero2.jpg" class="slide">
+<!-- HERO -->
 
-<div class="clock" id="clock"></div>
+<section class="hero">
 
-</div>
+<div class="hero-slide">
 
-<div class="review">
-
-<span>
-⭐ John (USA): Best airport transfer in Bangkok |
-⭐ Maria (Spain): Very clean car and friendly driver |
-⭐ Ahmed (Dubai): On time pickup from Suvarnabhumi |
-⭐ Lee (Singapore): Perfect Safari World trip |
-</span>
+<img src="hero_01.png">
+<img src="hero_02.png">
+<img src="hero_05.png">
 
 </div>
 
-<h2 align="center">Photo Gallery</h2>
+<div class="clock">
+
+<div id="time"></div>
+<div id="date"></div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEW TEXT RUN -->
+
+<div class="review-run">
+
+<div class="review-text">
+
+⭐ Amazing airport transfer service! — John (USA)
+
+⭐ Very clean car and polite driver — Maria (Spain)
+
+⭐ Best Bangkok taxi service — David (UK)
+
+⭐ Perfect Safari World trip — Alex (Australia)
+
+</div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<h2>Our Services</h2>
+
+<div class="grid-3">
+
+<div class="card">
+<img src="hero_01.png">
+<p>Airport Transfer</p>
+</div>
+
+<div class="card">
+<img src="G-03.png">
+<p>Safari World</p>
+</div>
+
+<div class="card">
+<img src="G-02.png">
+<p>Floating Market</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VEHICLES -->
+
+<section id="fleet">
+
+<h2>Our Vehicles</h2>
+
+<div class="grid-4">
+
+<div class="car">
+<img src="car-altis.png">
+<p>Toyota Altis</p>
+</div>
+
+<div class="car">
+<img src="car-camry.png">
+<p>Toyota Camry</p>
+</div>
+
+<div class="car">
+<img src="car-suv.png">
+<p>SUV</p>
+</div>
+
+<div class="car">
+<img src="car-van.png">
+<p>VIP Van</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2>Photo Gallery</h2>
 
 <div class="gallery">
 
-<a href="gallery1.html" target="_blank">
-<img src="A4-01.jpg">
-</a>
+<a href="photo1.html"><img src="G-01.png"></a>
+<a href="photo2.html"><img src="G-02.png"></a>
+<a href="photo3.html"><img src="G-03.png"></a>
+<a href="photo4.html"><img src="G-04.png"></a>
 
-<a href="gallery2.html" target="_blank">
-<img src="A4-02.jpg">
-</a>
+<a href="photo5.html"><img src="G-01.png"></a>
+<a href="photo6.html"><img src="G-02.png"></a>
+<a href="photo7.html"><img src="G-03.png"></a>
+<a href="photo8.html"><img src="G-04.png"></a>
 
-<a href="gallery3.html" target="_blank">
-<img src="A4-03.jpg">
-</a>
-
-<a href="gallery1.html" target="_blank">
-<img src="A4-01.jpg">
-</a>
-
-</div>
+<a href="photo9.html"><img src="G-01.png"></a>
+<a href="photo10.html"><img src="G-02.png"></a>
+<a href="photo11.html"><img src="G-03.png"></a>
+<a href="photo12.html"><img src="G-04.png"></a>
 
 </div>
 
-<a class="lineFloat" href="https://line.me/R/ti/p/@775hjmvl">LINE</a>
+</section>
+
+
+<!-- BOOK -->
+
+<section class="booking">
+
+<h2>Book Your Ride</h2>
+
+<form id="bookingForm">
+
+<input type="text" placeholder="Name" required>
+
+<input type="text" placeholder="Pickup Location">
+
+<input type="text" placeholder="Drop-off Location">
+
+<input type="date">
+
+<button type="submit">Book via LINE</button>
+
+</form>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<img src="line-qr.png" class="qr">
+
+</section>
+
+
+<!-- LIVE COUNTER -->
+
+<div class="visitor-box">
+
+Online: <span id="online">0</span><br>
+Visitors Today: <span id="today">0</span>
+
+</div>
+
+
+<!-- LINE FLOAT -->
+
+<a href="https://line.me/R/ti/p/@775hjmvl" class="line-float">
+
+<img src="line.png">
+
+</a>
+
 
 <footer>
 
-©2026 ThaiRide Travel
+© 2026 ThaiRide Travel
 
 </footer>
 
-<script>
-
-function clock(){
-let d=new Date()
-document.getElementById("clock").innerHTML=d.toLocaleTimeString()
-}
-
-setInterval(clock,1000)
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
