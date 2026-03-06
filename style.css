@@ -1,6 +1,6 @@
 body{
-margin:0;
 font-family:Arial;
+margin:0;
 background:#f4f6f9;
 }
 
@@ -9,8 +9,20 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 40px;
-background:#0c2e4e;
+background:#0a2a45;
 color:white;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:22px;
+font-weight:bold;
+}
+
+.logo img{
+height:40px;
 }
 
 nav a{
@@ -21,117 +33,118 @@ text-decoration:none;
 
 .hero{
 position:relative;
-text-align:center;
-}
-
-.hero-img{
-width:100%;
-height:600px;
-object-fit:cover;
-}
-
-.hero-text{
-position:absolute;
-top:35%;
-left:50%;
-transform:translate(-50%,-50%);
-color:white;
-}
-
-.hero-text h1{
-font-size:48px;
-}
-
-.clock-box{
-position:absolute;
-top:40px;
-right:40px;
-background:#0c2e4e;
-color:white;
-padding:15px 25px;
-border-radius:10px;
-text-align:center;
-}
-
-#clock{
-font-size:28px;
-font-weight:bold;
-}
-
-#date{
-font-size:14px;
-}
-
-.services{
-padding:60px;
-text-align:center;
-}
-
-.service-grid{
-display:flex;
-gap:30px;
-justify-content:center;
-}
-
-.card{
-background:white;
-border-radius:10px;
+height:500px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card img{
-width:300px;
-height:200px;
+.hero img{
+width:100%;
+height:500px;
 object-fit:cover;
 }
 
-.vehicles{
-padding:60px;
-text-align:center;
+.clock{
+position:absolute;
+right:30px;
+top:30px;
+background:#0a2a45;
+color:white;
+padding:15px;
+border-radius:10px;
 }
 
-.car-grid{
-display:flex;
-justify-content:center;
+.review-run{
+background:#111;
+color:white;
+overflow:hidden;
+white-space:nowrap;
+}
+
+.review-text{
+display:inline-block;
+padding-left:100%;
+animation:run 25s linear infinite;
+}
+
+@keyframes run{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+.services,.booking,#fleet,#gallery{
+max-width:1200px;
+margin:auto;
+padding:50px 20px;
+}
+
+.grid-3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
 gap:20px;
 }
 
-.car img{
-width:250px;
-border-radius:10px;
-}
-
-.gallery{
-padding:60px;
-text-align:center;
-}
-
-.gallery-grid{
+.grid-4{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
 }
 
-.gallery-grid img{
+.card img{
 width:100%;
 border-radius:10px;
 }
 
-.contact{
-padding:60px;
-text-align:center;
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
-.qr{
-width:200px;
-margin-top:20px;
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.booking form{
+display:flex;
+flex-direction:column;
+gap:10px;
+max-width:400px;
+}
+
+button{
+background:#f9b233;
+border:none;
+padding:12px;
+font-size:16px;
+cursor:pointer;
+}
+
+.visitor-box{
+position:fixed;
+left:20px;
+top:150px;
+background:#0a2a45;
+color:white;
+padding:15px;
+border-radius:10px;
+}
+
+.line-float{
+position:fixed;
+right:20px;
+bottom:20px;
+}
+
+.line-float img{
+width:60px;
 }
 
 footer{
-background:#007c91;
+background:#0a2a45;
 color:white;
 text-align:center;
-padding:25px;
-margin-top:40px;
+padding:20px;
 }
