@@ -3,37 +3,56 @@
 
 function updateClock(){
 
-let now=new Date()
+const now=new Date()
 
-document.getElementById("time").innerHTML=
-now.toLocaleTimeString()
-
-document.getElementById("date").innerHTML=
-now.toDateString()
+document.getElementById("time").innerHTML=now.toLocaleTimeString()
+document.getElementById("date").innerHTML=now.toDateString()
 
 }
 
 setInterval(updateClock,1000)
 
 
+// HERO SLIDE
 
-// LINE BOOKING
+let slide=0
+const slides=document.querySelectorAll(".hero-slide img")
 
-document.getElementById("bookingForm").addEventListener("submit",function(e){
+function showSlide(){
 
-e.preventDefault()
+slides.forEach(s=>s.style.display="none")
 
-let text="Booking ThaiRide%0A"
+slide++
 
-window.open("https://line.me/R/ti/p/@775hjmvl?text="+text)
+if(slide>slides.length) slide=1
+
+slides[slide-1].style.display="block"
+
+}
+
+setInterval(showSlide,4000)
+
+showSlide()
+
+
+
+// BOOKING → LINE
+
+function sendLine(){
+
+window.open("https://lin.ee/775hjmvl")
+
+}
+
+
+// LIVE VISITOR
+
+fetch("https://api.countapi.xyz/hit/thairide/visits")
+
+.then(res=>res.json())
+
+.then(res=>{
+
+console.log("Visitors:",res.value)
 
 })
-
-
-// VISITOR COUNTER
-
-let online=Math.floor(Math.random()*50)+20
-let today=Math.floor(Math.random()*500)+100
-
-document.getElementById("online").innerHTML=online
-document.getElementById("today").innerHTML=today
