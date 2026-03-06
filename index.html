@@ -1,377 +1,198 @@
-<!doctype html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ThaiRide Travel | Bangkok Airport Transfer</title>
-<meta name="description" content="Bangkok Airport Transfer, Safari World, Floating Market, Private Tour Thailand">
-<meta name="keywords" content="Bangkok Airport Taxi, Bangkok Private Car, Safari World Tour, Floating Market Tour">
 
-<!-- Google Analytics (already requested) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
+<meta name="description" content="Bangkok Airport Transfer Private Car Safari World Floating Market">
+<meta name="keywords" content="Bangkok Taxi Airport Transfer Private Tour Thailand">
 
-<!-- critical inline CSS (small) -->
 <style>
-:root{
-  --accent:#0b4b73;
-  --accent-2:#ffb400;
-  --card-shadow:0 6px 18px rgba(13,38,65,0.08);
-  --maxw:1200px;
-}
-*{box-sizing:border-box}
+
 body{
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  margin:0;
-  background:#f5f7fb;
-  color:#222;
-  -webkit-font-smoothing:antialiased;
+font-family:Arial;
+margin:0;
+background:#f4f6fb;
 }
-.site {
-  max-width:var(--maxw);
-  margin:18px auto;
-  padding:0 18px 60px;
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
 }
-.header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:14px;
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:48px;display:block}
-.brand h1{font-size:18px;margin:0;color:var(--accent)}
-.topnav a{margin:0 8px;color:#444;text-decoration:none;font-weight:600;font-size:14px}
-.hero {
-  position:relative;
-  border-radius:10px;
-  overflow:hidden;
-  height:420px;
-  background:#ddd;
-  box-shadow:var(--card-shadow);
+
+.hero{
+position:relative;
+height:420px;
+overflow:hidden;
+border-radius:10px;
 }
-.hero .slides{height:100%;width:100%;position:relative}
-.hero .slide{
-  position:absolute;inset:0;opacity:0;transition:opacity .9s ease;
-  background-size:cover;background-position:center;
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+animation:slide 15s infinite;
 }
-.hero .slide.active{opacity:1}
-.hero .overlay{
-  position:absolute;left:18px;top:18px;background:rgba(7,44,67,.86);
-  color:#fff;padding:10px;border-radius:8px;font-size:13px;
+
+@keyframes slide{
+0%{opacity:1}
+33%{opacity:0}
+66%{opacity:0}
+100%{opacity:1}
 }
+
+.review{
+background:#0b3d6d;
+color:white;
+padding:10px;
+margin-top:10px;
+overflow:hidden;
+}
+
+.review span{
+display:inline-block;
+padding-left:100%;
+animation:review 20s linear infinite;
+}
+
+@keyframes review{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.lineFloat{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#06c755;
+padding:12px 16px;
+border-radius:50px;
+color:white;
+font-weight:bold;
+text-decoration:none;
+}
+
+footer{
+margin-top:40px;
+background:#0b3d6d;
+color:white;
+text-align:center;
+padding:20px;
+}
+
 .clock{
-  position:absolute;right:18px;top:18px;background:rgba(7,44,67,.86);
-  color:#fff;padding:10px;border-radius:8px;font-size:13px;text-align:center;
-}
-.reviews-marquee{
-  position:absolute;left:0;right:0;bottom:10px;padding:12px 18px;
-  background:linear-gradient(to right, rgba(255,255,255,0.0), rgba(255,255,255,0.6));
-  pointer-events:none;
-}
-.marquee-inner{
-  white-space:nowrap;display:inline-block;animation:marquee 18s linear infinite;
-  pointer-events:auto;
-}
-.marquee-inner span{display:inline-block;margin-right:28px;background:rgba(255,255,255,0.92);color:#111;padding:8px 12px;border-radius:20px;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
-.marquee-inner:hover{animation-play-state:paused}
-@keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%) }
+position:absolute;
+top:20px;
+right:20px;
+background:#0b3d6d;
+color:white;
+padding:10px;
+border-radius:8px;
 }
 
-/* sections */
-.section-title{text-align:center;margin:28px 0 14px;font-weight:700;color:#123}
-.grid{
-  display:grid;gap:18px;
-}
-.services{grid-template-columns:repeat(3,1fr)}
-.service-card, .vehicle-card{
-  background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);text-align:center;
-  display:flex;flex-direction:column;
-}
-.service-card img, .vehicle-card img{width:100%;height:150px;object-fit:cover;display:block}
-.service-card p,.vehicle-card p{margin:12px 10px 18px;font-weight:600;color:#333;font-size:14px}
-
-/* vehicles 4 columns */
-.vehicles{grid-template-columns:repeat(4,1fr);margin-top:8px}
-
-/* photo gallery 4 columns, 3 rows */
-.gallery-grid{grid-template-columns:repeat(4,1fr);row-gap:14px}
-.gallery-grid img{width:100%;height:120px;object-fit:cover;border-radius:8px;display:block}
-
-/* booking + qr */
-.booking-wrap{display:grid;grid-template-columns:1fr 180px;gap:20px;margin-top:26px}
-form.booking{background:#fff;padding:16px;border-radius:10px;box-shadow:var(--card-shadow)}
-.booking input, .booking select, .booking button, .booking textarea{width:100%;padding:10px;margin-top:10px;border:1px solid #e6e6e6;border-radius:6px;font-size:14px}
-.booking button{background:var(--accent-2);border:none;color:#222;font-weight:700;cursor:pointer}
-.qr-box{text-align:center;background:transparent;padding:6px}
-
-/* visitors */
-.visitors{margin-top:28px;text-align:center;color:#333;font-weight:700}
-
-/* floating LINE button */
-.line-fab{position:fixed;right:18px;bottom:18px;background:#00c300;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.25);z-index:9999}
-.line-fab img{width:40px;height:40px}
-
-/* responsive */
-@media (max-width:1000px){
-  .vehicles{grid-template-columns:repeat(2,1fr)}
-  .services{grid-template-columns:repeat(2,1fr)}
-  .gallery-grid{grid-template-columns:repeat(3,1fr)}
-  .booking-wrap{grid-template-columns:1fr 140px}
-  .hero{height:340px}
-}
-@media (max-width:640px){
-  .site{padding:12px}
-  .grid{gap:12px}
-  .header{flex-direction:column;align-items:flex-start;gap:8px}
-  .brand h1{font-size:16px}
-  .services{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
-  .vehicles{grid-template-columns:repeat(2,1fr)}
-  .booking-wrap{grid-template-columns:1fr;align-items:start}
-  .hero{height:260px}
-  .reviews-marquee{bottom:6px;padding:8px}
-  .marquee-inner span{font-size:12px;padding:6px 10px}
-}
 </style>
 </head>
+
 <body>
 
-<div class="site">
+<div class="container">
 
-  <!-- header -->
-  <header class="header">
-    <div class="brand">
-      <img src="logo.png" alt="ThaiRide logo" loading="lazy">
-      <h1>ThaiRide Travel</h1>
-    </div>
-    <nav class="topnav" aria-label="Main navigation">
-      <a href="#">Home</a>
-      <a href="#fleet">Fleet</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
 
-  <!-- hero slider -->
-  <section class="hero" aria-label="Hero">
-    <div class="slides" id="slides">
-      <div class="slide active" style="background-image:url('hero_08.png');" role="img" aria-label="Hero slide 1"></div>
-      <div class="slide" style="background-image:url('hero_01.png');" role="img" aria-label="Hero slide 2"></div>
-      <div class="slide" style="background-image:url('hero_05.png');" role="img" aria-label="Hero slide 3"></div>
-    </div>
+<h2>ThaiRide Travel</h2>
 
-    <div class="overlay" id="statsBox">
-      Online: <strong id="onlineCount">0</strong><br>
-      Today: <strong id="todayCount">0</strong><br>
-      Month: <strong id="monthCount">0</strong>
-    </div>
+<nav>
+Home | Fleet | Gallery | Contact
+</nav>
 
-    <div class="clock" id="clock">--:--:--</div>
+</header>
 
-    <!-- reviews marquee (text replaces moving big image) -->
-    <div class="reviews-marquee" aria-hidden="false">
-      <div class="marquee-inner" id="marquee">
-        <!-- JS will populate reviews -->
-      </div>
-    </div>
-  </section>
+<div class="hero">
 
-  <!-- services -->
-  <h2 class="section-title">Our Services</h2>
-  <section class="grid services" aria-label="Our Services">
-    <div class="service-card">
-      <img src="hero_08.png" loading="lazy" alt="Airport Transfer">
-      <p>Airport Transfer</p>
-    </div>
-    <div class="service-card">
-      <img src="hero_06.png" loading="lazy" alt="Safari World">
-      <p>Safari World</p>
-    </div>
-    <div class="service-card">
-      <img src="hero_07.png" loading="lazy" alt="Floating Market">
-      <p>Floating Market</p>
-    </div>
-  </section>
+<img src="hero1.jpg" class="slide">
+<img src="hero2.jpg" class="slide">
 
-  <!-- vehicles -->
-  <h2 id="fleet" class="section-title">Our Vehicles</h2>
-  <section class="grid vehicles" aria-label="Vehicles">
-    <div class="vehicle-card"><img src="hero_08.png" alt="Toyota Altis" loading="lazy"><p>Toyota Altis</p></div>
-    <div class="vehicle-card"><img src="hero_09.png" alt="Toyota Camry" loading="lazy"><p>Toyota Camry</p></div>
-    <div class="vehicle-card"><img src="hero_05.png" alt="SUV" loading="lazy"><p>SUV</p></div>
-    <div class="vehicle-card"><img src="hero_02.png" alt="VIP Van" loading="lazy"><p>VIP Van</p></div>
-  </section>
+<div class="clock" id="clock"></div>
 
-  <!-- gallery auto-slide (grid 4x3 but also auto-scroll preview) -->
-  <h2 id="gallery" class="section-title">Photo Gallery</h2>
-  <section class="grid gallery-grid" id="galleryGrid" aria-label="Photo gallery">
-    <!-- 12 images: 4 columns × 3 rows -->
-    <img src="G-01.png" alt="Gallery 1" loading="lazy">
-    <img src="G-02.png" alt="Gallery 2" loading="lazy">
-    <img src="G-03.png" alt="Gallery 3" loading="lazy">
-    <img src="G-04.png" alt="Gallery 4" loading="lazy">
-    <img src="G-01.png" alt="Gallery 5" loading="lazy">
-    <img src="G-02.png" alt="Gallery 6" loading="lazy">
-    <img src="G-03.png" alt="Gallery 7" loading="lazy">
-    <img src="G-04.png" alt="Gallery 8" loading="lazy">
-    <img src="G-01.png" alt="Gallery 9" loading="lazy">
-    <img src="G-02.png" alt="Gallery 10" loading="lazy">
-    <img src="G-03.png" alt="Gallery 11" loading="lazy">
-    <img src="G-04.png" alt="Gallery 12" loading="lazy">
-  </section>
-
-  <!-- booking + QR -->
-  <div class="booking-wrap" id="contact">
-    <form class="booking" id="bookingForm" onsubmit="handleBooking(event)">
-      <h3>Book Your Ride</h3>
-      <input id="name" placeholder="Name" required>
-      <input id="pickup" placeholder="Pickup Location" required>
-      <input id="dropoff" placeholder="Drop-off Location" required>
-      <select id="vehicle">
-        <option value="Toyota Altis">Toyota Altis</option>
-        <option value="Toyota Camry">Toyota Camry</option>
-        <option value="SUV">SUV</option>
-        <option value="VIP Van">VIP Van</option>
-      </select>
-      <input id="date" type="date" required>
-      <input id="time" type="time" required>
-      <button type="submit">Send Booking (via LINE)</button>
-      <small style="display:block;margin-top:8px;color:#666">กดส่งเพื่อเปิด LINE OA พร้อมข้อความจอง</small>
-    </form>
-
-    <div class="qr-box">
-      <h4 style="margin:6px 0 10px">Add LINE</h4>
-      <img src="line-qr.png" alt="LINE QR" width="160" loading="lazy" style="border-radius:8px;box-shadow:var(--card-shadow)">
-      <p style="font-size:13px;color:#666;margin-top:8px">หรือกดปุ่ม LINE ด้านล่างขวา</p>
-    </div>
-  </div>
-
-  <div class="visitors">
-    <div>Visitors Around the World</div>
-    <div style="margin-top:8px;color:#0b4b73;font-weight:800" id="liveCounterDisplay">Online: 0</div>
-    <!-- ClustrMaps placeholder (optional). If you use ClustrMaps, paste your script here -->
-    <!-- <script src="//cdn.clustrmaps.com/map_v2.js?d=YOUR_ID" async defer></script> -->
-  </div>
-
-  <footer style="margin-top:28px;text-align:center;padding:14px;background:var(--accent);color:#fff;border-radius:6px;margin-bottom:20px">
-    ©2026 ThaiRide Travel
-  </footer>
 </div>
 
-<!-- floating LINE button -->
-<a class="line-fab" id="lineFab" href="#" aria-label="Contact on LINE" title="Contact on LINE">
-  <img src="line-icon.png" alt="LINE" loading="lazy">
+<div class="review">
+
+<span>
+⭐ John (USA): Best airport transfer in Bangkok |
+⭐ Maria (Spain): Very clean car and friendly driver |
+⭐ Ahmed (Dubai): On time pickup from Suvarnabhumi |
+⭐ Lee (Singapore): Perfect Safari World trip |
+</span>
+
+</div>
+
+<h2 align="center">Photo Gallery</h2>
+
+<div class="gallery">
+
+<a href="gallery1.html" target="_blank">
+<img src="A4-01.jpg">
 </a>
 
-<!-- minimal JS (deferred to help PageSpeed) -->
+<a href="gallery2.html" target="_blank">
+<img src="A4-02.jpg">
+</a>
+
+<a href="gallery3.html" target="_blank">
+<img src="A4-03.jpg">
+</a>
+
+<a href="gallery1.html" target="_blank">
+<img src="A4-01.jpg">
+</a>
+
+</div>
+
+</div>
+
+<a class="lineFloat" href="https://line.me/R/ti/p/@775hjmvl">LINE</a>
+
+<footer>
+
+©2026 ThaiRide Travel
+
+</footer>
+
 <script>
-/* ========== CONFIG ========== */
-const LINE_OA = "https://line.me/R/ti/p/@775hjmvl"; // LINE OA URL
-const HERO_SLIDE_TIME = 6000;
-const GALLERY_AUTO_SCROLL_MS = 2500;
-const REVIEWS = [
-  "สภาพรถสะอาด พนักงานมาถึงตรงเวลา — สุชาติ",
-  "บริการดีมาก ให้คำแนะนำทริปฟรี — May",
-  "ราคาคุ้มค่า สำหรับครอบครัว — Tomas",
-  "พนักงานน่ารักมาก มีน้ำให้บริการ — Suda",
-  "เดินทางปลอดภัย สุภาพมาก — Paul",
-  "จองง่ายผ่าน LINE ตอบไว — K."
-];
-/* ============================ */
 
-document.addEventListener('DOMContentLoaded', function(){
+function clock(){
+let d=new Date()
+document.getElementById("clock").innerHTML=d.toLocaleTimeString()
+}
 
-  /* HERO SLIDER */
-  let idx = 0;
-  const slides = document.querySelectorAll('.hero .slide');
-  function showSlide(i){
-    slides.forEach(s=>s.classList.remove('active'));
-    slides[i].classList.add('active');
-  }
-  setInterval(function(){
-    idx = (idx + 1) % slides.length;
-    showSlide(idx);
-  }, HERO_SLIDE_TIME);
+setInterval(clock,1000)
 
-  /* populate marquee (reviews) - duplicate to make continuous scroll */
-  const marquee = document.getElementById('marquee');
-  const all = REVIEWS.concat(REVIEWS);
-  marquee.innerHTML = all.map(r=>`<span>${escapeHtml(r)}</span>`).join('');
-
-  /* clock */
-  function updateClock(){
-    const d=new Date();
-    document.getElementById('clock').textContent = d.toLocaleTimeString();
-  }
-  updateClock();
-  setInterval(updateClock, 1000);
-
-  /* live visitor counter (simulation). Replace with real endpoint if available */
-  const onlineBox = document.getElementById('onlineCount');
-  const todayBox = document.getElementById('todayCount');
-  const monthBox = document.getElementById('monthCount');
-  const liveDisplay = document.getElementById('liveCounterDisplay');
-
-  function updateCounters(){
-    // Simulated values (for demo). Replace this function with fetch() to your real API if you have one.
-    const online = Math.floor(Math.random()*60)+8;
-    const today = Math.floor(Math.random()*1500)+200;
-    const month = Math.floor(Math.random()*40000)+5000;
-    onlineBox.textContent = online;
-    todayBox.textContent = today;
-    monthBox.textContent = month;
-    liveDisplay.textContent = `Online: ${online}`;
-  }
-  updateCounters();
-  setInterval(updateCounters, 7000);
-
-  /* gallery auto-scan preview: gently scroll container left-right for focus (mobile friendly) */
-  const gallery = document.getElementById('galleryGrid');
-  let gIndex = 0;
-  const gItems = gallery.querySelectorAll('img');
-  function galleryAuto(){
-    // scroll to item every interval (smooth)
-    gIndex = (gIndex + 1) % gItems.length;
-    gItems[gIndex].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-  }
-  setInterval(galleryAuto, GALLERY_AUTO_SCROLL_MS);
-
-  /* floating LINE FAB */
-  const lineFab = document.getElementById('lineFab');
-  lineFab.addEventListener('click', function(e){
-    e.preventDefault();
-    // open LINE main profile
-    window.open(LINE_OA, '_blank');
-  });
-
-  /* booking -> open LINE with message */
-  window.handleBooking = function(e){
-    e.preventDefault();
-    const name = encodeURIComponent(document.getElementById('name').value || '');
-    const pickup = encodeURIComponent(document.getElementById('pickup').value || '');
-    const dropoff = encodeURIComponent(document.getElementById('dropoff').value || '');
-    const vehicle = encodeURIComponent(document.getElementById('vehicle').value || '');
-    const date = encodeURIComponent(document.getElementById('date').value || '');
-    const time = encodeURIComponent(document.getElementById('time').value || '');
-    const msg = `จองรถจากเว็บ%0AName:%20${name}%0APickup:%20${pickup}%0ADropoff:%20${dropoff}%0AVehicle:%20${vehicle}%0ADate:%20${date}%0ATime:%20${time}`;
-    // open LINE OA with prefilled message (LINE external linking)
-    const url = LINE_OA + "?text=" + msg;
-    window.open(url,'_blank');
-  };
-
-  /* utility */
-  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]; }); }
-
-});
 </script>
 
 </body>
