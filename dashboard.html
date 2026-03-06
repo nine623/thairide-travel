@@ -1,5 +1,46 @@
-<h1>ThaiRide Visitor Dashboard</h1>
+<!DOCTYPE html>
+<html>
 
-<p>ดูสถิติจริงใน Google Analytics</p>
+<head>
 
-<a href="https://analytics.google.com">Open Analytics</a>
+<title>ThaiRide Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h1>Visitor Analytics</h1>
+
+<canvas id="chart"></canvas>
+
+<script>
+
+const ctx=document.getElementById('chart');
+
+new Chart(ctx,{
+
+type:'line',
+
+data:{
+
+labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+
+datasets:[{
+
+label:"Visitors",
+
+data:[120,190,300,500,200,300,450]
+
+}]
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
