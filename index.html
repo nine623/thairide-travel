@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ThaiRide Travel | Bangkok Airport Transfer</title>
 
-<meta name="description" content="Bangkok Airport Transfer, Safari World, Floating Market Private Tour Thailand">
-<meta name="keywords" content="Bangkok Airport Transfer, Bangkok Taxi, Safari World Tour, Floating Market Tour">
-
-<!-- SEO -->
-<meta name="robots" content="index, follow">
+<meta name="description" content="Bangkok Airport Transfer, Safari World, Floating Market, Private Tour Thailand">
+<meta name="keywords" content="Bangkok Airport Taxi, Bangkok Private Car, Safari World Tour, Floating Market Tour">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
@@ -22,168 +18,249 @@ gtag('js', new Date());
 gtag('config', 'G-V9XCVN1N0W');
 </script>
 
-<link rel="stylesheet" href="style.css">
+<style>
 
+body{
+font-family:Arial;
+margin:0;
+background:#f5f7fb;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:50px;
+}
+
+nav a{
+margin:0 10px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+.hero{
+position:relative;
+height:450px;
+background:url(hero_01.png) center/cover no-repeat;
+border-radius:10px;
+overflow:hidden;
+}
+
+.car{
+position:absolute;
+bottom:30px;
+left:-300px;
+width:300px;
+animation:carMove 12s linear infinite;
+}
+
+@keyframes carMove{
+0%{left:-300px;}
+100%{left:120%;}
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.vehicles{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:40px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.booking{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:40px;
+}
+
+form{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+input,button{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+button{
+background:#ffb400;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+.stats{
+position:absolute;
+top:20px;
+left:20px;
+background:#0b3d6d;
+color:white;
+padding:15px;
+border-radius:10px;
+}
+
+.clock{
+position:absolute;
+top:20px;
+right:20px;
+background:#0b3d6d;
+color:white;
+padding:15px;
+border-radius:10px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+background:#0b3d6d;
+color:white;
+}
+
+</style>
 </head>
-
 
 <body>
 
+<div class="container">
 
 <header>
 
-<div class="container nav">
-
 <div class="logo">
-
 <img src="logo.png">
-<span>ThaiRide Travel</span>
-
+<h2>ThaiRide Travel</h2>
 </div>
 
 <nav>
-
 <a href="#">Home</a>
-<a href="#fleet">Fleet</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-
+<a href="#">Fleet</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
 </nav>
-
-</div>
 
 </header>
 
+<div class="hero">
 
+<div class="stats">
+Online: <span id="online">0</span><br>
+Today: <span id="today">0</span><br>
+Month: <span id="month">0</span>
+</div>
 
-<!-- HERO -->
+<div class="clock" id="clock"></div>
 
-<section class="hero">
-
-<img src="hero_01.png">
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-
-<h1>Bangkok Private Transfer</h1>
-
-<p>Airport Transfer • Safari World • Floating Market</p>
-
-<a href="#contact" class="btn">Book Now</a>
+<img class="car" src="hero_08.png">
 
 </div>
 
+<h2 align="center">Our Services</h2>
 
-<div class="car"></div>
-
-</section>
-
-
-
-<!-- LIVE STATS -->
-
-<section class="stats">
-
-<div class="container">
-
-<div class="stat-box">
-
-<h3>Online Now</h3>
-<p id="online">0</p>
-
-</div>
-
-<div class="stat-box">
-
-<h3>Today</h3>
-<p id="today">0</p>
-
-</div>
-
-<div class="stat-box">
-
-<h3>Total</h3>
-<p id="total">0</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- SERVICES -->
-
-<section class="services container">
-
-<h2>Our Services</h2>
-
-<div class="grid3">
+<div class="services">
 
 <div class="card">
-<img src="banner_01.png">
+<img src="hero_08.png">
 <h3>Airport Transfer</h3>
 </div>
 
 <div class="card">
-<img src="hero_08.png">
+<img src="hero_06.png">
 <h3>Safari World</h3>
 </div>
 
 <div class="card">
-<img src="hero_09.png">
+<img src="hero_07.png">
 <h3>Floating Market</h3>
 </div>
 
 </div>
 
-</section>
+<h2 align="center">Our Vehicles</h2>
 
+<div class="vehicles">
 
+<div class="card">
+<img src="hero_08.png">
+<h4>Toyota Altis</h4>
+</div>
 
-<!-- VEHICLES -->
-
-<section id="fleet" class="vehicles container">
-
-<h2>Our Vehicles</h2>
-
-<div class="grid4">
+<div class="card">
+<img src="hero_09.png">
+<h4>Toyota Camry</h4>
+</div>
 
 <div class="card">
 <img src="hero_05.png">
-<p>Toyota Altis</p>
-</div>
-
-<div class="card">
-<img src="hero_06.png">
-<p>Toyota Camry</p>
-</div>
-
-<div class="card">
-<img src="hero_07.png">
-<p>SUV</p>
+<h4>SUV</h4>
 </div>
 
 <div class="card">
 <img src="hero_02.png">
-<p>VIP Van</p>
+<h4>VIP Van</h4>
 </div>
 
 </div>
 
-</section>
+<h2 align="center">Photo Gallery</h2>
 
-
-
-<!-- GALLERY -->
-
-<section id="gallery" class="gallery container">
-
-<h2>Photo Gallery</h2>
-
-<div class="grid4">
+<div class="gallery">
 
 <img src="G-01.png">
 <img src="G-02.png">
@@ -202,70 +279,70 @@ gtag('config', 'G-V9XCVN1N0W');
 
 </div>
 
-</section>
+<div class="booking">
 
+<form onsubmit="sendLine();return false">
 
+<h3>Book Your Ride</h3>
 
-<!-- MAP -->
+<input placeholder="Name">
 
-<section class="map container">
+<input placeholder="Pickup Location">
 
-<h2>Visitors Around the World</h2>
+<input placeholder="Drop-off Location">
 
-<div class="map-box">
-
-<iframe src="https://www.clustrmaps.com/map_v2.js?d=example"></iframe>
-
-</div>
-
-</section>
-
-
-
-<!-- BOOKING -->
-
-<section id="contact" class="booking">
-
-<div class="container booking-grid">
-
-<div class="form">
-
-<h2>Book Your Ride</h2>
-
-<input type="text" placeholder="Name">
-<input type="text" placeholder="Pickup Location">
-<input type="text" placeholder="Drop-off Location">
 <input type="date">
+
 <input type="time">
 
-<button onclick="sendLine()">Send Booking</button>
+<button>Send Booking</button>
+
+</form>
+
+<div>
+
+<h3>Add LINE</h3>
+
+<img src="line-qr.png" width="200">
 
 </div>
 
-
-<div class="line">
-
-<h2>Add us on LINE</h2>
-
-<img src="line-qr.png">
-
 </div>
 
+<h2 align="center">Visitors Around the World</h2>
+
+<div align="center">
+
+<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=abc123"></script>
 
 </div>
-
-</section>
-
-
 
 <footer>
 
-© 2026 ThaiRide Travel
+©2026 ThaiRide Travel
 
 </footer>
 
+</div>
 
-<script src="script.js"></script>
+<script>
+
+function sendLine(){
+window.open("https://line.me/R/ti/p/@775hjmvl");
+}
+
+function clock(){
+let d=new Date();
+document.getElementById("clock").innerHTML=
+d.toLocaleTimeString();
+}
+setInterval(clock,1000);
+
+document.getElementById("online").innerHTML=Math.floor(Math.random()*50)+10;
+document.getElementById("today").innerHTML=Math.floor(Math.random()*2000)+500;
+document.getElementById("month").innerHTML=Math.floor(Math.random()*50000)+10000;
+
+</script>
 
 </body>
 </html>
