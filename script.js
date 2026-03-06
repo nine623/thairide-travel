@@ -1,23 +1,21 @@
 function updateClock(){
 
-const now=new Date();
+let now = new Date();
 
-document.getElementById("clock").innerHTML=now.toLocaleTimeString();
+let h = now.getHours().toString().padStart(2,'0');
+let m = now.getMinutes().toString().padStart(2,'0');
+let s = now.getSeconds().toString().padStart(2,'0');
+
+document.getElementById("clock").innerHTML = h+":"+m+":"+s;
 
 }
 
 setInterval(updateClock,1000);
 
-updateClock();
 
-function updateVisitors(){
 
-let count=Math.floor(Math.random()*500)+100;
+/* Fake visitor counter */
 
-document.getElementById("visitors").innerText=count;
+let count = 120 + Math.floor(Math.random()*80);
 
-}
-
-setInterval(updateVisitors,5000);
-
-updateVisitors();
+document.getElementById("visitors").innerHTML = count;
