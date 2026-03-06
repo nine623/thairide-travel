@@ -14,8 +14,6 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thairidetravel.com/">
 
-<!-- Open Graph -->
-
 <meta property="og:title" content="ThaiRide Travel | Bangkok Airport Transfer">
 <meta property="og:description" content="Premium Airport Transfer and Thailand Tour Service.">
 <meta property="og:image" content="https://thairidetravel.com/hero_01.png">
@@ -30,33 +28,6 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-V9XCVN1N0W');
-</script>
-
-<!-- FAQ SEO SCHEMA -->
-
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"FAQPage",
- "mainEntity":[
- {
- "@type":"Question",
- "name":"Do you offer Bangkok Airport Transfer?",
- "acceptedAnswer":{
- "@type":"Answer",
- "text":"Yes we provide private airport transfer from Suvarnabhumi and Don Mueang airport."
- }
- },
- {
- "@type":"Question",
- "name":"Do you provide Safari World Tour?",
- "acceptedAnswer":{
- "@type":"Answer",
- "text":"Yes we offer Safari World private tour with comfortable vehicles."
- }
- }
- ]
-}
 </script>
 
 <style>
@@ -117,10 +88,17 @@ border-radius:10px;
 position:absolute;
 top:20px;
 right:20px;
-font-size:28px;
+font-size:26px;
 background:rgba(0,0,0,0.6);
-padding:10px 20px;
+padding:12px 20px;
 border-radius:10px;
+text-align:center;
+}
+
+.date{
+font-size:14px;
+opacity:0.8;
+margin-top:5px;
 }
 
 /* SCROLL */
@@ -163,32 +141,6 @@ text-align:center;
 .vehicle img{
 width:100%;
 border-radius:10px;
-}
-
-/* BOOKING */
-
-.booking{
-margin-top:40px;
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-}
-
-.booking input, .booking textarea{
-width:100%;
-padding:10px;
-margin-top:10px;
-border-radius:6px;
-border:none;
-}
-
-.booking button{
-margin-top:15px;
-padding:12px 20px;
-background:#22c55e;
-border:none;
-color:white;
-border-radius:6px;
 }
 
 /* GALLERY */
@@ -255,8 +207,6 @@ border-radius:10px;
 margin-top:40px;
 }
 
-/* LINE */
-
 .line-btn{
 position:fixed;
 bottom:20px;
@@ -304,7 +254,6 @@ grid-template-columns:1fr;
 <nav>
 <a href="#">Home</a>
 <a href="#gallery">Gallery</a>
-<a href="#booking">Booking</a>
 </nav>
 
 </header>
@@ -313,7 +262,10 @@ grid-template-columns:1fr;
 
 <img src="hero_01.png">
 
-<div class="clock" id="clock"></div>
+<div class="clock">
+<div id="clock"></div>
+<div class="date" id="date"></div>
+</div>
 
 </section>
 
@@ -322,8 +274,6 @@ grid-template-columns:1fr;
 Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bangkok Private Car Service
 </span>
 </div>
-
-<!-- VEHICLES -->
 
 <h2>Our Vehicles</h2>
 
@@ -349,25 +299,6 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 </div>
 
-<!-- BOOKING -->
-
-<section id="booking" class="booking">
-
-<h2>Book Your Ride</h2>
-
-<input placeholder="Name">
-<input placeholder="Email">
-<input placeholder="Pickup Location">
-<input placeholder="Destination">
-
-<textarea placeholder="Message"></textarea>
-
-<button>Send Booking</button>
-
-</section>
-
-<!-- GALLERY -->
-
 <section id="gallery">
 
 <h2>Photo Gallery</h2>
@@ -388,8 +319,6 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 </section>
 
-<!-- REVIEWS -->
-
 <section class="reviews">
 
 <h2>Google Reviews ⭐⭐⭐⭐⭐</h2>
@@ -399,8 +328,6 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 <div class="review">"Best floating market tour experience."</div>
 
 </section>
-
-<!-- BLOG -->
 
 <h2>Travel Blog</h2>
 
@@ -422,8 +349,6 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 </div>
 
 </div>
-
-<!-- VISITOR -->
 
 <h2 style="text-align:center;margin-top:40px;">
 🌍 Visitors Around The World
@@ -478,27 +403,43 @@ LINE Booking
 <script>
 
 function updateClock(){
+
 let now = new Date();
+
 let time = now.toLocaleTimeString();
 document.getElementById("clock").innerHTML = time;
+
+let date = now.toLocaleDateString("en-US",{
+weekday:"long",
+year:"numeric",
+month:"long",
+day:"numeric"
+});
+
+document.getElementById("date").innerHTML = date;
+
 }
 
 updateClock();
 setInterval(updateClock,1000);
 
-function websiteVisits(response) {
+function websiteVisits(response){
 document.querySelector("#visits").textContent = response.value;
 }
 
 let device="Desktop";
+
 if(/Android/i.test(navigator.userAgent)) device="Android";
 if(/iPhone|iPad|iPod/i.test(navigator.userAgent)) device="iOS";
+
 document.getElementById("device").innerHTML=device;
 
 let browser="Unknown";
+
 if(navigator.userAgent.indexOf("Chrome")>-1) browser="Chrome";
 if(navigator.userAgent.indexOf("Safari")>-1) browser="Safari";
 if(navigator.userAgent.indexOf("Firefox")>-1) browser="Firefox";
+
 document.getElementById("browser").innerHTML=browser;
 
 </script>
