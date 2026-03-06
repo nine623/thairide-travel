@@ -6,21 +6,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ThaiRide Travel | Bangkok Airport Transfer Private Taxi</title>
+<title>ThaiRide Travel | Bangkok Airport Transfer Private Taxi & Thailand Tour</title>
 
-<meta name="description" content="Bangkok Airport Transfer Private Car Service. Safari World Tour, Floating Market Tour, VIP Van Service in Thailand.">
-<meta name="keywords" content="Bangkok Airport Transfer, Private Taxi Bangkok, Safari World Tour, Floating Market Tour, Thailand Tour">
+<meta name="description" content="Bangkok Airport Transfer Private Taxi Service. Safari World Tour, Floating Market Tour and VIP Van in Thailand. Book your private ride today.">
+
+<meta name="keywords" content="Bangkok Airport Transfer, Private Taxi Bangkok, Safari World Tour, Floating Market Tour, Thailand Tour, VIP Van Bangkok">
+
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://thairidetravel.com/">
 
-<!-- Open Graph (Facebook / LINE) -->
+<!-- Open Graph -->
 
 <meta property="og:title" content="ThaiRide Travel | Bangkok Airport Transfer">
-<meta property="og:description" content="Premium Airport Transfer, Safari World Tour and Floating Market Tour in Bangkok.">
+<meta property="og:description" content="Premium Private Taxi, Airport Transfer and Thailand Tour Service.">
 <meta property="og:image" content="https://thairidetravel.com/hero_01.png">
 <meta property="og:url" content="https://thairidetravel.com">
 <meta property="og:type" content="website">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- Twitter SEO -->
 
@@ -28,10 +33,6 @@
 <meta name="twitter:title" content="ThaiRide Travel Bangkok Airport Transfer">
 <meta name="twitter:description" content="Private Taxi and VIP Van Service in Bangkok Thailand">
 <meta name="twitter:image" content="https://thairidetravel.com/hero_01.png">
-
-<!-- Google Verification -->
-
-<meta name="google-site-verification" content="G-V9XCVN1N0W">
 
 <!-- Google Analytics -->
 
@@ -44,7 +45,7 @@ gtag('js', new Date());
 gtag('config', 'G-V9XCVN1N0W');
 </script>
 
-<!-- STRUCTURED DATA (Google Local Business SEO) -->
+<!-- STRUCTURED DATA -->
 
 <script type="application/ld+json">
 {
@@ -54,6 +55,7 @@ gtag('config', 'G-V9XCVN1N0W');
  "image": "https://thairidetravel.com/hero_01.png",
  "url": "https://thairidetravel.com",
  "telephone": "+66",
+ "priceRange": "$$",
  "address": {
    "@type": "PostalAddress",
    "addressLocality": "Bangkok",
@@ -118,7 +120,7 @@ position:relative;
 margin-top:20px;
 }
 
-.hero-img{
+.hero img{
 width:100%;
 border-radius:10px;
 }
@@ -127,34 +129,37 @@ border-radius:10px;
 position:absolute;
 top:20px;
 right:20px;
-font-size:30px;
+font-size:28px;
 background:rgba(0,0,0,0.6);
 padding:10px 20px;
 border-radius:10px;
 }
 
-.visitor{
-position:absolute;
-bottom:20px;
-right:20px;
-background:rgba(0,0,0,0.6);
-padding:10px 20px;
-border-radius:10px;
-text-align:center;
+/* SCROLL TEXT */
+
+.scroll-text{
+overflow:hidden;
+white-space:nowrap;
+margin-top:25px;
 }
 
-/* MARQUEE */
-
-.marquee{
-margin-top:30px;
-font-size:22px;
+.scroll-text div{
+display:inline-block;
+padding-left:100%;
+animation:scroll 20s linear infinite;
 color:#38bdf8;
+font-size:22px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
 }
 
 /* PROMO */
 
 .promo{
-margin-top:20px;
+margin-top:30px;
 text-align:center;
 }
 
@@ -177,14 +182,11 @@ opacity:0.8;
 
 /* GALLERY */
 
-#gallery{
-margin-top:40px;
-}
-
 .gallery{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:15px;
+margin-top:30px;
 }
 
 .gallery img{
@@ -213,18 +215,22 @@ border-radius:8px;
 text-decoration:none;
 }
 
-/* WORLD */
+/* WORLD MAP */
 
 .world{
 margin-top:40px;
 text-align:center;
 }
 
+/* FOOTER */
+
 footer{
 margin-top:40px;
 text-align:center;
 opacity:0.6;
 }
+
+/* LINE BUTTON */
 
 .line-btn{
 position:fixed;
@@ -249,7 +255,7 @@ font-weight:bold;
 <header>
 
 <div class="logo">
-<img src="logo.png">
+<img src="logo.png" alt="ThaiRide Travel Logo">
 <h1>ThaiRide Travel</h1>
 </div>
 
@@ -265,30 +271,21 @@ font-weight:bold;
 
 <section class="hero">
 
-<img src="hero_01.png" class="hero-img">
+<img src="hero_01.png" alt="Bangkok Airport Transfer Service">
 
 <div class="clock" id="clock"></div>
 
-<div class="visitor">
-
-<h3>Visitors</h3>
-<div id="visitors">0</div>
-
-</div>
-
 </section>
 
-<section class="marquee">
-
-<marquee>
+<div class="scroll-text">
+<div>
 Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bangkok Private Car Service
-</marquee>
-
-</section>
+</div>
+</div>
 
 <section class="promo">
 
-<img src="tour-banner.png">
+<img src="tour-banner.png" alt="Thailand Tour Service">
 
 </section>
 
@@ -308,17 +305,17 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <div class="gallery">
 
-<img src="G-01.png">
-<img src="G-02.png">
-<img src="G-03.png">
+<img src="G-01.png" alt="Airport Transfer Bangkok">
+<img src="G-02.png" alt="Safari World Tour">
+<img src="G-03.png" alt="Floating Market Tour">
 
-<img src="G-04.png">
-<img src="hero_05.png">
-<img src="hero_06.png">
+<img src="G-04.png" alt="VIP Van Bangkok">
+<img src="hero_05.png" alt="Private Car Service Thailand">
+<img src="hero_06.png" alt="Thailand Tour Car">
 
-<img src="hero_07.png">
-<img src="hero_08.png">
-<img src="hero_09.png">
+<img src="hero_07.png" alt="Bangkok Tour Service">
+<img src="hero_08.png" alt="Tourist Transport Bangkok">
+<img src="hero_09.png" alt="Private Driver Bangkok">
 
 </div>
 
@@ -326,7 +323,7 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <section class="qr">
 
-<img src="line-qr.png">
+<img src="line-qr.png" alt="LINE Booking QR">
 
 <br>
 
@@ -360,17 +357,8 @@ let time = now.toLocaleTimeString();
 document.getElementById("clock").innerHTML = time;
 }
 
+updateClock();
 setInterval(updateClock,1000);
-
-let v = localStorage.getItem("visitors");
-
-if(!v){v=0;}
-
-v++;
-
-localStorage.setItem("visitors",v);
-
-document.getElementById("visitors").innerText = v;
 
 </script>
 
