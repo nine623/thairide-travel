@@ -2,14 +2,79 @@ body{
 margin:0;
 font-family:Arial, sans-serif;
 background:#0b3d91;
-color:#111;
 }
 
-/* กรอบเว็บ */
+/* กรอบเว็บไซต์ */
 .border-frame{
 max-width:1200px;
 margin:auto;
+border:0.5cm solid #0b3d91;
 background:white;
+}
+
+/* Header */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#ffffff;
+}
+
+.logo{
+display:flex;
+align-items:center;
+}
+
+.logo img{
+height:60px;
+margin-right:10px;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+color:#333;
+}
+
+/* Hero */
+.hero{
+position:relative;
+}
+
+.hero img{
+width:100%;
+display:block;
+}
+
+/* Clock */
+.clock{
+position:absolute;
+right:20px;
+top:20px;
+background:white;
+padding:10px;
+font-size:18px;
+border-radius:6px;
+}
+
+/* Visitors */
+.visitor{
+position:absolute;
+left:20px;
+top:20px;
+background:white;
+padding:10px;
+border-radius:6px;
+text-align:center;
+}
+
+/* Marquee */
+.marquee{
+background:#ffd200;
+padding:10px;
+font-size:20px;
 }
 
 /* Reviews */
@@ -17,11 +82,10 @@ background:white;
 text-align:center;
 padding:40px 20px;
 background:#ffffff;
-color:#222;
 font-size:22px;
 }
 
-/* Gallery section */
+/* Gallery */
 #gallery{
 padding:40px 20px;
 background:#f5f7fb;
@@ -32,7 +96,6 @@ text-align:center;
 margin-bottom:30px;
 }
 
-/* GRID 4x4 */
 .gallery{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -41,10 +104,9 @@ max-width:1000px;
 margin:auto;
 }
 
-/* รูป */
 .gallery img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 border-radius:8px;
 transition:0.3s;
@@ -54,7 +116,37 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-/* มือถือ */
+/* QR */
+.qr{
+text-align:center;
+padding:40px;
+}
+
+.qr img{
+width:200px;
+}
+
+/* LINE floating */
+.line-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#06c755;
+color:white;
+padding:18px 22px;
+border-radius:50px;
+font-size:18px;
+text-decoration:none;
+}
+
+/* Footer */
+footer{
+text-align:center;
+padding:20px;
+background:#ffffff;
+}
+
+/* Mobile */
 @media(max-width:900px){
 
 .gallery{
@@ -62,7 +154,11 @@ grid-template-columns:repeat(2,1fr);
 }
 
 .gallery img{
-height:180px;
+height:200px;
+}
+
+header{
+flex-direction:column;
 }
 
 }
