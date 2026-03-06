@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>ThaiRide Photo</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>ThaiRide Travel</h1>
+
+</header>
+
+<section class="hero">
+
+<img id="photo" style="width:100%">
+
+</section>
+
+<section>
+
+<h2>Add us on LINE</h2>
+
+<a href="https://line.me/ti/p/@775hjmvl">
+<img src="line-qr.png" width="200">
+</a>
+
+</section>
+
+<footer>
+
+<p>© 2026 ThaiRide</p>
+
+</footer>
+
+<script>
+
+const urlParams = new URLSearchParams(window.location.search);
+
+document.getElementById("photo").src =
+urlParams.get("img");
+
+</script>
+
+</body>
+
+</html>
