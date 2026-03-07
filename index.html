@@ -1,457 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<section class="hero">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<div class="hero-slide">
 
-<title>ThaiRide Travel | Bangkok Airport Transfer Private Taxi & Thailand Tour</title>
+<img src="heroslide_01.png" class="active">
+<img src="heroslide_02.png">
+<img src="heroslide_03.png">
 
-<meta name="description" content="Bangkok Airport Transfer Private Taxi Service. Safari World Tour, Floating Market Tour and VIP Van Service in Thailand. Book your private ride today.">
+</div>
 
-<meta name="keywords" content="Bangkok Airport Transfer, Private Taxi Bangkok, Safari World Tour, Floating Market Tour, VIP Van Bangkok, Thailand Tour">
+<div class="clock">
+<div id="clock"></div>
+</div>
 
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://thairidetravel.com/">
-
-<meta property="og:title" content="ThaiRide Travel | Bangkok Airport Transfer">
-<meta property="og:description" content="Premium Airport Transfer and Thailand Tour Service.">
-<meta property="og:image" content="https://thairidetravel.com/hero_01.png">
-<meta property="og:url" content="https://thairidetravel.com">
-<meta property="og:type" content="website">
-
-<!-- Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
+</section>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.logo img{
-width:45px;
-}
-
-nav a{
-margin-left:20px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
 
 /* HERO */
 
 .hero{
 position:relative;
-margin-top:20px;
+overflow:hidden;
 }
 
-.hero img{
+.hero-slide{
+position:relative;
+}
+
+.hero-slide img{
 width:100%;
+display:none;
 border-radius:10px;
 }
+
+.hero-slide img.active{
+display:block;
+}
+
+/* CLOCK */
 
 .clock{
 position:absolute;
+right:20px;
 top:20px;
-right:20px;
-font-size:26px;
-background:rgba(0,0,0,0.6);
-padding:12px 20px;
-border-radius:10px;
-text-align:center;
-}
-
-.date{
-font-size:14px;
-opacity:0.8;
-margin-top:5px;
-}
-
-/* SCROLL */
-
-.scroll{
-overflow:hidden;
-white-space:nowrap;
-margin-top:25px;
-}
-
-.scroll span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 18s linear infinite;
-color:#38bdf8;
-font-size:22px;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-100%)}
-}
-
-/* VEHICLES */
-
-.vehicles{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.vehicle{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-text-align:center;
-}
-
-.vehicle img{
-width:100%;
-border-radius:10px;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-top:30px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-}
-
-/* REVIEWS */
-
-.reviews{
-margin-top:40px;
-}
-
-.review{
-background:#1e293b;
-padding:20px;
-margin-top:10px;
-border-radius:10px;
-}
-
-/* BLOG */
-
-.blog{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.post{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
-
-/* VISITOR */
-
-.visitor-box{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:30px;
-text-align:center;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-}
-
-/* MAP */
-
-.map{
-margin-top:40px;
-}
-
-.line-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#22c55e;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
+background:white;
+padding:10px;
 font-weight:bold;
 }
 
-footer{
-margin-top:40px;
-text-align:center;
-opacity:0.7;
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
-.gallery,
-.vehicles,
-.blog,
-.visitor-box{
-grid-template-columns:1fr;
+.hero-slide img{
+height:220px;
+object-fit:cover;
 }
 
 }
 
 </style>
 
-</head>
-
-<body>
-
-<div class="container">
-
-<header>
-
-<div class="logo">
-<img src="logo.png">
-<h1>ThaiRide Travel</h1>
-</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#gallery">Gallery</a>
-</nav>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-slide">
-
-<img src="hero_01.png">
-<img src="hero_02.png">
-<img src="hero_03.png">
-
-</div>
-
-<div class="clock">
-<div id="clock"></div>
-<div class="date" id="date"></div>
-</div>
-
-</section>
-
-<div class="scroll">
-<span>
-Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bangkok Private Car Service
-</span>
-</div>
-
-<h2>Our Vehicles</h2>
-
-<div class="vehicles">
-
-<div class="vehicle">
-<img src="altis.png">
-<h3>Toyota Camry</h3>
-<p>Luxury airport transfer</p>
-</div>
-
-<div class="vehicle">
-<img src="suv.png">
-<h3>Toyota Altis</h3>
-<p>Comfort private ride</p>
-</div>
-
-<div class="vehicle">
-<img src="van.png">
-<h3>VIP Van</h3>
-<p>Perfect for family trip</p>
-</div>
-
-</div>
-
-<section id="gallery">
-
-<h2>Photo Gallery</h2>
-
-<div class="gallery">
-
-<img src="G-01.png" loading="lazy">
-<img src="G-02.png" loading="lazy">
-<img src="G-03.png" loading="lazy">
-<img src="G-04.png" loading="lazy">
-<img src="hero_05.png" loading="lazy">
-<img src="hero_06.png" loading="lazy">
-<img src="hero_07.png" loading="lazy">
-<img src="hero_08.png" loading="lazy">
-<img src="hero_09.png" loading="lazy">
-
-</div>
-
-</section>
-
-<section class="reviews">
-
-<h2>Google Reviews ⭐⭐⭐⭐⭐</h2>
-
-<div class="review">"Excellent airport transfer service!"</div>
-<div class="review">"Very comfortable van and friendly driver."</div>
-<div class="review">"Best floating market tour experience."</div>
-
-</section>
-
-<h2>Travel Blog</h2>
-
-<div class="blog">
-
-<div class="post">
-<h3>Best Time to Visit Bangkok</h3>
-<p>Discover the best season to travel Bangkok.</p>
-</div>
-
-<div class="post">
-<h3>Safari World Guide</h3>
-<p>Everything you need before visiting Safari World.</p>
-</div>
-
-<div class="post">
-<h3>Floating Market Tour</h3>
-<p>Explore Thailand traditional floating market.</p>
-</div>
-
-</div>
-
-<h2 style="text-align:center;margin-top:40px;">
-🌍 Visitors Around The World
-</h2>
-
-<div class="visitor-box">
-
-<div class="card">
-<h3>👥</h3>
-<p>Total Visitors</p>
-<script async src="https://api.countapi.xyz/hit/thairide/visits?callback=websiteVisits"></script>
-<h3 id="visits">Loading</h3>
-</div>
-
-<div class="card">
-<h3>📱</h3>
-<p>Device</p>
-<h3 id="device"></h3>
-</div>
-
-<div class="card">
-<h3>🌐</h3>
-<p>Browser</p>
-<h3 id="browser"></h3>
-</div>
-
-</div>
-
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=bangkok&t=&z=10&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="350"
-style="border:0;">
-</iframe>
-
-</div>
-
-<footer>
-
-©2026 ThaiRide Travel
-
-</footer>
-
-</div>
-
-<a href="https://line.me/R/ti/p/@775hjmvl" class="line-btn">
-LINE Booking
-</a>
-
 <script>
+
+/* CLOCK */
 
 function updateClock(){
 
 let now = new Date();
 
-let time = now.toLocaleTimeString();
-document.getElementById("clock").innerHTML = time;
+let h = now.getHours().toString().padStart(2,'0');
+let m = now.getMinutes().toString().padStart(2,'0');
+let s = now.getSeconds().toString().padStart(2,'0');
 
-let date = now.toLocaleDateString("en-US",{
-weekday:"long",
-year:"numeric",
-month:"long",
-day:"numeric"
-});
-
-document.getElementById("date").innerHTML = date;
+document.getElementById("clock").innerHTML = h+":"+m+":"+s;
 
 }
 
-updateClock();
 setInterval(updateClock,1000);
 
-function websiteVisits(response){
-document.querySelector("#visits").textContent = response.value;
+
+
+/* HERO SLIDE */
+
+let slideIndex = 0;
+
+let slides = document.querySelectorAll(".hero-slide img");
+
+function showSlide(){
+
+slides.forEach(img => img.classList.remove("active"));
+
+slideIndex++;
+
+if(slideIndex > slides.length){
+
+slideIndex = 1;
+
 }
 
-let device="Desktop";
+slides[slideIndex-1].classList.add("active");
 
-if(/Android/i.test(navigator.userAgent)) device="Android";
-if(/iPhone|iPad|iPod/i.test(navigator.userAgent)) device="iOS";
+}
 
-document.getElementById("device").innerHTML=device;
+showSlide();
 
-let browser="Unknown";
-
-if(navigator.userAgent.indexOf("Chrome")>-1) browser="Chrome";
-if(navigator.userAgent.indexOf("Safari")>-1) browser="Safari";
-if(navigator.userAgent.indexOf("Firefox")>-1) browser="Firefox";
-
-document.getElementById("browser").innerHTML=browser;
+setInterval(showSlide,4000);
 
 </script>
-
-</body>
-</html>
-
-
-ผมให้ไป คุณก็ไปตัดโค๊ตบางส่วนออก 
