@@ -7,7 +7,11 @@
 
 <title>ThaiRide Travel | Bangkok Airport Transfer Private Taxi & Thailand Tour</title>
 
-<meta name="description" content="Bangkok Airport Transfer Private Taxi Service. Safari World Tour, Floating Market Tour and VIP Van Service in Thailand.">
+<meta name="description" content="Bangkok Airport Transfer Private Taxi Service, Safari World Tour, Floating Market Tour, VIP Van Bangkok. Book private taxi in Thailand.">
+
+<meta name="keywords" content="Bangkok airport transfer, Bangkok taxi, Thailand private car, safari world tour, floating market tour">
+
+<meta name="robots" content="index, follow">
 
 <style>
 
@@ -75,13 +79,13 @@ padding:12px 20px;
 border-radius:10px;
 }
 
-/* BOOKING FORM */
+/* BOOKING */
 
 .booking{
 background:#1e293b;
-padding:30px;
-border-radius:10px;
 margin-top:30px;
+padding:30px;
+border-radius:12px;
 }
 
 .booking h2{
@@ -98,21 +102,31 @@ gap:15px;
 .booking input,
 .booking select,
 .booking textarea{
-padding:12px;
-border-radius:6px;
+
+padding:14px;
+border-radius:8px;
 border:none;
 width:100%;
+font-size:15px;
+
+}
+
+.booking textarea{
+margin-top:15px;
 }
 
 .booking button{
-background:#22c55e;
-border:none;
-padding:15px;
+
+margin-top:15px;
+width:100%;
+padding:16px;
 font-size:18px;
+border:none;
+border-radius:10px;
+background:#22c55e;
 color:white;
-border-radius:8px;
 cursor:pointer;
-margin-top:10px;
+
 }
 
 .booking button:hover{
@@ -241,6 +255,8 @@ text-align:center;
 opacity:0.7;
 }
 
+/* MOBILE */
+
 @media(max-width:768px){
 
 .gallery,
@@ -255,22 +271,13 @@ grid-template-columns:1fr;
 }
 
 .hero-slide img{
-height:220px;
+height:230px;
 object-fit:cover;
 }
 
 }
 
 </style>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
 
 </head>
 
@@ -306,7 +313,7 @@ gtag('config', 'G-V9XCVN1N0W');
 
 </section>
 
-<!-- BOOKING FORM -->
+<!-- BOOKING -->
 
 <section class="booking">
 
@@ -314,19 +321,19 @@ gtag('config', 'G-V9XCVN1N0W');
 
 <div class="booking-grid">
 
-<input type="text" id="name" placeholder="Your Name">
+<input type="text" placeholder="Your Name">
 
-<input type="text" id="contact" placeholder="LINE / WhatsApp">
+<input type="text" placeholder="LINE / WhatsApp">
 
-<input type="text" id="pickup" placeholder="Pickup Location">
+<input type="text" placeholder="Pickup Location">
 
-<input type="text" id="dropoff" placeholder="Dropoff Location">
+<input type="text" placeholder="Dropoff Location">
 
-<input type="date" id="date">
+<input type="date">
 
-<input type="time" id="time">
+<input type="time">
 
-<select id="passengers">
+<select>
 <option>Passengers</option>
 <option>1</option>
 <option>2</option>
@@ -335,8 +342,8 @@ gtag('config', 'G-V9XCVN1N0W');
 <option>5+</option>
 </select>
 
-<select id="vehicle">
-<option>Vehicle Type</option>
+<select>
+<option>Vehicle</option>
 <option>Toyota Altis</option>
 <option>SUV</option>
 <option>VIP Van</option>
@@ -344,9 +351,9 @@ gtag('config', 'G-V9XCVN1N0W');
 
 </div>
 
-<textarea id="message" placeholder="Additional Message"></textarea>
+<textarea placeholder="Additional message"></textarea>
 
-<button onclick="sendToLine()">BOOK VIA LINE</button>
+<button onclick="openLine()">BOOK VIA LINE</button>
 
 </section>
 
@@ -368,7 +375,7 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <div class="vehicle">
 <img src="suv.png">
-<h3> SUV </h3>
+<h3>SUV</h3>
 <p>Comfort private ride</p>
 </div>
 
@@ -410,77 +417,6 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 </section>
 
-<h2>Travel Blog</h2>
-
-<div class="blog">
-
-<div class="post">
-<h3>Best Time to Visit Bangkok</h3>
-<p>Discover the best season to travel Bangkok.</p>
-</div>
-
-<div class="post">
-<h3>Safari World Guide</h3>
-<p>Everything you need before visiting Safari World.</p>
-</div>
-
-<div class="post">
-<h3>Floating Market Tour</h3>
-<p>Explore Thailand traditional floating market.</p>
-</div>
-
-</div>
-
-<h2 style="text-align:center;margin-top:40px;">
-🌍 Visitors Around The World
-</h2>
-
-<div class="visitor-box">
-
-<div class="card">
-<h3>👥</h3>
-<p>Total Visitors</p>
-<script async src="https://api.countapi.xyz/hit/thairide/visits?callback=websiteVisits"></script>
-<h3 id="visits">Loading</h3>
-</div>
-
-<div class="card">
-<h3>📊</h3>
-<p>Histats Counter</p>
-
-<script type="text/javascript">
-var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4780000,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script');
-hs.type = 'text/javascript';
-hs.async = true;
-hs.src = ('https:' == document.location.protocol ?
-'https://s10.histats.com/js15_as.js' :
-'http://s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] ||
-document.getElementsByTagName('body')[0]).appendChild(hs);
-})();
-</script>
-
-</div>
-
-<div class="card">
-<h3>📱</h3>
-<p>Device</p>
-<h3 id="device"></h3>
-</div>
-
-<div class="card">
-<h3>🌐</h3>
-<p>Browser</p>
-<h3 id="browser"></h3>
-</div>
-
-</div>
-
 <div class="map">
 
 <iframe
@@ -493,7 +429,7 @@ style="border:0;">
 </div>
 
 <footer>
-<h1></h1>©2026 ThaiRide Travel</h1>
+©2026 ThaiRide Travel
 </footer>
 
 </div>
@@ -507,74 +443,38 @@ LINE Booking
 /* CLOCK */
 
 function updateClock(){
-let now = new Date();
-document.getElementById("clock").innerHTML = now.toLocaleTimeString();
+let now=new Date();
+document.getElementById("clock").innerHTML=now.toLocaleTimeString();
 }
+
 setInterval(updateClock,1000);
 
 /* HERO SLIDE */
 
-let slideIndex = 0;
-let slides = document.querySelectorAll(".hero-slide img");
+let slideIndex=0;
+let slides=document.querySelectorAll(".hero-slide img");
 
 function showSlide(){
-slides.forEach(img => img.classList.remove("active"));
+
+slides.forEach(img=>img.classList.remove("active"));
+
 slideIndex++;
-if(slideIndex > slides.length){slideIndex = 1;}
+
+if(slideIndex>slides.length){slideIndex=1;}
+
 slides[slideIndex-1].classList.add("active");
+
 }
 
 showSlide();
+
 setInterval(showSlide,4000);
 
-/* COUNT API */
+/* OPEN LINE */
 
-function websiteVisits(response){
-document.querySelector("#visits").textContent = response.value;
-}
+function openLine(){
 
-/* DEVICE */
-
-let device="Desktop";
-if(/Android/i.test(navigator.userAgent)) device="Android";
-if(/iPhone|iPad|iPod/i.test(navigator.userAgent)) device="iOS";
-document.getElementById("device").innerHTML=device;
-
-/* BROWSER */
-
-let browser="Unknown";
-if(navigator.userAgent.indexOf("Chrome")>-1) browser="Chrome";
-if(navigator.userAgent.indexOf("Safari")>-1) browser="Safari";
-if(navigator.userAgent.indexOf("Firefox")>-1) browser="Firefox";
-document.getElementById("browser").innerHTML=browser;
-
-/* SEND BOOKING TO LINE */
-
-function sendToLine(){
-
-let name=document.getElementById("name").value;
-let contact=document.getElementById("contact").value;
-let pickup=document.getElementById("pickup").value;
-let dropoff=document.getElementById("dropoff").value;
-let date=document.getElementById("date").value;
-let time=document.getElementById("time").value;
-let passengers=document.getElementById("passengers").value;
-let vehicle=document.getElementById("vehicle").value;
-let message=document.getElementById("message").value;
-
-let text=
-"New Booking Request%0A"+
-"Name: "+name+"%0A"+
-"Contact: "+contact+"%0A"+
-"Pickup: "+pickup+"%0A"+
-"Dropoff: "+dropoff+"%0A"+
-"Date: "+date+"%0A"+
-"Time: "+time+"%0A"+
-"Passengers: "+passengers+"%0A"+
-"Vehicle: "+vehicle+"%0A"+
-"Message: "+message;
-
-window.open("https://line.me/R/msg/text/?"+text);
+window.open("https://line.me/R/ti/p/@775hjmvl");
 
 }
 
