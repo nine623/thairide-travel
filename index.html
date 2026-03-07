@@ -3,11 +3,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>ThaiRide Travel | Bangkok Airport Transfer</title>
+<title>ThaiRide Travel | Bangkok Airport Transfer Private Taxi & Thailand Tour</title>
 
-<meta name="description" content="Bangkok Airport Transfer Private Taxi Service Thailand. Book private taxi, safari world tour, floating market tour.">
+<meta name="description" content="Bangkok Airport Transfer Private Taxi Service. Safari World Tour, Floating Market Tour and VIP Van Service in Thailand.">
 
 <style>
 
@@ -41,32 +41,47 @@ width:45px;
 }
 
 nav a{
-color:white;
-text-decoration:none;
 margin-left:20px;
+text-decoration:none;
+color:white;
 font-weight:bold;
 }
 
-.hero img{
+/* HERO */
+
+.hero{
+position:relative;
+margin-top:20px;
+overflow:hidden;
+}
+
+.hero-slide img{
 width:100%;
 border-radius:10px;
+display:none;
+}
+
+.hero-slide img.active{
+display:block;
 }
 
 .clock{
 position:absolute;
-right:20px;
 top:20px;
+right:20px;
+font-size:26px;
 background:rgba(0,0,0,0.6);
-padding:10px 18px;
-border-radius:8px;
-font-size:22px;
+padding:12px 20px;
+border-radius:10px;
 }
+
+/* BOOKING */
 
 .booking{
 background:#1e293b;
 padding:30px;
 border-radius:12px;
-margin-top:30px;
+margin-top:40px;
 }
 
 .booking-grid{
@@ -86,11 +101,11 @@ font-size:15px;
 }
 
 .booking textarea{
-margin-top:15px;
+margin-top:10px;
 }
 
 .booking button{
-margin-top:15px;
+margin-top:10px;
 width:100%;
 padding:16px;
 border:none;
@@ -101,29 +116,118 @@ font-size:18px;
 cursor:pointer;
 }
 
-.booking button:hover{
-background:#16a34a;
-}
+/* QR */
 
-.stats{
-margin-top:20px;
-font-size:14px;
-opacity:0.8;
-}
-
-.qr-section{
-margin-top:40px;
+.qr-box{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
+margin-top:20px;
 text-align:center;
 }
 
-.qr-section img{
-width:150px;
+.qr-box img{
+width:140px;
 background:white;
-padding:10px;
+padding:8px;
 border-radius:10px;
+}
+
+/* SCROLL */
+
+.scroll{
+overflow:hidden;
+white-space:nowrap;
+margin-top:25px;
+}
+
+.scroll span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 18s linear infinite;
+color:#38bdf8;
+font-size:22px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
+
+/* VEHICLES */
+
+.vehicles{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:40px;
+}
+
+.vehicle{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.vehicle img{
+width:100%;
+border-radius:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+/* REVIEWS */
+
+.review{
+background:#1e293b;
+padding:20px;
+margin-top:10px;
+border-radius:10px;
+}
+
+/* VISITOR */
+
+.visitor-box{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:30px;
+text-align:center;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+}
+
+.map{
+margin-top:40px;
+}
+
+.line-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#22c55e;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
 }
 
 footer{
@@ -134,17 +238,32 @@ opacity:0.7;
 
 @media(max-width:768px){
 
+.gallery,
+.vehicles,
+.visitor-box,
+.qr-box,
 .booking-grid{
 grid-template-columns:1fr;
 }
 
-.qr-section{
-grid-template-columns:1fr;
+.hero-slide img{
+height:220px;
+object-fit:cover;
 }
 
 }
 
 </style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V9XCVN1N0W');
+</script>
+
 </head>
 
 <body>
@@ -155,27 +274,35 @@ grid-template-columns:1fr;
 
 <div class="logo">
 <img src="logo.png">
-<h2>ThaiRide Travel</h2>
+<h1>ThaiRide Travel</h1>
 </div>
 
 <nav>
 <a href="#">Home</a>
-<a href="#">Booking</a>
+<a href="#gallery">Gallery</a>
 </nav>
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
 
-<img src="heroslide_01.png">
+<div class="hero-slide">
+<img src="heroslide_01.png" class="active">
+<img src="heroslide_02.png">
+<img src="heroslide_03.png">
+</div>
 
 <div class="clock">
-<span id="clock"></span>
+<div id="clock"></div>
 </div>
 
 </section>
+
+<div class="scroll">
+<span>
+Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bangkok Private Car Service
+</span>
+</div>
 
 <!-- BOOKING FORM -->
 
@@ -223,18 +350,9 @@ grid-template-columns:1fr;
 
 </form>
 
-<div class="stats">
+<!-- QR CONTACT -->
 
-Visitors Online :
-<span id="visitors"></span>
-
-</div>
-
-</section>
-
-<!-- CONTACT QR -->
-
-<section class="qr-section">
+<div class="qr-box">
 
 <div>
 <h3>LINE OA</h3>
@@ -251,40 +369,173 @@ Visitors Online :
 <img src="wechat-qr.png">
 </div>
 
+</div>
+
 </section>
 
+<h2>Our Vehicles</h2>
+
+<div class="vehicles">
+
+<div class="vehicle">
+<img src="altis.png">
+<h3>Toyota Altis</h3>
+<p>Luxury airport transfer</p>
+</div>
+
+<div class="vehicle">
+<img src="suv.png">
+<h3>SUV</h3>
+<p>Comfort private ride</p>
+</div>
+
+<div class="vehicle">
+<img src="van.png">
+<h3>VIP Van</h3>
+<p>Perfect for family trip</p>
+</div>
+
+</div>
+
+<section id="gallery">
+
+<h2>Photo Gallery</h2>
+
+<div class="gallery">
+
+<img src="G-01.png">
+<img src="G-02.png">
+<img src="G-03.png">
+<img src="G-04.png">
+<img src="hero_05.png">
+<img src="hero_06.png">
+<img src="hero_07.png">
+<img src="hero_08.png">
+<img src="hero_09.png">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Google Reviews ⭐⭐⭐⭐⭐</h2>
+
+<div class="review">Excellent airport transfer service!</div>
+<div class="review">Very comfortable van and friendly driver.</div>
+<div class="review">Best floating market tour experience.</div>
+
+</section>
+
+<h2 style="text-align:center;margin-top:40px;">
+🌍 Visitors Around The World
+</h2>
+
+<div class="visitor-box">
+
+<div class="card">
+<h3>Total Visitors</h3>
+<script async src="https://api.countapi.xyz/hit/thairide/visits?callback=websiteVisits"></script>
+<h2 id="visits">Loading</h2>
+</div>
+
+<div class="card">
+
+<h3>Histats Counter</h3>
+
+<script type="text/javascript">
+var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4780000,4,0,0,0,00010000']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script');
+hs.type = 'text/javascript';
+hs.async = true;
+hs.src = 'https://s10.histats.com/js15_as.js';
+(document.getElementsByTagName('head')[0]).appendChild(hs);
+})();
+</script>
+
+</div>
+
+<div class="card">
+<h3>Device</h3>
+<h2 id="device"></h2>
+</div>
+
+<div class="card">
+<h3>Browser</h3>
+<h2 id="browser"></h2>
+</div>
+
+</div>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=bangkok&t=&z=10&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350"
+style="border:0;">
+</iframe>
+
+</div>
+
 <footer>
-
-© 2026 ThaiRide Travel
-
+©2026 ThaiRide Travel
 </footer>
 
 </div>
+
+<a href="https://line.me/R/ti/p/@775hjmvl" class="line-btn">
+LINE Booking
+</a>
 
 <script>
 
 /* CLOCK */
 
 function updateClock(){
-
-let now=new Date();
-
-let h=now.getHours().toString().padStart(2,'0');
-let m=now.getMinutes().toString().padStart(2,'0');
-let s=now.getSeconds().toString().padStart(2,'0');
-
-document.getElementById("clock").innerHTML=h+":"+m+":"+s;
-
+let now = new Date();
+document.getElementById("clock").innerHTML = now.toLocaleTimeString();
 }
-
 setInterval(updateClock,1000);
 
+/* HERO SLIDE */
 
-/* VISITOR COUNTER */
+let slideIndex = 0;
+let slides = document.querySelectorAll(".hero-slide img");
 
-let count=120+Math.floor(Math.random()*80);
+function showSlide(){
+slides.forEach(img => img.classList.remove("active"));
+slideIndex++;
+if(slideIndex > slides.length){slideIndex = 1;}
+slides[slideIndex-1].classList.add("active");
+}
 
-document.getElementById("visitors").innerHTML=count;
+showSlide();
+setInterval(showSlide,4000);
+
+/* COUNT API */
+
+function websiteVisits(response){
+document.querySelector("#visits").textContent = response.value;
+}
+
+/* DEVICE */
+
+let device="Desktop";
+if(/Android/i.test(navigator.userAgent)) device="Android";
+if(/iPhone|iPad|iPod/i.test(navigator.userAgent)) device="iOS";
+document.getElementById("device").innerHTML=device;
+
+/* BROWSER */
+
+let browser="Unknown";
+if(navigator.userAgent.indexOf("Chrome")>-1) browser="Chrome";
+if(navigator.userAgent.indexOf("Safari")>-1) browser="Safari";
+if(navigator.userAgent.indexOf("Firefox")>-1) browser="Firefox";
+document.getElementById("browser").innerHTML=browser;
 
 </script>
 
