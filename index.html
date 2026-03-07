@@ -75,6 +75,50 @@ padding:12px 20px;
 border-radius:10px;
 }
 
+/* BOOKING FORM */
+
+.booking{
+background:#1e293b;
+padding:30px;
+border-radius:10px;
+margin-top:30px;
+}
+
+.booking h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.booking-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.booking input,
+.booking select,
+.booking textarea{
+padding:12px;
+border-radius:6px;
+border:none;
+width:100%;
+}
+
+.booking button{
+background:#22c55e;
+border:none;
+padding:15px;
+font-size:18px;
+color:white;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.booking button:hover{
+background:#16a34a;
+}
+
 /* SCROLL */
 
 .scroll{
@@ -206,6 +250,10 @@ opacity:0.7;
 grid-template-columns:1fr;
 }
 
+.booking-grid{
+grid-template-columns:1fr;
+}
+
 .hero-slide img{
 height:220px;
 object-fit:cover;
@@ -214,8 +262,8 @@ object-fit:cover;
 }
 
 </style>
-  
-  <!-- Google Analytics -->
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -255,6 +303,50 @@ gtag('config', 'G-V9XCVN1N0W');
 <div class="clock">
 <div id="clock"></div>
 </div>
+
+</section>
+
+<!-- BOOKING FORM -->
+
+<section class="booking">
+
+<h2>🚐 Airport Transfer Booking</h2>
+
+<div class="booking-grid">
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="text" id="contact" placeholder="LINE / WhatsApp">
+
+<input type="text" id="pickup" placeholder="Pickup Location">
+
+<input type="text" id="dropoff" placeholder="Dropoff Location">
+
+<input type="date" id="date">
+
+<input type="time" id="time">
+
+<select id="passengers">
+<option>Passengers</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5+</option>
+</select>
+
+<select id="vehicle">
+<option>Vehicle Type</option>
+<option>Toyota Altis</option>
+<option>SUV</option>
+<option>VIP Van</option>
+</select>
+
+</div>
+
+<textarea id="message" placeholder="Additional Message"></textarea>
+
+<button onclick="sendToLine()">BOOK VIA LINE</button>
 
 </section>
 
@@ -356,7 +448,6 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 <h3>📊</h3>
 <p>Histats Counter</p>
 
-<!-- Histats -->
 <script type="text/javascript">
 var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4780000,4,0,0,0,00010000']);
@@ -373,10 +464,6 @@ hs.src = ('https:' == document.location.protocol ?
 document.getElementsByTagName('body')[0]).appendChild(hs);
 })();
 </script>
-
-<noscript>
-<img src="//sstatic1.histats.com/0.gif?4780000&101">
-</noscript>
 
 </div>
 
@@ -460,6 +547,36 @@ if(navigator.userAgent.indexOf("Chrome")>-1) browser="Chrome";
 if(navigator.userAgent.indexOf("Safari")>-1) browser="Safari";
 if(navigator.userAgent.indexOf("Firefox")>-1) browser="Firefox";
 document.getElementById("browser").innerHTML=browser;
+
+/* SEND BOOKING TO LINE */
+
+function sendToLine(){
+
+let name=document.getElementById("name").value;
+let contact=document.getElementById("contact").value;
+let pickup=document.getElementById("pickup").value;
+let dropoff=document.getElementById("dropoff").value;
+let date=document.getElementById("date").value;
+let time=document.getElementById("time").value;
+let passengers=document.getElementById("passengers").value;
+let vehicle=document.getElementById("vehicle").value;
+let message=document.getElementById("message").value;
+
+let text=
+"New Booking Request%0A"+
+"Name: "+name+"%0A"+
+"Contact: "+contact+"%0A"+
+"Pickup: "+pickup+"%0A"+
+"Dropoff: "+dropoff+"%0A"+
+"Date: "+date+"%0A"+
+"Time: "+time+"%0A"+
+"Passengers: "+passengers+"%0A"+
+"Vehicle: "+vehicle+"%0A"+
+"Message: "+message;
+
+window.open("https://line.me/R/msg/text/?"+text);
+
+}
 
 </script>
 
