@@ -14,22 +14,6 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://thairidetravel.com/">
 
-<meta property="og:title" content="ThaiRide Travel | Bangkok Airport Transfer">
-<meta property="og:description" content="Premium Airport Transfer and Thailand Tour Service.">
-<meta property="og:image" content="https://thairidetravel.com/hero_01.png">
-<meta property="og:url" content="https://thairidetravel.com">
-<meta property="og:type" content="website">
-
-<!-- Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
-
 <style>
 
 body{
@@ -72,16 +56,38 @@ nav a:hover{
 color:#38bdf8;
 }
 
-/* HERO */
+/* HERO SLIDER */
 
 .hero{
 position:relative;
 margin-top:20px;
+overflow:hidden;
+border-radius:10px;
 }
 
-.hero img{
+.slider{
+display:flex;
+width:300%;
+animation:slideHero 12s infinite;
+}
+
+.slider img{
 width:100%;
-border-radius:10px;
+}
+
+/* SLIDE ANIMATION */
+
+@keyframes slideHero{
+
+0%{transform:translateX(0%)}
+30%{transform:translateX(0%)}
+
+35%{transform:translateX(-100%)}
+65%{transform:translateX(-100%)}
+
+70%{transform:translateX(-200%)}
+100%{transform:translateX(-200%)}
+
 }
 
 .clock{
@@ -258,9 +264,17 @@ grid-template-columns:1fr;
 
 </header>
 
+<!-- HERO SLIDE -->
+
 <section class="hero">
 
-<img src="hero_01.png">
+<div class="slider">
+
+<img src="heroslide_01.png">
+<img src="heroslide_02.png">
+<img src="heroslide_03.png">
+
+</div>
 
 <div class="clock">
 <div id="clock"></div>
@@ -275,123 +289,8 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 </span>
 </div>
 
-<h2>Our Vehicles</h2>
-
-<div class="vehicles">
-
-<div class="vehicle">
-<img src="altis.png">
-<h3>Toyota Camry</h3>
-<p>Luxury airport transfer</p>
-</div>
-
-<div class="vehicle">
-<img src="suv.png">
-<h3>Toyota Altis</h3>
-<p>Comfort private ride</p>
-</div>
-
-<div class="vehicle">
-<img src="van.png">
-<h3>VIP Van</h3>
-<p>Perfect for family trip</p>
-</div>
-
-</div>
-
-<section id="gallery">
-
-<h2>Photo Gallery</h2>
-
-<div class="gallery">
-
-<img src="G-01.png" loading="lazy">
-<img src="G-02.png" loading="lazy">
-<img src="G-03.png" loading="lazy">
-<img src="G-04.png" loading="lazy">
-<img src="hero_05.png" loading="lazy">
-<img src="hero_06.png" loading="lazy">
-<img src="hero_07.png" loading="lazy">
-<img src="hero_08.png" loading="lazy">
-<img src="hero_09.png" loading="lazy">
-
-</div>
-
-</section>
-
-<section class="reviews">
-
-<h2>Google Reviews ⭐⭐⭐⭐⭐</h2>
-
-<div class="review">"Excellent airport transfer service!"</div>
-<div class="review">"Very comfortable van and friendly driver."</div>
-<div class="review">"Best floating market tour experience."</div>
-
-</section>
-
-<h2>Travel Blog</h2>
-
-<div class="blog">
-
-<div class="post">
-<h3>Best Time to Visit Bangkok</h3>
-<p>Discover the best season to travel Bangkok.</p>
-</div>
-
-<div class="post">
-<h3>Safari World Guide</h3>
-<p>Everything you need before visiting Safari World.</p>
-</div>
-
-<div class="post">
-<h3>Floating Market Tour</h3>
-<p>Explore Thailand traditional floating market.</p>
-</div>
-
-</div>
-
-<h2 style="text-align:center;margin-top:40px;">
-🌍 Visitors Around The World
-</h2>
-
-<div class="visitor-box">
-
-<div class="card">
-<h3>👥</h3>
-<p>Total Visitors</p>
-<script async src="https://api.countapi.xyz/hit/thairide/visits?callback=websiteVisits"></script>
-<h3 id="visits">Loading</h3>
-</div>
-
-<div class="card">
-<h3>📱</h3>
-<p>Device</p>
-<h3 id="device"></h3>
-</div>
-
-<div class="card">
-<h3>🌐</h3>
-<p>Browser</p>
-<h3 id="browser"></h3>
-</div>
-
-</div>
-
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=bangkok&t=&z=10&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="350"
-style="border:0;">
-</iframe>
-
-</div>
-
 <footer>
-
 ©2026 ThaiRide Travel
-
 </footer>
 
 </div>
@@ -422,25 +321,6 @@ document.getElementById("date").innerHTML = date;
 
 updateClock();
 setInterval(updateClock,1000);
-
-function websiteVisits(response){
-document.querySelector("#visits").textContent = response.value;
-}
-
-let device="Desktop";
-
-if(/Android/i.test(navigator.userAgent)) device="Android";
-if(/iPhone|iPad|iPod/i.test(navigator.userAgent)) device="iOS";
-
-document.getElementById("device").innerHTML=device;
-
-let browser="Unknown";
-
-if(navigator.userAgent.indexOf("Chrome")>-1) browser="Chrome";
-if(navigator.userAgent.indexOf("Safari")>-1) browser="Safari";
-if(navigator.userAgent.indexOf("Firefox")>-1) browser="Firefox";
-
-document.getElementById("browser").innerHTML=browser;
 
 </script>
 
