@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +13,17 @@
 <meta name="keywords" content="Bangkok Airport Transfer, Private Taxi Bangkok, Safari World Tour, Floating Market Tour, VIP Van Bangkok, Thailand Tour">
 
 <meta name="robots" content="index, follow">
+
+<!-- GOOGLE ANALYTICS -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V9XCVN1N0W');
+</script>
 
 <style>
 
@@ -398,8 +409,8 @@ let now = new Date();
 document.getElementById("clock").innerHTML = now.toLocaleTimeString();
 }
 
+updateClock();
 setInterval(updateClock,1000);
-
 
 /* HERO SLIDE */
 
@@ -420,9 +431,7 @@ slides[slideIndex-1].classList.add("active");
 
 }
 
-showSlide();
 setInterval(showSlide,4000);
-
 
 /* VISITOR COUNT */
 
