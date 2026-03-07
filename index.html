@@ -12,12 +12,12 @@
 <meta name="keywords" content="Bangkok Airport Transfer, Private Taxi Bangkok, Safari World Tour, Floating Market Tour, VIP Van Bangkok, Thailand Tour">
 
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://thairidetravel.com/">
+<link rel="canonical" href="https://nine623.github.io/thairide-travel/">
 
 <meta property="og:title" content="ThaiRide Travel | Bangkok Airport Transfer">
 <meta property="og:description" content="Premium Airport Transfer and Thailand Tour Service.">
-<meta property="og:image" content="https://thairidetravel.com/heroslide_01.png">
-<meta property="og:url" content="https://thairidetravel.com">
+<meta property="og:image" content="hero_01.png">
+<meta property="og:url" content="https://nine623.github.io/thairide-travel/">
 <meta property="og:type" content="website">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
@@ -34,15 +34,15 @@ gtag('config', 'G-V9XCVN1N0W');
 body{
 margin:0;
 font-family:Arial;
-background:#1f4fa3;
+background:#f3f4f6;
+color:#111;
 }
 
 .container{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 background:white;
 }
-
 
 /* HEADER */
 
@@ -56,11 +56,11 @@ padding:15px;
 .logo{
 display:flex;
 align-items:center;
+gap:10px;
 }
 
 .logo img{
 width:40px;
-margin-right:10px;
 }
 
 nav a{
@@ -70,105 +70,100 @@ color:black;
 font-weight:bold;
 }
 
-
 /* HERO */
 
 .hero{
 position:relative;
+}
+
+.hero img{
 width:100%;
-height:420px;
-overflow:hidden;
+display:block;
 border-radius:10px;
 }
 
-.hero-img{
-width:100%;
-}
+/* HERO MENU */
 
-.hero-slide{
+.hero-menu{
 position:absolute;
-width:100%;
-height:100%;
-opacity:0;
-transition:opacity 1.5s;
+top:10px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:15px;
+background:rgba(255,255,255,0.9);
+padding:8px 12px;
+border-radius:8px;
 }
 
-.hero-slide img{
-width:100%;
-height:100%;
-object-fit:cover;
+.hero-menu div{
+text-align:center;
+font-size:12px;
 }
 
-.hero-slide.active{
-opacity:1;
+.hero-menu img{
+width:90px;
+border-radius:6px;
 }
+
+/* CLOCK */
 
 .clock{
 position:absolute;
-right:20px;
-top:20px;
+top:15px;
+right:15px;
 background:white;
-padding:10px;
-font-weight:bold;
-}
-
-.visitor{
-position:absolute;
-left:20px;
-top:20px;
-background:white;
-padding:10px;
+padding:8px 12px;
+border-radius:6px;
+font-size:14px;
 text-align:center;
 }
 
+/* VISITOR */
 
-/* PROMO BANNER */
-
-.promo img{
-width:100%;
+.visitor-loading{
+position:absolute;
+top:15px;
+left:15px;
+background:white;
+padding:6px 10px;
+border-radius:6px;
+font-size:13px;
 }
 
+/* SCROLL TEXT */
 
-/* MARQUEE */
-
-.marquee{
-background:#ffd000;
+.scroll{
+background:#facc15;
 padding:10px;
+text-align:center;
 font-weight:bold;
 }
-
 
 /* REVIEWS */
 
 .reviews{
 text-align:center;
-padding:40px;
+padding:40px 20px;
 }
 
 .reviews p{
-font-size:18px;
+margin:10px 0;
 }
-
 
 /* GALLERY */
-
-#gallery{
-padding:40px;
-}
 
 .gallery{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:12px;
+gap:15px;
+padding:20px;
 }
 
 .gallery img{
 width:100%;
-height:150px;
-object-fit:cover;
-border-radius:6px;
+border-radius:10px;
 }
-
 
 /* QR */
 
@@ -178,27 +173,14 @@ padding:40px;
 }
 
 .qr img{
-width:150px;
+width:220px;
 }
 
+/* MAP */
 
-/* WORLD MAP */
-
-.world{
-text-align:center;
-padding:40px;
-}
-
-
-/* FOOTER */
-
-footer{
-background:#222;
-color:white;
-text-align:center;
+.map{
 padding:20px;
 }
-
 
 /* LINE BUTTON */
 
@@ -206,7 +188,7 @@ padding:20px;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#06c755;
+background:#22c55e;
 color:white;
 padding:14px 18px;
 border-radius:30px;
@@ -214,17 +196,16 @@ text-decoration:none;
 font-weight:bold;
 }
 
-
 /* MOBILE */
 
 @media(max-width:768px){
 
 .gallery{
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:1fr 1fr;
 }
 
-.hero{
-height:220px;
+.hero-menu{
+display:none;
 }
 
 }
@@ -251,18 +232,15 @@ height:220px;
 
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="hero-slide active">
-<img src="heroslide_01.png">
-</div>
+<img src="hero_01.png">
 
-<div class="hero-slide">
-<img src="heroslide_02.png">
-</div>
-
-<div class="hero-slide">
-<img src="heroslide_03.png">
+<div class="visitor-loading">
+Visitors Loading
 </div>
 
 <div class="clock">
@@ -270,20 +248,37 @@ height:220px;
 <div id="date"></div>
 </div>
 
-<div class="visitor">
-Visitors
-<div id="visits">Loading</div>
+<div class="hero-menu">
+
+<div>
+<img src="hero_02.png">
+<p>BKK Airport</p>
+</div>
+
+<div>
+<img src="hero_03.png">
+<p>Safari World</p>
+</div>
+
+<div>
+<img src="hero_04.png">
+<p>Floating Market</p>
+</div>
+
+<div>
+<img src="hero_05.png">
+<p>Bangkok Temple Tour</p>
+</div>
+
 </div>
 
 </section>
 
-<div class="promo">
-<img src="promo.png">
+
+<div class="scroll">
+Bangkok Airport Transfer • Safari World Tour • Floating Market Tour
 </div>
 
-<div class="marquee">
-<marquee>Bangkok Airport Transfer • Safari World Tour • Floating Market Tour • Private Taxi Thailand</marquee>
-</div>
 
 <section class="reviews">
 
@@ -295,9 +290,10 @@ Visitors
 
 </section>
 
+
 <section id="gallery">
 
-<h2>Photo Gallery</h2>
+<h2 style="padding-left:20px;">Photo Gallery</h2>
 
 <div class="gallery">
 
@@ -305,104 +301,73 @@ Visitors
 <img src="G-02.png">
 <img src="G-03.png">
 <img src="G-04.png">
-<img src="G-05.png">
-<img src="G-06.png">
+<img src="hero_05.png">
+<img src="hero_06.png">
 
 </div>
 
 </section>
 
-<section class="qr">
+
+<div class="qr">
 
 <h2>Scan QR to Book</h2>
 
 <img src="qr.png">
 
-</section>
+</div>
 
-<section class="world">
 
-<h2>Visitors Around the World</h2>
+<h2 style="text-align:center;">
+Visitors Around the World
+</h2>
 
-<iframe src="https://maps.google.com/maps?q=world&t=&z=2&ie=UTF8&iwloc=&output=embed"
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=bangkok&t=&z=2&ie=UTF8&iwloc=&output=embed"
 width="100%"
 height="350"
-style="border:0;"></iframe>
+style="border:0;">
+</iframe>
 
-</section>
+</div>
 
-<footer>
 
-© 2026 ThaiRide Travel
-
+<footer style="text-align:center;padding:20px;">
+©2026 ThaiRide Travel
 </footer>
 
 </div>
+
 
 <a href="https://line.me/R/ti/p/@775hjmvl" class="line-btn">
 LINE Booking
 </a>
 
+
 <script>
-
-/* HERO SLIDE */
-
-let slides=document.querySelectorAll(".hero-slide");
-let index=0;
-
-function showSlide(){
-
-slides.forEach(slide=>{
-slide.classList.remove("active");
-});
-
-index++;
-
-if(index>=slides.length){
-index=0;
-}
-
-slides[index].classList.add("active");
-
-}
-
-setInterval(showSlide,4000);
-
-
-/* CLOCK */
 
 function updateClock(){
 
 let now=new Date();
 
-let time=now.toLocaleTimeString();
-document.getElementById("clock").innerHTML=time;
+document.getElementById("clock").innerHTML=
+now.toLocaleTimeString();
 
-let date=now.toLocaleDateString("en-US",{
+document.getElementById("date").innerHTML=
+now.toLocaleDateString("en-US",{
 weekday:"long",
 year:"numeric",
 month:"long",
 day:"numeric"
 });
 
-document.getElementById("date").innerHTML=date;
-
 }
 
-updateClock();
 setInterval(updateClock,1000);
-
-
-/* VISITOR COUNTER */
-
-function websiteVisits(response){
-document.querySelector("#visits").textContent = response.value;
-}
 
 </script>
 
-<script async src="https://api.countapi.xyz/hit/thairide/visits?callback=websiteVisits"></script>
-
 </body>
 </html>
-```
