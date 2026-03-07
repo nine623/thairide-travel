@@ -1,33 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>ThaiRide Travel | Bangkok Airport Transfer Private Taxi & Thailand Tour</title>
+<title>ThaiRide Travel | Bangkok Airport Transfer</title>
 
-<meta name="description" content="Bangkok Airport Transfer Private Taxi Service. Safari World Tour, Floating Market Tour and VIP Van Service in Thailand. Book your private ride today.">
+<meta name="description" content="Bangkok Airport Transfer Private Taxi Service. Safari World Tour, Floating Market Tour and VIP Van Service in Thailand.">
 
-<meta name="keywords" content="Bangkok Airport Transfer, Private Taxi Bangkok, Safari World Tour, Floating Market Tour, VIP Van Bangkok, Thailand Tour">
+<meta name="keywords" content="Bangkok Airport Transfer, Private Taxi Bangkok, Safari World Tour, VIP Van Bangkok">
 
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://thairidetravel.com/">
 
-<meta property="og:title" content="ThaiRide Travel | Bangkok Airport Transfer">
-<meta property="og:description" content="Premium Airport Transfer and Thailand Tour Service.">
-<meta property="og:image" content="https://thairidetravel.com/hero_01.png">
-<meta property="og:url" content="https://thairidetravel.com">
-<meta property="og:type" content="website">
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-V9XCVN1N0W');
-</script>
+<link rel="canonical" href="https://nine623.github.io/thairide-travel/">
 
 <style>
 
@@ -57,7 +44,7 @@ gap:10px;
 }
 
 .logo img{
-width:45px;
+width:40px;
 }
 
 nav a{
@@ -71,48 +58,43 @@ nav a:hover{
 color:#38bdf8;
 }
 
-/* HERO SLIDER */
+/* HERO */
 
 .hero{
 position:relative;
 margin-top:20px;
-overflow:hidden;
-border-radius:10px;
 height:420px;
+border-radius:12px;
+overflow:hidden;
 }
 
-.slider{
-display:flex;
-width:300%;
+/* SLIDE */
+
+.slide{
+position:absolute;
+width:100%;
 height:100%;
-animation:slideHero 12s infinite;
+opacity:0;
+transition:opacity 1.5s;
 }
 
-.slider img{
+.slide img{
 width:100%;
 height:100%;
 object-fit:cover;
-flex-shrink:0;
 }
 
-@keyframes slideHero{
-
-0%{transform:translateX(0%)}
-30%{transform:translateX(0%)}
-
-35%{transform:translateX(-100%)}
-65%{transform:translateX(-100%)}
-
-70%{transform:translateX(-200%)}
-100%{transform:translateX(-200%)}
-
+.slide.active{
+opacity:1;
 }
+
+/* CLOCK */
 
 .clock{
 position:absolute;
 top:20px;
 right:20px;
-font-size:26px;
+font-size:24px;
 background:rgba(0,0,0,0.6);
 padding:12px 20px;
 border-radius:10px;
@@ -122,7 +104,6 @@ text-align:center;
 .date{
 font-size:14px;
 opacity:0.8;
-margin-top:5px;
 }
 
 /* SCROLL */
@@ -138,7 +119,7 @@ display:inline-block;
 padding-left:100%;
 animation:scroll 18s linear infinite;
 color:#38bdf8;
-font-size:22px;
+font-size:20px;
 }
 
 @keyframes scroll{
@@ -181,55 +162,7 @@ width:100%;
 border-radius:10px;
 }
 
-/* REVIEWS */
-
-.reviews{
-margin-top:40px;
-}
-
-.review{
-background:#1e293b;
-padding:20px;
-margin-top:10px;
-border-radius:10px;
-}
-
-/* BLOG */
-
-.blog{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.post{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
-}
-
-/* VISITOR */
-
-.visitor-box{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:30px;
-text-align:center;
-}
-
-.card{
-background:#1e293b;
-padding:25px;
-border-radius:10px;
-}
-
-/* MAP */
-
-.map{
-margin-top:40px;
-}
+/* LINE */
 
 .line-btn{
 position:fixed;
@@ -237,16 +170,10 @@ bottom:20px;
 right:20px;
 background:#22c55e;
 color:white;
-padding:15px 20px;
-border-radius:50px;
+padding:14px 18px;
+border-radius:40px;
 text-decoration:none;
 font-weight:bold;
-}
-
-footer{
-margin-top:40px;
-text-align:center;
-opacity:0.7;
 }
 
 /* MOBILE */
@@ -258,9 +185,7 @@ height:260px;
 }
 
 .gallery,
-.vehicles,
-.blog,
-.visitor-box{
+.vehicles{
 grid-template-columns:1fr;
 }
 
@@ -278,7 +203,7 @@ grid-template-columns:1fr;
 
 <div class="logo">
 <img src="logo.png">
-<h1>ThaiRide Travel</h1>
+<h2>ThaiRide Travel</h2>
 </div>
 
 <nav>
@@ -288,14 +213,20 @@ grid-template-columns:1fr;
 
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="slider">
-
+<div class="slide active">
 <img src="heroslide_01.png">
-<img src="heroslide_02.png">
-<img src="heroslide_03.png">
+</div>
 
+<div class="slide">
+<img src="heroslide_02.png">
+</div>
+
+<div class="slide">
+<img src="heroslide_03.png">
 </div>
 
 <div class="clock">
@@ -341,35 +272,16 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <div class="gallery">
 
-<img src="G-01.png" loading="lazy">
-<img src="G-02.png" loading="lazy">
-<img src="G-03.png" loading="lazy">
-<img src="G-04.png" loading="lazy">
-<img src="hero_05.png" loading="lazy">
-<img src="hero_06.png" loading="lazy">
-<img src="hero_07.png" loading="lazy">
-<img src="hero_08.png" loading="lazy">
-<img src="hero_09.png" loading="lazy">
+<img src="G-01.png">
+<img src="G-02.png">
+<img src="G-03.png">
+<img src="G-04.png">
+<img src="hero_05.png">
+<img src="hero_06.png">
 
 </div>
 
 </section>
-
-<section class="reviews">
-
-<h2>Google Reviews ⭐⭐⭐⭐⭐</h2>
-
-<div class="review">Excellent airport transfer service!</div>
-<div class="review">Very comfortable van and friendly driver.</div>
-<div class="review">Best floating market tour experience.</div>
-
-</section>
-
-<footer>
-
-©2026 ThaiRide Travel
-
-</footer>
 
 </div>
 
@@ -379,26 +291,43 @@ LINE Booking
 
 <script>
 
+/* CLOCK */
+
 function updateClock(){
 
 let now = new Date();
 
-let time = now.toLocaleTimeString();
-document.getElementById("clock").innerHTML = time;
+document.getElementById("clock").innerHTML =
+now.toLocaleTimeString();
 
-let date = now.toLocaleDateString("en-US",{
-weekday:"long",
-year:"numeric",
-month:"long",
-day:"numeric"
-});
-
-document.getElementById("date").innerHTML = date;
+document.getElementById("date").innerHTML =
+now.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"});
 
 }
 
-updateClock();
 setInterval(updateClock,1000);
+updateClock();
+
+/* HERO SLIDE */
+
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+function showSlide(){
+
+slides.forEach(slide=>slide.classList.remove("active"));
+
+index++;
+
+if(index>=slides.length){
+index=0;
+}
+
+slides[index].classList.add("active");
+
+}
+
+setInterval(showSlide,4000);
 
 </script>
 
