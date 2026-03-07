@@ -310,26 +310,44 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <h2>🚐 Airport Transfer Booking</h2>
 
-<form action="https://formsubmit.co/nine623@gmail.com" method="POST">
+<form action="mailto:nine623@gmail.com" method="post" enctype="text/plain">
 
-<label>ชื่อผู้จอง</label>
+<label>Name</label>
 <input type="text" name="name" required>
 
-<label>เบอร์โทร</label>
-<input type="tel" name="phone" required>
+<label>Contact</label>
+<input type="text" name="contact" required>
 
-<label>วันเวลาไปรับ</label>
-<input type="datetime-local" name="pickup_time" required>
+<label>Pickup Location</label>
+<input type="text" name="pickup">
 
-<label>สถานที่รับ</label>
-<input type="text" name="pickup_location" required>
+<label>Dropoff Location</label>
+<input type="text" name="dropoff">
 
-<label>สถานที่ส่ง</label>
-<input type="text" name="drop_location" required>
+<label>Date</label>
+<input type="date" id="date" name="date">
 
-<button type="submit">จองรถ</button>
+<label>Time</label>
+<input type="time" id="time" name="time">
+
+<button type="submit">Book Now</button>
 
 </form>
+
+<script>
+window.onload = function() {
+
+let now = new Date()
+
+let date = now.toISOString().split('T')[0]
+
+let time = now.toTimeString().slice(0,5)
+
+document.getElementById("date").value = date
+document.getElementById("time").value = time
+
+}
+</script>
 
 <!-- QR CONTACT -->
 
