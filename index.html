@@ -30,11 +30,6 @@ gtag('js', new Date());
 gtag('config', 'G-V9XCVN1N0W');
 </script>
 
-<!-- GoatCounter Visitor Stats -->
-
-<script data-goatcounter="https://thairide.goatcounter.com/count"
-async src="//gc.zgo.at/count.js"></script>
-
 <style>
 
 body{
@@ -97,7 +92,6 @@ font-size:26px;
 background:rgba(0,0,0,0.6);
 padding:12px 20px;
 border-radius:10px;
-text-align:center;
 }
 
 /* SCROLL */
@@ -126,7 +120,14 @@ font-size:22px;
 .date-center{
 text-align:center;
 margin-top:10px;
-opacity:0.8;
+font-size:18px;
+opacity:0.9;
+}
+
+#time{
+font-size:24px;
+margin-top:5px;
+color:#38bdf8;
 }
 
 /* VEHICLES */
@@ -279,7 +280,10 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 </span>
 </div>
 
-<div class="date-center" id="date"></div>
+<div class="date-center">
+<div id="date"></div>
+<div id="time"></div>
+</div>
 
 <h2>Our Vehicles</h2>
 
@@ -311,15 +315,15 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 <div class="gallery">
 
-<img src="G-01.png" loading="lazy">
-<img src="G-02.png" loading="lazy">
-<img src="G-03.png" loading="lazy">
-<img src="G-04.png" loading="lazy">
-<img src="hero_05.png" loading="lazy">
-<img src="hero_06.png" loading="lazy">
-<img src="hero_07.png" loading="lazy">
-<img src="hero_08.png" loading="lazy">
-<img src="hero_09.png" loading="lazy">
+<img src="G-01.png">
+<img src="G-02.png">
+<img src="G-03.png">
+<img src="G-04.png">
+<img src="hero_05.png">
+<img src="hero_06.png">
+<img src="hero_07.png">
+<img src="hero_08.png">
+<img src="hero_09.png">
 
 </div>
 
@@ -356,19 +360,8 @@ Premium Airport Transfer • Safari World Tour • Floating Market Tour • Bang
 
 </div>
 
-<div class="map">
-
-<iframe
-src="https://maps.google.com/maps?q=bangkok&t=&z=10&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="350"
-style="border:0;">
-</iframe>
-
-</div>
-
-<h2 style="text-align:center;margin-top:50px;">
-📊 Website Statistics
+<h2 style="text-align:center;margin-top:40px;">
+🌍 Visitors Around The World
 </h2>
 
 <div class="visitor-box">
@@ -376,7 +369,8 @@ style="border:0;">
 <div class="card">
 <h3>👥</h3>
 <p>Total Visitors</p>
-<p>Tracked by GoatCounter</p>
+<script async src="https://api.countapi.xyz/hit/thairide/visits?callback=websiteVisits"></script>
+<h3 id="visits">Loading</h3>
 </div>
 
 <div class="card">
@@ -393,10 +387,19 @@ style="border:0;">
 
 </div>
 
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=bangkok&t=&z=10&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350"
+style="border:0;">
+</iframe>
+
+</div>
+
 <footer>
-
 ©2026 ThaiRide Travel
-
 </footer>
 
 </div>
@@ -413,6 +416,7 @@ let now = new Date();
 
 let time = now.toLocaleTimeString();
 document.getElementById("clock").innerHTML = time;
+document.getElementById("time").innerHTML = time;
 
 let date = now.toLocaleDateString("en-US",{
 weekday:"long",
@@ -427,6 +431,10 @@ document.getElementById("date").innerHTML = date;
 
 updateClock();
 setInterval(updateClock,1000);
+
+function websiteVisits(response){
+document.querySelector("#visits").textContent = response.value;
+}
 
 let device="Desktop";
 
