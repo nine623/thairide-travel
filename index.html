@@ -733,7 +733,17 @@ document.getElementById("clock").innerHTML=date+" | "+time
 setInterval(updateClock,1000)
 
 updateClock()
+function toggleChat(){
 
+let menu = document.getElementById("chatMenu");
+
+if(menu.style.display === "flex"){
+menu.style.display = "none";
+}else{
+menu.style.display = "flex";
+}
+
+}
 </script>
 
 </body>
