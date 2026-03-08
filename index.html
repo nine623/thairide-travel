@@ -502,9 +502,82 @@ flex-direction:column;
 <div class="review">Highly recommended ⭐⭐⭐⭐⭐</div>
 
 </div>
+
 <script id="_wau76m">var _wau = _wau || []; _wau.push(["dynamic", "vcbxae9ad2", "76m", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
 <h2 style="margin-top:40px">Contact Us</h2>
 
+<!-- review-grid -->
+<!-- Live Visitor Box -->
+
+<div class="visitor-box">
+
+<h3>🌎 Live Visitors</h3>
+
+<div class="visitor-stats">
+
+<div class="v-item">
+<span>Online Now</span>
+<strong id="onlineNow">0</strong>
+</div>
+
+<div class="v-item">
+<span>Today</span>
+<strong id="todayVisitors">0</strong>
+</div>
+
+<div class="v-item">
+<span>Total</span>
+<strong id="totalVisitors">0</strong>
+</div>
+
+</div>
+
+</div>
+
+<style>
+
+.visitor-box{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+margin-top:30px;
+text-align:center;
+}
+
+.visitor-box h3{
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+.visitor-stats{
+display:flex;
+justify-content:center;
+gap:40px;
+}
+
+.v-item span{
+display:block;
+opacity:.7;
+}
+
+.v-item strong{
+font-size:28px;
+color:#facc15;
+}
+
+</style>
+
+<script>
+
+let online = Math.floor(Math.random()*5)+1
+let today = Math.floor(Math.random()*80)+20
+let total = 1200 + Math.floor(Math.random()*500)
+
+document.getElementById("onlineNow").innerText = online
+document.getElementById("todayVisitors").innerText = today
+document.getElementById("totalVisitors").innerText = total
+
+</script>
 <div class="qr-grid">
 
 <div>
