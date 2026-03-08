@@ -673,20 +673,20 @@ WhatsApp
 
 /* HERO SLIDE */
 
-let slide=0
-let slides=document.querySelectorAll(".hero img")
+let slide = 0
+let slides = document.querySelectorAll(".hero img")
 
 function showSlide(){
 
 slides.forEach(s=>s.classList.remove("active"))
 
+slides[slide].classList.add("active")
+
 slide++
 
-if(slide>=slides.length){
-slide=0
+if(slide >= slides.length){
+slide = 0
 }
-
-slides[slide].classList.add("active")
 
 }
 
