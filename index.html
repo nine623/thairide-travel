@@ -7,6 +7,7 @@
 
 <title>ThaiRide Travel | Bangkok Airport Transfer</title>
 
+<!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9XCVN1N0W"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -15,6 +16,7 @@ gtag('js', new Date());
 gtag('config', 'G-V9XCVN1N0W');
 </script>
 
+<!-- Statcounter -->
 <script type="text/javascript">
 var sc_project=13209398; 
 var sc_invisible=1; 
@@ -36,6 +38,8 @@ max-width:1200px;
 margin:auto;
 padding:20px;
 }
+
+/* HEADER */
 
 header{
 display:flex;
@@ -73,13 +77,12 @@ font-weight:bold;
 /* ADS */
 
 .ad{
+background:#1e40af;
 text-align:center;
+padding:16px;
 margin:25px 0;
-}
-
-.ad img{
-max-width:100%;
 border-radius:8px;
+font-weight:bold;
 }
 
 /* HERO */
@@ -231,6 +234,8 @@ text-align:center;
 
 .qr-grid img{width:120px;}
 
+/* CHAT */
+
 .chat-widget{
 position:fixed;
 right:20px;
@@ -295,13 +300,9 @@ font-weight:bold;
 
 </header>
 
-<!-- AD 1 Agoda -->
+<!-- AD 1 -->
 
-<div class="ad">
-<a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1434592" target="_blank">
-<img src="https://dummyimage.com/728x90/ff6600/ffffff&text=Book+Hotels+Worldwide+on+Agoda">
-</a>
-</div>
+<div class="ad">AD Banner 728x90</div>
 
 <section class="hero">
 
@@ -363,13 +364,9 @@ font-weight:bold;
 
 </div>
 
-<!-- AD 2 Agoda -->
+<!-- AD 2 -->
 
-<div class="ad">
-<a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1434592" target="_blank">
-<img src="https://dummyimage.com/728x90/ff6600/ffffff&text=Best+Hotel+Deals+on+Agoda">
-</a>
-</div>
+<div class="ad">AD Banner 728x90</div>
 
 <h2>Popular Tours</h2>
 
@@ -417,6 +414,28 @@ font-weight:bold;
 
 </div>
 
+<!-- LIVE VISITOR -->
+
+<div style="text-align:center;margin:40px 0">
+
+<h2>🌎 Live Visitors</h2>
+
+<script id="_wautnh">
+var _wau = _wau || [];
+_wau.push(["dynamic", "vhzzo69l0r", "tnh", "3c78d8c4302b", "small"]);
+</script>
+
+<script async src="//waust.at/d.js"></script>
+
+</div>
+
+<!-- WORLD MAP -->
+
+<div style="text-align:center;margin:40px 0">
+<h2>🌍 Visitors Around The World</h2>
+<img src="https://s01.flagcounter.com/map/XXXXX/size_l/txt_ffffff/border_cccccc/pageviews_0/viewers_0/flags_0/">
+</div>
+
 <div class="stats">
 
 <div class="stat">
@@ -439,6 +458,12 @@ font-weight:bold;
 <p>Rating</p>
 </div>
 
+</div>
+
+<!-- ONLINE -->
+
+<div style="text-align:center;font-size:20px;margin-top:20px">
+📈 Online Now : <span id="onlineCount">3</span>
 </div>
 
 <h2 style="margin-top:40px">Customer Reviews</h2>
@@ -472,13 +497,9 @@ font-weight:bold;
 
 </div>
 
-<!-- AD 3 Agoda -->
+<!-- AD 3 -->
 
-<div class="ad">
-<a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1434592" target="_blank">
-<img src="https://dummyimage.com/728x90/ff6600/ffffff&text=Find+Hotels+Worldwide+Agoda">
-</a>
-</div>
+<div class="ad">AD Banner 728x90</div>
 
 <footer style="margin-top:60px;text-align:center">
 
@@ -493,6 +514,106 @@ Contact ThaiRide Travel
 </footer>
 
 </div>
+
+<!-- CHAT -->
+
+<div class="chat-widget">
+
+<div class="chat-menu" id="chatMenu">
+
+<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" class="line-chat">
+LINE
+</a>
+
+<a href="https://wa.me/66852242135" target="_blank" class="whatsapp-chat">
+WhatsApp
+</a>
+
+</div>
+
+<div class="chat-main" onclick="toggleChat()">
+💬 Chat with us
+</div>
+
+</div>
+
+<!-- BOOKING POPUP -->
+
+<div id="bookingPopup" style="
+position:fixed;
+left:20px;
+bottom:20px;
+background:#1e293b;
+padding:15px 20px;
+border-radius:8px;
+display:none;
+z-index:9999;">
+🌎 Someone booked a Bangkok Tour
+</div>
+
+<script>
+
+/* CHAT */
+
+function toggleChat(){
+let menu=document.getElementById("chatMenu")
+menu.style.display=menu.style.display==="flex"?"none":"flex"
+}
+
+/* CLOCK */
+
+function updateClock(){
+let now=new Date()
+let date=now.toLocaleDateString('en-US')
+let time=now.toLocaleTimeString('en-US')
+document.getElementById("clock").innerHTML=date+" | "+time
+}
+
+setInterval(updateClock,1000)
+
+/* ONLINE */
+
+let online=3
+
+setInterval(()=>{
+online=Math.floor(Math.random()*6)+3
+document.getElementById("onlineCount").innerText=online
+},5000)
+
+/* COUNTER */
+
+const counters=document.querySelectorAll(".counter")
+
+counters.forEach(counter=>{
+
+let target=+counter.getAttribute("data-target")
+let count=0
+
+function update(){
+count+=Math.ceil(target/100)
+if(count>=target){
+counter.innerText=target+"+"
+}else{
+counter.innerText=count
+requestAnimationFrame(update)
+}
+}
+
+update()
+
+})
+
+/* BOOKING POPUP */
+
+function showBooking(){
+let popup=document.getElementById("bookingPopup")
+popup.style.display="block"
+setTimeout(()=>{popup.style.display="none"},4000)
+}
+
+setInterval(showBooking,15000)
+
+</script>
 
 </body>
 </html>
