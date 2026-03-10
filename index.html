@@ -230,13 +230,19 @@ font-size:24px;
 
 /* FOOTER */
 
-footer{
-margin-top:40px;
-text-align:center;
+.footer-brand{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
 }
 
-.footer-logo{
-height:80px;
+.footer-brand img{
+height:45px;
+}
+
+.footer-text{
+text-align:left;
 }
 .agoda-search{
 margin:20px auto;
@@ -540,16 +546,20 @@ Search Hotels
 
 <footer id="contact">
 
-<img src="logo_01.png" class="footer-logo">
+<div class="footer-brand">
 
-<p>Contact ThaiRide Travel © 2026</p>
+<img src="logo_01.png">
 
-</footer>
+<div class="footer-text">
+<b>ThaiRide Travel</b>
+<p>Bangkok Airport Transfer & Private Tours</p>
+<p>Contact via LINE</p>
+<p>© 2026 ThaiRide Travel</p>
+</div>
 
 </div>
 
-<script>
-
+</footer>
 /* CLOCK */
 
 function updateClock(){
