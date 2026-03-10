@@ -32,6 +32,25 @@ font-family:Arial;
 background:#0f172a;
 color:white;
 }
+
+/* STICKY BOOK BUTTON */
+
+.book-sticky{
+position:fixed;
+left:50%;
+bottom:20px;
+transform:translateX(-50%);
+background:#f97316;
+color:white;
+padding:14px 30px;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 6px 15px rgba(0,0,0,0.4);
+}
+  
 .transfer-banner{
 width:100%;
 background:#f97316;
@@ -318,7 +337,35 @@ right:20px;
 bottom:20px;
 z-index:9999;
 }
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
 
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:80px;
+right:20px;
+background:#1e293b;
+padding:20px;
+border-radius:8px;
+}
+
+nav a{
+margin:10px 0;
+}
+
+}
+  
 .chat-main{
 background:#2563eb;
 color:white;
@@ -366,7 +413,9 @@ font-weight:bold;
 
 <div class="clock" id="clock"></div>
 
-<nav>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="mainMenu">
 <a href="#">Home</a>
 <a href="#">Services</a>
 <a href="#">Tours</a>
@@ -841,8 +890,35 @@ setTimeout(()=>{popup.style.display="none"},4000)
 }
 
 setInterval(showBooking,15000)
+<script>
+
+/* CHAT */
+function toggleChat(){
+let menu=document.getElementById("chatMenu")
+menu.style.display=menu.style.display==="flex"?"none":"flex"
+}
+
+/* ใส่ตรงนี้ */
+
+function toggleMenu(){
+
+let menu=document.getElementById("mainMenu")
+
+if(menu.style.display==="flex"){
+menu.style.display="none"
+}else{
+menu.style.display="flex"
+}
+
+}
 
 </script>
+</script>
+<a href="https://line.me/R/ti/p/@775hjmvl" class="book-sticky">
+🚐 BOOK AIRPORT TRANSFER
+</a>
 
+</body>
+</html>
 </body>
 </html>
