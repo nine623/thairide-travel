@@ -632,6 +632,109 @@ Contact ThaiRide Travel. © 2026 ThaiRide Travel
 
 </footer>
 
+  <script>
+
+/* CLOCK */
+
+function updateClock(){
+
+let now = new Date()
+
+let date = now.toLocaleDateString("en-GB",{
+weekday:"long",
+day:"numeric",
+month:"long",
+year:"numeric"
+})
+
+let time = now.toLocaleTimeString()
+
+document.getElementById("clock").innerHTML =
+"🌍 Bangkok Time<br>" + date + "<br>" + time
+
+}
+
+setInterval(updateClock,1000)
+updateClock()
+
+
+/* HERO SLIDER */
+
+let heroIndex = 0
+let heroSlides = document.querySelectorAll(".hero img")
+
+setInterval(function(){
+
+heroSlides[heroIndex].classList.remove("active")
+
+heroIndex++
+
+if(heroIndex >= heroSlides.length){
+heroIndex = 0
+}
+
+heroSlides[heroIndex].classList.add("active")
+
+},4000)
+
+
+/* TOUR SLIDER */
+
+let tourIndex = 0
+let tourTrack = document.getElementById("tourTrack")
+
+setInterval(function(){
+
+tourIndex++
+
+if(tourIndex > 2){
+tourIndex = 0
+}
+
+tourTrack.style.transform =
+"translateX(-" + (tourIndex * 50) + "%)"
+
+},4000)
+
+
+/* COUNTER ANIMATION */
+
+let counters = document.querySelectorAll(".counter")
+
+counters.forEach(counter => {
+
+let target = counter.getAttribute("data-target")
+let count = 0
+
+let update = setInterval(function(){
+
+count += target / 100
+
+if(count >= target){
+counter.innerText = target
+clearInterval(update)
+}else{
+counter.innerText = Math.floor(count)
+}
+
+},20)
+
+})
+
+
+/* ONLINE RANDOM */
+
+function randomOnline(){
+
+let num = Math.floor(Math.random()*8)+3
+document.getElementById("onlineCount").innerText = num
+
+}
+
+setInterval(randomOnline,5000)
+
+  </script>
+
 </body>
 </html>
 
