@@ -688,10 +688,7 @@ heroSlides[heroIndex].classList.add("active")
 
 },4000)
 
-</script>
-  
-</div>
-<script>
+
 
 function updateClock(){
 
@@ -707,7 +704,7 @@ year:"numeric"
 let time = now.toLocaleTimeString()
 
 document.getElementById("clock").innerHTML =
-date + " | " + time
+"🌍 Bangkok Time<br>" + date + "<br>" + time
 
 }
 
@@ -715,5 +712,6 @@ setInterval(updateClock,1000)
 updateClock()
 
 </script>
+  
 </body>
 </html>
