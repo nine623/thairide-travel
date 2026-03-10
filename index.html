@@ -31,132 +31,8 @@ margin:0;
 font-family:Arial;
 background:#0f172a;
 color:white;
-padding-bottom:90px;
 }
 
-/* AIRPORT TRANSFER BANNER */
-
-.airport-banner{
-text-align:center;
-margin:35px 0 15px 0;
-}
-
-.airport-banner h1{
-font-size:42px;
-font-weight:800;
-color:white;
-letter-spacing:1px;
-margin-bottom:18px;
-}
-
-.airport-book{
-border:2px solid #38bdf8;
-color:#38bdf8;
-padding:14px 30px;
-border-radius:8px;
-text-decoration:none;
-font-size:18px;
-font-weight:bold;
-transition:0.3s;
-}
-
-.airport-book:hover{
-background:#38bdf8;
-color:#0f172a;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.airport-banner h1{
-font-size:30px;
-}
-
-.airport-book{
-font-size:16px;
-padding:12px 22px;
-}
-
-}  
-/* STICKY BOOK BUTTON */
-
-.book-sticky{
-position:fixed;
-left:50%;
-bottom:20px;
-transform:translateX(-50%);
-background:#f97316;
-color:white;
-padding:14px 30px;
-border-radius:40px;
-font-size:18px;
-font-weight:bold;
-text-decoration:none;
-z-index:9999;
-box-shadow:0 6px 15px rgba(0,0,0,0.4);
-}
-  
-.transfer-banner{
-width:100%;
-background:#f97316;
-padding:14px 10px;
-margin:20px 0;
-border-radius:8px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-}
-
-.transfer-text{
-font-size:18px;
-font-weight:bold;
-color:white;
-}
-
-.transfer-buttons{
-display:flex;
-gap:10px;
-margin-top:5px;
-}
-
-.transfer-buttons a{
-text-decoration:none;
-padding:8px 14px;
-border-radius:6px;
-color:white;
-font-weight:bold;
-font-size:14px;
-}
-
-.line-btn{
-background:#06C755;
-}
-
-.wechat-btn{
-background:#09B83E;
-}
-
-.wa-btn{
-background:#25D366;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.transfer-banner{
-flex-direction:column;
-text-align:center;
-}
-
-.transfer-buttons{
-margin-top:10px;
-}
-
-}
 .container{
 max-width:1200px;
 margin:auto;
@@ -169,12 +45,6 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-
-position:sticky;
-top:0;
-z-index:999;
-background:#0f172a;
-padding:10px 0;
 }
 
 .logo{
@@ -389,35 +259,7 @@ right:20px;
 bottom:20px;
 z-index:9999;
 }
-.menu-toggle{
-display:none;
-font-size:28px;
-cursor:pointer;
-}
 
-@media(max-width:768px){
-
-.menu-toggle{
-display:block;
-}
-
-nav{
-display:none;
-flex-direction:column;
-position:absolute;
-top:80px;
-right:20px;
-background:#1e293b;
-padding:20px;
-border-radius:8px;
-}
-
-nav a{
-margin:10px 0;
-}
-
-}
-  
 .chat-main{
 background:#2563eb;
 color:white;
@@ -465,9 +307,7 @@ font-weight:bold;
 
 <div class="clock" id="clock"></div>
 
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<nav id="mainMenu">
+<nav>
 <a href="#">Home</a>
 <a href="#">Services</a>
 <a href="#">Tours</a>
@@ -476,35 +316,32 @@ font-weight:bold;
 </nav>
 
 </header>
+<div style="
+background:#f97316;
+padding:14px;
+margin:20px 0;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
+font-size:18px;
+">
 
-<!-- AIRPORT TRANSFER BANNER -->
-<div class="transfer-banner">
-<!-- AIRPORT TRANSFER BANNER -->
+🚐 Bangkok Airport Transfer Available 24 Hours  
 
-<div class="transfer-banner">
+<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" style="
+background:#06C755;
+color:white;
+padding:8px 16px;
+border-radius:5px;
+text-decoration:none;
+margin-left:10px;
+">
 
-<div class="transfer-text">
-🚐 Bangkok Airport Transfer 24 Hours
-</div>
+Chat on LINE
 
-<div class="transfer-buttons">
-
-<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" class="line-btn">
-LINE
 </a>
 
-<a href="weixin://dl/chat?narada19" class="wechat-btn">
-WeChat
-</a>
-
-<a href="https://wa.me/66852242135" target="_blank" class="wa-btn">
-WhatsApp
-</a>
-
 </div>
-
-</div>
-
 <!-- AD 1 Agoda -->
 
 <div class="ad">
@@ -526,35 +363,38 @@ WhatsApp
 <img src="heroslide_09.png">
 <img src="heroslide_10.png">
 
+<div class="hero-text">
+<h1>Bangkok Airport Transfer</h1>
+<a href="#" class="book-btn">BOOK NOW</a>
+</div>
+
 </section>
+<div style="
+background:#f97316;
+padding:14px;
+margin:20px 0;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
+font-size:18px;
+">
 
-<!-- AIRPORT TRANSFER BANNER -->
+🚐 Bangkok Airport Transfer Available 24 Hours  
 
-<div class="transfer-banner">
+<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" style="
+background:#06C755;
+color:white;
+padding:8px 16px;
+border-radius:5px;
+text-decoration:none;
+margin-left:10px;
+">
 
-<div class="transfer-text">
-🚐 Bangkok Airport Transfer 24 Hours
-</div>
+Chat on LINE
 
-<div class="transfer-buttons">
-
-<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" class="line-btn">
-LINE
 </a>
 
-<a href="weixin://dl/chat?narada19id" class="wechat-btn">
-WeChat
-</a>
-
-<a href="https://wa.me/66852242135" target="_blank" class="wa-btn">
-WhatsApp
-</a>
-
 </div>
-
-</div>
-
-<!-- AD 1 Agoda -->
 <!-- AGODA HOTEL SEARCH -->
 
 <div style="background:#1e293b;padding:20px;border-radius:10px;margin:30px 0;text-align:center;">
@@ -687,29 +527,7 @@ Search Hotels
 <img src="G-04.png">
 
 </div>
-<div class="transfer-banner">
 
-<div class="transfer-text">
-🚐 Bangkok Airport Transfer 24 Hours
-</div>
-
-<div class="transfer-buttons">
-
-<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" class="line-btn">
-LINE
-</a>
-
-<a href="weixin://dl/chat?narada19" class="wechat-btn">
-WeChat
-</a>
-
-<a href="https://wa.me/66852242135" target="_blank" class="wa-btn">
-WhatsApp
-</a>
-
-</div>
-
-</div>
 <!-- LIVE VISITOR -->
 
 <div style="text-align:center;margin:40px 0">
@@ -797,29 +615,7 @@ _wau.push(["dynamic", "vhzzo69l0r", "tnh", "3c78d8c4302b", "small"]);
 </div>
 
 </div>
-<div class="transfer-banner">
 
-<div class="transfer-text">
-🚐 Bangkok Airport Transfer 24 Hours
-</div>
-
-<div class="transfer-buttons">
-
-<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" class="line-btn">
-LINE
-</a>
-
-<a href="weixin://dl/chat?narada19" class="wechat-btn">
-WeChat
-</a>
-
-<a href="https://wa.me/66852242135" target="_blank" class="wa-btn">
-WhatsApp
-</a>
-
-</div>
-
-</div>
 <!-- AD 3 Agoda -->
 
 <div class="ad">
@@ -842,132 +638,5 @@ Contact ThaiRide Travel
 
 </div>
 
-<!-- CHAT -->
-
-<div class="chat-widget">
-
-<div class="chat-menu" id="chatMenu">
-
-<a href="https://line.me/R/ti/p/@775hjmvl" target="_blank" class="line-chat">
-LINE
-</a>
-
-<a href="https://wa.me/66852242135" target="_blank" class="whatsapp-chat">
-WhatsApp
-</a>
-
-</div>
-
-<div class="chat-main" onclick="toggleChat()">
-💬 Chat with us
-</div>
-
-</div>
-
-<!-- BOOKING POPUP -->
-
-<div id="bookingPopup" style="
-position:fixed;
-left:20px;
-bottom:20px;
-background:#1e293b;
-padding:15px 20px;
-border-radius:8px;
-display:none;
-z-index:9999;">
-🌎 Someone booked a Bangkok Tour
-</div>
-
-<script>
-
-/* CHAT */
-
-function toggleChat(){
-let menu=document.getElementById("chatMenu")
-menu.style.display=menu.style.display==="flex"?"none":"flex"
-}
-
-/* CLOCK */
-
-function updateClock(){
-let now=new Date()
-let date=now.toLocaleDateString('en-US')
-let time=now.toLocaleTimeString('en-US')
-document.getElementById("clock").innerHTML=date+" | "+time
-}
-
-setInterval(updateClock,1000)
-
-/* ONLINE */
-
-let online=3
-
-setInterval(()=>{
-online=Math.floor(Math.random()*6)+3
-document.getElementById("onlineCount").innerText=online
-},5000)
-
-/* COUNTER */
-
-const counters=document.querySelectorAll(".counter")
-
-counters.forEach(counter=>{
-
-let target=+counter.getAttribute("data-target")
-let count=0
-
-function update(){
-count+=Math.ceil(target/100)
-if(count>=target){
-counter.innerText=target+"+"
-}else{
-counter.innerText=count
-requestAnimationFrame(update)
-}
-}
-
-update()
-
-})
-
-/* BOOKING POPUP */
-
-function showBooking(){
-let popup=document.getElementById("bookingPopup")
-popup.style.display="block"
-setTimeout(()=>{popup.style.display="none"},4000)
-}
-
-setInterval(showBooking,15000)
-<script>
-
-/* CHAT */
-function toggleChat(){
-let menu=document.getElementById("chatMenu")
-menu.style.display=menu.style.display==="flex"?"none":"flex"
-}
-
-/* ใส่ตรงนี้ */
-
-function toggleMenu(){
-
-let menu=document.getElementById("mainMenu")
-
-if(menu.style.display==="flex"){
-menu.style.display="none"
-}else{
-menu.style.display="flex"
-}
-
-}
-
-</script>
-</script>
-<a href="https://line.me/R/ti/p/@775hjmvl" class="book-sticky">
-🚐 BOOK AIRPORT TRANSFER
-</a>
-
-</body>
-</html>
 </body>
 </html>
