@@ -106,10 +106,20 @@ cursor:pointer;
 
 .hero{position:relative;}
 
+.hero{
+position:relative;
+width:100%;
+overflow:hidden;
+}
+
 .hero img{
 width:100%;
 border-radius:10px;
 display:none;
+}
+
+.hero img.active{
+display:block;
 }
 
 .hero img.active{display:block;}
@@ -631,7 +641,27 @@ Contact ThaiRide Travel
 © 2026 ThaiRide Travel
 
 </footer>
+<script>
 
+let heroIndex = 0
+let heroSlides = document.querySelectorAll(".hero img")
+
+setInterval(function(){
+
+heroSlides[heroIndex].classList.remove("active")
+
+heroIndex++
+
+if(heroIndex >= heroSlides.length){
+heroIndex = 0
+}
+
+heroSlides[heroIndex].classList.add("active")
+
+},4000)
+
+</script>
+  
 </div>
 
 </body>
