@@ -53,11 +53,25 @@ padding:10px 0;
 z-index:999;
 }
 
-.logo img{height:70px}
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:70px;
+}
+
+.logo-text{
+font-size:26px;
+font-weight:bold;
+color:#38bdf8;
+}
 
 nav a{
-color:white;
 margin-left:20px;
+color:white;
 text-decoration:none;
 font-weight:bold;
 }
@@ -79,7 +93,7 @@ border-radius:10px;
 display:block;
 }
 
-/* BANGKOK TRANSFER BANNER */
+/* TRANSFER BANNER */
 
 .transfer-banner{
 text-align:center;
@@ -96,12 +110,23 @@ margin:0 0 10px;
 
 .book-line{
 background:#22c55e;
-color:white;
 padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
 font-size:20px;
-display:inline-block;
+color:white;
+}
+
+/* BANNER */
+
+.banner{
+text-align:center;
+margin:30px 0;
+}
+
+.banner img{
+max-width:728px;
+width:100%;
 }
 
 /* CHAT FLOAT */
@@ -145,7 +170,6 @@ text-align:center;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-margin-top:20px;
 }
 
 .vehicle{
@@ -155,25 +179,20 @@ border-radius:10px;
 text-align:center;
 }
 
-.vehicle img{width:100%}
-
-/* TOURS */
-
-.tour-slider{
-overflow:hidden;
+.vehicle img{
+width:100%;
 }
 
-.tour-track{
-display:flex;
-transition:0.5s;
+/* TOURS 4x4 */
+
+.tours{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:20px;
 }
 
-.tour{
-min-width:50%;
-padding:10px;
-}
-
-.tour img{
+.tours img{
 width:100%;
 border-radius:10px;
 }
@@ -210,20 +229,12 @@ font-size:24px;
 /* FOOTER */
 
 footer{
-text-align:center;
 margin-top:40px;
-}
-
-/* BANNER */
-
-.banner{
 text-align:center;
-margin:30px 0;
 }
 
-.banner img{
-max-width:728px;
-width:100%;
+.footer-logo{
+height:80px;
 }
 
 </style>
@@ -237,6 +248,7 @@ width:100%;
 
 <div class="logo">
 <img src="logo_01.png">
+<div class="logo-text">ThaiRide Travel</div>
 </div>
 
 <div class="clock" id="clock"></div>
@@ -248,6 +260,12 @@ width:100%;
 
 </header>
 
+<!-- AGODA BANNER 1 -->
+
+<div class="banner">
+<img src="banner728_90.jpg">
+</div>
+
 <!-- HERO -->
 
 <section class="hero">
@@ -258,7 +276,7 @@ width:100%;
 
 </section>
 
-<!-- BANGKOK TRANSFER -->
+<!-- TRANSFER -->
 
 <div class="transfer-banner">
 
@@ -288,15 +306,9 @@ BOOK VIA LINE
 
 </div>
 
-<!-- BANNER 728 -->
-
-<div class="banner">
-<img src="banner728_90.jpg">
-</div>
-
 <!-- AGODA SEARCH -->
 
-<div style="background:#1e293b;padding:20px;border-radius:10px;text-align:center">
+<div style="background:#1e293b;padding:20px;border-radius:10px;text-align:center;margin-top:30px">
 
 <h2>Search Bangkok Hotels</h2>
 
@@ -355,29 +367,25 @@ BOOK VIA LINE
 
 </div>
 
+<!-- AGODA BANNER 2 -->
+
+<div class="banner">
+<img src="banner728_90.jpg">
+</div>
+
 <h2>Popular Tours</h2>
 
-<div class="tour-slider">
+<div class="tours">
 
-<div class="tour-track" id="tourTrack">
-
-<div class="tour">
 <img src="G-01.png">
-</div>
-
-<div class="tour">
 <img src="G-02.png">
-</div>
-
-<div class="tour">
 <img src="G-03.png">
-</div>
-
-<div class="tour">
 <img src="G-04.png">
-</div>
 
-</div>
+<img src="G-05.png">
+<img src="G-06.png">
+<img src="G-07.png">
+<img src="G-08.png">
 
 </div>
 
@@ -390,10 +398,10 @@ BOOK VIA LINE
 <img src="G-03.png">
 <img src="G-04.png">
 
-<img src="G-01.png">
-<img src="G-02.png">
-<img src="G-03.png">
-<img src="G-04.png">
+<img src="G-05.png">
+<img src="G-06.png">
+<img src="G-07.png">
+<img src="G-08.png">
 
 </div>
 
@@ -405,8 +413,14 @@ BOOK VIA LINE
 
 <div class="stars">★★★★★</div>
 
-<p>Excellent service! Very professional driver and clean car.</p>
+<p>Excellent service! Professional drivers and clean vehicles.</p>
 
+</div>
+
+<!-- AGODA BANNER 3 -->
+
+<div class="banner">
+<img src="banner728_90.jpg">
 </div>
 
 <!-- FLAG COUNTER -->
@@ -420,6 +434,10 @@ BOOK VIA LINE
 </div>
 
 <footer id="contact">
+
+<img src="logo_01.png" class="footer-logo">
+
+<h3>ThaiRide Travel</h3>
 
 <p>Contact ThaiRide Travel © 2026</p>
 
@@ -459,21 +477,6 @@ heroIndex++
 if(heroIndex>=heroSlides.length){heroIndex=0}
 
 heroSlides[heroIndex].classList.add("active")
-
-},4000)
-
-/* TOUR SLIDER */
-
-let tourIndex=0
-let tourTrack=document.getElementById("tourTrack")
-
-setInterval(function(){
-
-tourIndex++
-
-if(tourIndex>2){tourIndex=0}
-
-tourTrack.style.transform="translateX(-"+(tourIndex*50)+"%)"
 
 },4000)
 
