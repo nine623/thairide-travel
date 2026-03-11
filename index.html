@@ -150,6 +150,14 @@ height:100px;
 background:red;
 }
 
+  .clock-date{
+color:#ffffff;
+font-size:16px;
+margin-top:15px;
+text-align:center;
+letter-spacing:1px;
+  }
+
 /* SERVICES */
 
 .services{
@@ -355,6 +363,7 @@ BOOK VIA LINE
 <div class="center-dot"></div>
 
 </div>
+  <div class="clock-date" id="clockDate"></div>
 </section>
 
 <style>
@@ -645,6 +654,18 @@ document.getElementById("hour").style.transform =
 
 setInterval(updateClock,1000)
 updateClock()
+
+ const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+const day = days[now.getDay()]
+const date = now.getDate()
+const month = months[now.getMonth()]
+const year = now.getFullYear()
+
+document.getElementById("clockDate").innerHTML =
+day + " " + date + " " + month + " " + year 
 
 </script>
 </body>
