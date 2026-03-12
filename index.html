@@ -588,47 +588,57 @@ updateClock()
 
 </div>
 
-....เนื้อหาเว็บ....
+<section style="max-width:700px;margin:auto;padding:20px;background:#ffffff;border-radius:10px">
 
-<section id="booking">
-
-<h2>Book Your Transfer</h2>
+<h2 style="text-align:center">Car Booking Form</h2>
 
 <form id="bookingForm">
 
-<input type="text" name="name" placeholder="Name" required>
-<br><br>
+<label>Full Name (ชื่อผู้จอง)</label>
+<input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:15px">
 
-<input type="tel" name="phone" placeholder="Phone" required>
-<br><br>
+<label>Phone / WhatsApp</label>
+<input type="text" name="phone" required style="width:100%;padding:10px;margin-bottom:15px">
 
-<input type="text" name="pickup" placeholder="Pickup location" required>
-<br><br>
+<label>Email</label>
+<input type="email" name="email" style="width:100%;padding:10px;margin-bottom:15px">
 
-<input type="text" name="dropoff" placeholder="Dropoff location" required>
-<br><br>
+<label>Pickup Location (สถานที่รับ)</label>
+<input type="text" name="pickup" required style="width:100%;padding:10px;margin-bottom:15px">
 
-<input type="date" name="date" required>
-<br><br>
+<label>Drop-off Location (สถานที่ส่ง)</label>
+<input type="text" name="dropoff" required style="width:100%;padding:10px;margin-bottom:15px">
 
-<input type="time" name="time" required>
-<br><br>
+<label>Pickup Date (วันที่รับ)</label>
+<input type="date" name="date" required style="width:100%;padding:10px;margin-bottom:15px">
 
-<select name="car">
-<option>Sedan</option>
-<option>SUV</option>
-<option>Van</option>
+<label>Pickup Time (เวลารับ)</label>
+<input type="time" name="time" required style="width:100%;padding:10px;margin-bottom:15px">
+
+<label>Number of Passengers (จำนวนผู้โดยสาร)</label>
+<input type="number" name="passengers" style="width:100%;padding:10px;margin-bottom:15px">
+
+<label>Car Type (ประเภทรถ)</label>
+<select name="car_type" style="width:100%;padding:10px;margin-bottom:15px">
+<option value="Sedan">Sedan</option>
+<option value="SUV">SUV</option>
+<option value="Van">Van</option>
+<option value="Luxury">Luxury</option>
 </select>
 
-<br><br>
+<label>Flight Number (ถ้ามี)</label>
+<input type="text" name="flight" style="width:100%;padding:10px;margin-bottom:15px">
 
-<textarea name="note" placeholder="Note"></textarea>
+<label>Note / Special Request</label>
+<textarea name="note" rows="4" style="width:100%;padding:10px;margin-bottom:20px"></textarea>
 
-<br><br>
-
-<button type="submit">BOOK NOW</button>
+<button type="submit" style="width:100%;padding:12px;background:#007bff;color:white;border:none;border-radius:5px;font-size:16px">
+Submit Booking
+</button>
 
 </form>
+
+<p id="result" style="text-align:center;margin-top:15px"></p>
 
 </section>
 
@@ -636,32 +646,48 @@ updateClock()
 
 document.getElementById("bookingForm").addEventListener("submit", function(e){
 
-e.preventDefault()
+e.preventDefault();
 
-fetch("https://hook.us2.make.com/dcdi4g4ngoujz5ut",{
+const formData = new FormData(this);
+
+const data = {
+name: formData.get("name"),
+phone: formData.get("phone"),
+email: formData.get("email"),
+pickup: formData.get("pickup"),
+dropoff: formData.get("dropoff"),
+date: formData.get("date"),
+time: formData.get("time"),
+passengers: formData.get("passengers"),
+car_type: formData.get("car_type"),
+flight: formData.get("flight"),
+note: formData.get("note")
+};
+
+fetch("https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco",{
 
 method:"POST",
-
 headers:{
 "Content-Type":"application/json"
 },
 
-body:JSON.stringify({
-name:this.name.value,
-phone:this.phone.value,
-pickup:this.pickup.value,
-dropoff:this.dropoff.value,
-date:this.date.value,
-time:this.time.value,
-car:this.car.value,
-note:this.note.value
-})
+body:JSON.stringify(data)
 
 })
+.then(res=>{
 
-alert("Booking Sent")
+document.getElementById("result").innerHTML="Booking Sent Successfully";
+
+document.getElementById("bookingForm").reset();
 
 })
+.catch(err=>{
+
+document.getElementById("result").innerHTML="Error sending booking";
+
+});
+
+});
 
 </script>
 
