@@ -803,6 +803,214 @@ e.preventDefault()
 
 const data = Object.fromEntries(new FormData(this).entries())
 
+<section id="thairide-booking">
+
+<style>
+
+#thairide-booking{
+background:#000;
+padding:60px 20px;
+font-family:Arial, sans-serif;
+}
+
+.booking-container{
+max-width:800px;
+margin:auto;
+border:3px solid #00ff88;
+border-radius:12px;
+padding:40px;
+box-shadow:0 0 20px #00ff8850;
+color:#fff;
+}
+
+.booking-title{
+text-align:center;
+font-size:30px;
+margin-bottom:35px;
+color:#00ff88;
+font-weight:bold;
+}
+
+.booking-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+.full{
+grid-column:1 / 3;
+}
+
+label{
+font-size:14px;
+color:#9cffd0;
+display:block;
+margin-bottom:5px;
+}
+
+input,select,textarea{
+
+width:100%;
+padding:14px;
+font-size:16px;
+background:#1a1a1a;
+border:2px solid #00ff88;
+border-radius:6px;
+color:#fff;
+
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+input:focus,select:focus,textarea:focus{
+outline:none;
+box-shadow:0 0 10px #00ff88;
+}
+
+.submit-btn{
+grid-column:1 / 3;
+padding:16px;
+font-size:18px;
+font-weight:bold;
+background:#00ff88;
+border:none;
+border-radius:6px;
+cursor:pointer;
+color:#000;
+}
+
+.submit-btn:hover{
+background:#00cc6a;
+}
+
+@media(max-width:700px){
+
+.booking-grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:1;
+}
+
+.submit-btn{
+grid-column:1;
+}
+
+}
+
+</style>
+
+
+<div class="booking-container">
+
+<div class="booking-title">
+Airport Transfer Booking
+</div>
+
+<form id="thairideForm">
+
+<div class="booking-grid">
+
+<div>
+<label>First Name</label>
+<input type="text" name="firstname" required>
+</div>
+
+<div>
+<label>Last Name</label>
+<input type="text" name="lastname" required>
+</div>
+
+<div>
+<label>Phone Number</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div>
+<label>Pickup Location</label>
+<input type="text" name="pickup" required>
+</div>
+
+<div>
+<label>Room Number (Hotel)</label>
+<input type="text" name="room">
+</div>
+
+<div>
+<label>Drop-off Location</label>
+<input type="text" name="dropoff" required>
+</div>
+
+<div>
+<label>Passengers</label>
+<input type="number" name="passengers">
+</div>
+
+<div>
+<label>Luggage Type</label>
+<select name="luggage_type">
+<option value="">Select Type</option>
+<option>Large Suitcase</option>
+<option>Medium Suitcase</option>
+<option>Small Suitcase</option>
+<option>Backpack</option>
+</select>
+</div>
+
+<div>
+<label>Number of Bags</label>
+<input type="number" name="luggage_amount">
+</div>
+
+<div>
+<label>Car Type</label>
+<select name="car_type">
+<option value="">Select Car</option>
+<option>Sedan (1-3 pax)</option>
+<option>SUV (1-4 pax)</option>
+<option>VIP Van (1-10 pax)</option>
+<option>Luxury Car</option>
+</select>
+</div>
+
+<div>
+<label>Travel Date</label>
+<input type="date" name="date">
+</div>
+
+<div>
+<label>Travel Time</label>
+<input type="time" name="time">
+</div>
+
+<div class="full">
+<label>Note / Special Request</label>
+<textarea name="note"></textarea>
+</div>
+
+<button class="submit-btn">
+BOOK TRANSFER
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+
+<script>
+
+document.getElementById("thairideForm").addEventListener("submit",function(e){
+
+e.preventDefault()
+
+const data = Object.fromEntries(new FormData(this).entries())
+
 fetch("https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco",{
 
 method:"POST",
