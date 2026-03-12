@@ -603,7 +603,7 @@ updateClock()
 
 <h2 style="text-align:center">Car Booking Form</h2>
 
-<form id="bookingForm">
+<form id="bookingForm" onsubmit="return false;">
 
 <label>Full Name</label>
 <input type="text" name="name" placeholder="Enter your name">
@@ -915,5 +915,25 @@ document.getElementById("clockDate").innerHTML =
 day + " " + date + " " + month + " " + year 
 
 </script>
+
+  <script>
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const formData = new FormData(this);
+
+fetch("https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco",{
+method:"POST",
+body:formData
+})
+.then(()=>{
+
+alert("Booking sent successfully");
+
+});
+
+});
+  </script>
 </body>
 </html>
