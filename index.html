@@ -621,124 +621,9 @@ _wau.push(["dynamic", "vhzzo69l0r", "tnh", "3c78d8c4302b", "small"]);
 
 <!-- ThaiRide Travel Booking -->
 
-<section id="booking">
 
-<style>
-#booking{
-font-family:Arial;
-background:#111;
-color:white;
-padding:40px 20px;
-}
 
-#booking form{
-max-width:500px;
-margin:auto;
-background:#1b1b1b;
-padding:25px;
-border-radius:10px;
-}
 
-#booking input,
-#booking select{
-width:100%;
-padding:10px;
-margin-top:10px;
-margin-bottom:15px;
-border-radius:5px;
-border:none;
-}
-
-#booking button{
-width:100%;
-padding:12px;
-background:#00aaff;
-border:none;
-color:white;
-font-size:16px;
-border-radius:6px;
-cursor:pointer;
-}
-
-#booking button:hover{
-background:#008ecc;
-}
-</style>
-
-<h2 style="text-align:center;">🚐 Book Your Transfer</h2>
-
-<form action="https://hook.us2.make.com/dcdi4g4ngoujz5utnld3hv2ny5u7ebco" method="POST" target="hidden_iframe">
-
-<label>Name</label>
-<input type="text" name="name" required>
-
-<label>Phone</label>
-<input type="text" name="phone" required>
-
-<label>Email</label>
-<input type="email" name="email">
-
-<label>Passengers</label>
-<select name="passengers">
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
-<section style="background:#0f172a;padding:80px 20px;text-align:center;color:white">
-
-<h2 style="font-size:34px;margin-bottom:10px;">
-🚐 Book Your Airport Transfer
-</h2>
-
-<p style="font-size:18px;color:#cbd5e1;margin-bottom:40px;">
-Add our LINE Official Account to book your ride instantly
-</p>
-
-<div style="
-background:white;
-display:inline-block;
-padding:20px;
-border-radius:20px;
-margin-bottom:30px;
-">
-
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAIAAA...REPLACE..." 
-alt="LINE QR"
-style="width:260px;height:260px;border-radius:12px;">
-
-</div>
-
-<br>
-
-<a href="https://lin.ee/911btrma"
-style="
-background:#06C755;
-color:white;
-padding:18px 40px;
-font-size:20px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-display:inline-block;
-box-shadow:0 8px 20px rgba(0,0,0,0.25);
-">
-Add LINE & Book Now
-</a>
-
-<div style="margin-top:40px;color:#cbd5e1;font-size:16px;line-height:1.8">
-
-<p>📲 Scan QR Code or click the button</p>
-<p>✉️ Send us your trip details</p>
-<p>✅ Receive booking confirmation</p>
-
-</div>
-
-<p style="margin-top:20px;color:#94a3b8;">
-LINE ID : @911btrma
-</p>
-
-</section>
 
 <!-- AD 3 Agoda -->
 
@@ -761,6 +646,49 @@ Contact ThaiRide Travel
 </footer>
 
 </div>
+
+  <a href="https://lin.ee/911btrma" target="_blank" class="line-book-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE">
+    <span>Book via LINE</span>
+</a>
+
+<style>
+
+.line-book-btn{
+position:fixed;
+right:25px;
+bottom:25px;
+background:#06C755;
+color:white;
+display:flex;
+align-items:center;
+gap:10px;
+padding:14px 20px;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+z-index:9999;
+animation:lineBounce 2s infinite;
+transition:0.3s;
+}
+
+.line-book-btn img{
+width:34px;
+height:34px;
+}
+
+.line-book-btn:hover{
+transform:scale(1.08);
+}
+
+@keyframes lineBounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+}
+
+</style>
 
 </body>
 </html>
