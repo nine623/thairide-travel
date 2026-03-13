@@ -695,42 +695,39 @@ background:#008ecc;
 
 <label>Vehicle</label>
 <select name="vehicle">
-<option>Sedan</option>
-<option>SUV</option>
-<option>Van</option>
-</select>
+<option>Sedan<<section style="background:#111;color:white;text-align:center;padding:70px 20px">
 
-<label>Date</label>
-<input type="date" name="date" required>
+<h2 style="font-size:32px;margin-bottom:10px;">
+Book Your Ride via LINE
+</h2>
 
-<label>Time</label>
-<input type="time" name="time" required>
+<p style="font-size:18px;color:#ccc;margin-bottom:40px;">
+Add our LINE Official Account to book your airport transfer
+</p>
 
-<label>Pickup</label>
-<input type="text" name="pickup" required>
+<img src="images/line-oa-qr.png" 
+alt="LINE Booking QR"
+style="width:240px;border-radius:20px;margin-bottom:30px;">
 
-<label>Dropoff</label>
-<input type="text" name="dropoff" required>
+<br>
 
-<label>Flight Number</label>
-<input type="text" name="flight">
+<a href="https://lin.ee/911btrma"
+style="
+background:#06C755;
+color:white;
+padding:16px 36px;
+font-size:18px;
+border-radius:10px;
+text-decoration:none;
+display:inline-block;
+font-weight:bold;
+">
+Add LINE & Book Now
+</a>
 
-<label>Message</label>
-<input type="text" name="message">
-
-<button type="submit">BOOK NOW</button>
-
-</form>
-
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-<script>
-document.querySelector("#booking form").addEventListener("submit", function(){
-setTimeout(function(){
-alert("✅ Booking sent successfully. We will contact you soon.");
-},500);
-});
-</script>
+<p style="margin-top:20px;color:#aaa;">
+LINE ID : @911btrma
+</p>
 
 </section>
 
