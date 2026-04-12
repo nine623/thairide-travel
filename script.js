@@ -1,102 +1,113 @@
-/* CLOCK */
+<script>
 
+/* =========================
+   CLOCK (ปลอดภัย)
+========================= */
 function updateClock(){
 
-let now = new Date();
+    const now = new Date();
 
-let h = now.getHours().toString().padStart(2,'0');
-let m = now.getMinutes().toString().padStart(2,'0');
-let s = now.getSeconds().toString().padStart(2,'0');
+    const h = String(now.getHours()).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const s = String(now.getSeconds()).padStart(2,'0');
 
-let clock = document.getElementById("clock");
-
-if(clock){
-clock.innerHTML = h + ":" + m + ":" + s;
+    const clock = document.getElementById("clock");
+    if(clock){
+        clock.innerText = `${h}:${m}:${s}`;
+    }
 }
 
-}
-
-updateClock();
 setInterval(updateClock,1000);
+updateClock();
 
 
-/* Fake visitor counter */
-
-let count = 120 + Math.floor(Math.random()*80);
-
-let visitors = document.getElementById("visitors");
-
+/* =========================
+   VISITOR COUNTER (Fake)
+========================= */
+const visitors = document.getElementById("visitors");
 if(visitors){
-visitors.innerHTML = count;
+    const count = 120 + Math.floor(Math.random()*80);
+    visitors.innerText = count;
 }
 
 
-/* HERO SLIDE */
+/* =========================
+   HERO SLIDE (FIXED VERSION)
+========================= */
 
-let slideIndex = 0;
-let slides = document.querySelectorAll(".hero-slide img");
+document.addEventListener("DOMContentLoaded", () => {
 
-function showSlide(){
+    const slides = document.querySelectorAll(".hero-slide img");
 
-slides.forEach(img => img.classList.remove("active"));
+    let index = 0;
 
-slideIndex++;
+    // ถ้าไม่มีรูป → stop ทันที
+    if(slides.length === 0) return;
 
-if(slideIndex > slides.length){
-slideIndex = 1;
-}
+    function showSlide(){
 
-slides[slideIndex-1].classList.add("active");
+        slides.forEach(img => img.classList.remove("active"));
 
-}
+        slides[index].classList.add("active");
 
-showSlide();
-setInterval(showSlide,4000);
+        index++;
+
+        if(index >= slides.length){
+            index = 0;
+        }
+    }
+
+    showSlide();
+    setInterval(showSlide, 4000);
+});
 
 
-/* BOOKING → SEND TO LINE */
-
+/* =========================
+   BOOKING → LINE
+========================= */
 function sendBooking(){
 
-let name = document.getElementById("name").value;
-let contact = document.getElementById("contact").value;
-let pickup = document.getElementById("pickup").value;
-let dropoff = document.getElementById("dropoff").value;
-let date = document.getElementById("date").value;
-let time = document.getElementById("time").value;
-let passengers = document.getElementById("passengers").value;
-let vehicle = document.getElementById("vehicle").value;
-let message = document.getElementById("message").value;
+    const name = document.getElementById("name")?.value || "";
+    const contact = document.getElementById("contact")?.value || "";
+    const pickup = document.getElementById("pickup")?.value || "";
+    const dropoff = document.getElementById("dropoff")?.value || "";
+    const date = document.getElementById("date")?.value || "";
+    const time = document.getElementById("time")?.value || "";
+    const passengers = document.getElementById("passengers")?.value || "";
+    const vehicle = document.getElementById("vehicle")?.value || "";
+    const message = document.getElementById("message")?.value || "";
 
-let text =
-"🚐 ThaiRide Booking %0A%0A"+
-"Name: "+name+"%0A"+
-"Contact: "+contact+"%0A"+
-"Pickup: "+pickup+"%0A"+
-"Dropoff: "+dropoff+"%0A"+
-"Date: "+date+"%0A"+
-"Time: "+time+"%0A"+
-"Passengers: "+passengers+"%0A"+
-"Vehicle: "+vehicle+"%0A"+
-"Message: "+message;
+    const text =
+`🚐 ThaiRide Booking%0A%0A
+Name: ${name}%0A
+Contact: ${contact}%0A
+Pickup: ${pickup}%0A
+Dropoff: ${dropoff}%0A
+Date: ${date}%0A
+Time: ${time}%0A
+Passengers: ${passengers}%0A
+Vehicle: ${vehicle}%0A
+Message: ${message}`;
 
-/* เปิด LINE พร้อมข้อความ */
-
-window.open("https://line.me/R/msg/text/?"+text);
+    window.open("https://line.me/R/msg/text/?" + text);
 
 }
 
 
-/* CHAT MENU */
-
+/* =========================
+   CHAT MENU (FIXED)
+========================= */
 function toggleChat(){
 
-let menu = document.getElementById("chatMenu")
+    const menu = document.getElementById("chatMenu");
 
-if(menu.style.display === "flex"){
-menu.style.display = "none"
-}else{
-menu.style.display = "flex"
+    if(!menu) return;
+
+    if(menu.style.display === "flex"){
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
 }
 
-}
+</script>
