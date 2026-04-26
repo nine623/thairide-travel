@@ -3,217 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>ThaiRide Travel | บริการรถรับส่งสนามบิน 24 ชม.</title>
-    
+    <title>ThaiRide Travel | New Template</title>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&family=Prompt:wght@500;600&display=swap" rel="stylesheet">
-
 <style>
-    /* 1. RESET & CORE CSS */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    html, body {
-        width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden !important;
-        background: #0f172a;
-        color: #ffffff;
-        font-family: 'Sarabun', sans-serif;
-        line-height: 1.6;
-    }
-
-    /* 2. NAVIGATION */
-    .nav-bar {
-        width: 100%;
-        background: #1e293b;
-        padding: 12px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-        border-bottom: 2px solid #38bdf8;
-    }
-    .nav-bar .brand { display: flex; align-items: center; gap: 10px; }
-    .nav-bar img { width: 35px; height: auto; }
-    .nav-bar span { font-family: 'Prompt'; font-weight: 600; color: #38bdf8; font-size: 1.2rem; }
-
-    /* 3. HERO SLIDER (ภาพแบนเนอร์) */
-    .hero-slider {
-        width: 100%;
-        background: #000;
-        position: relative;
-        overflow: hidden;
-        aspect-ratio: 16/9; /* คุมสัดส่วนภาพไม่ให้บิดเบี้ยว */
-    }
-    .slide { width: 100%; height: 100%; display: none; }
-    .slide.active { display: block; }
-    .slide img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* 4. MAIN CONTENT */
+    html, body { width: 100%; max-width: 100vw; overflow-x: hidden !important; background: #0f172a; color: #ffffff; font-family: 'Sarabun', sans-serif; }
+    .nav-bar { width: 100%; background: #1e293b; padding: 12px 20px; display: flex; align-items: center; border-bottom: 2px solid #38bdf8; position: sticky; top: 0; z-index: 999; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: 'Prompt'; font-weight: 600; color: #38bdf8; font-size: 1.2rem; }
+    .hero-box { width: 100%; background: #000; line-height: 0; }
+    .hero-box img { width: 100%; height: auto; display: block; }
     .container { padding: 15px; width: 100%; }
-
-    .card {
-        background: #1e293b;
-        border-radius: 16px;
-        padding: 20px;
-        margin-bottom: 20px;
-        border: 1px solid rgba(255,255,255,0.05);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .card h2 { font-family: 'Prompt'; color: #facc15; margin-bottom: 10px; font-size: 1.4rem; }
-    
-    /* 5. CAR SELECTION GRID */
-    .car-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin: 20px 0;
-    }
-    .car-item {
-        background: #0f172a;
-        padding: 12px 5px;
-        border-radius: 12px;
-        text-align: center;
-        transition: 0.3s;
-    }
-    .car-item img { width: 100%; max-width: 65px; height: auto; margin-bottom: 8px; }
-    .car-item p { font-size: 11px; color: #38bdf8; font-weight: bold; }
-
-    /* 6. BUTTONS */
-    .btn-primary {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #06C755;
-        color: #fff;
-        text-decoration: none;
-        padding: 15px;
-        border-radius: 12px;
-        font-family: 'Prompt';
-        font-weight: 600;
-        width: 100%;
-        border: none;
-        box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
-        font-size: 1.1rem;
-    }
-
-    /* 7. STATS DASHBOARD */
-    .stats-row {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-    .stat-card {
-        flex: 1;
-        background: #1e293b;
-        padding: 15px 5px;
-        border-radius: 12px;
-        text-align: center;
-        border-bottom: 3px solid #38bdf8;
-    }
-    .stat-card small { font-size: 10px; color: #94a3b8; display: block; }
-    .stat-card b { font-size: 1.1rem; color: #fff; font-family: 'Prompt'; }
-
-    /* 8. FOOTER */
-    footer {
-        background: #1e293b;
-        padding: 40px 20px;
-        text-align: center;
-        border-top: 1px solid #334155;
-    }
-    footer img { width: 50px; margin-bottom: 15px; }
-    footer p { font-size: 13px; color: #94a3b8; }
-
+    .card { background: #1e293b; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.05); }
+    .card h2 { font-family: 'Prompt'; color: #facc15; margin-bottom: 10px; }
+    .btn-line { display: flex; align-items: center; justify-content: center; background: #06C755; color: #fff; text-decoration: none; padding: 15px; border-radius: 12px; font-family: 'Prompt'; font-weight: 600; width: 100%; margin-top: 15px; }
+    .car-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; }
+    .car-item { background: #0f172a; padding: 10px; border-radius: 10px; text-align: center; }
+    .car-item img { width: 100%; max-width: 60px; height: auto; }
+    footer { background: #1e293b; padding: 30px 20px; text-align: center; border-top: 1px solid #334155; }
 </style>
 </head>
 <body>
-
-    <nav class="nav-bar">
-        <div class="brand">
-            <img src="logo_01.png" alt="ThaiRide Logo">
-            <span>ThaiRide Travel</span>
-        </div>
-    </nav>
-
-    <div class="hero-slider">
-        <div class="slide active"><img src="heroslide_01.png"></div>
-        <div class="slide"><img src="heroslide_02.png"></div>
-    </div>
-
+    <nav class="nav-bar"><div class="brand">ThaiRide Travel</div></nav>
+    <div class="hero-box"><img src="heroslide_01.png"></div>
     <div class="container">
-        
-        <div class="card" style="border-top: 4px solid #f97316;">
-            <h2>🚐 รับ-ส่งสนามบิน 24 ชม.</h2>
-            <p style="color: #cbd5e1; font-size: 14px;">บริการรถเห่านำเที่ยว และรับส่งสนามบิน สุวรรณภูมิ ดอนเมือง พัทยา หัวหิน ราคามาตรฐาน คนขับสุภาพ</p>
-            
-            <div class="car-grid">
-                <div class="car-item">
-                    <img src="altis.png">
-                    <p>SEDAN</p>
-                </div>
-                <div class="car-item">
-                    <img src="suv.png">
-                    <p>SUV</p>
-                </div>
-                <div class="car-item">
-                    <img src="van.png">
-                    <p>VIP VAN</p>
-                </div>
-            </div>
-
-            <a href="https://line.me/R/ti/p/@775hjmvl" class="btn-primary">
-                🟢 จองผ่าน LINE / เช็คราคา
-            </a>
-        </div>
-
-        <div class="stats-row">
-            <div class="stat-card">
-                <small>งานบริการ</small>
-                <b>5,000+</b>
-            </div>
-            <div class="stat-card">
-                <small>คะแนนรีวิว</small>
-                <b>4.9★</b>
-            </div>
-            <div class="stat-card">
-                <small>จำนวนรถ</small>
-                <b>50+ คัน</b>
-            </div>
-        </div>
-
         <div class="card">
-            <h2>📍 พื้นที่ให้บริการ</h2>
-            <ul style="list-style: none; color: #94a3b8; font-size: 14px;">
-                <li>✅ กรุงเทพฯ และปริมณฑล</li>
-                <li>✅ พัทยา / ชลบุรี</li>
-                <li>✅ หัวหิน / ชะอำ</li>
-                <li>✅ อยุธยา / กาญจนบุรี</li>
-            </ul>
+            <h2>🚐 รับ-ส่งสนามบิน 24 ชม.</h2>
+            <p>บริการรถส่วนตัว ราคามาตรฐาน ปลอดภัย ตรงเวลา</p>
+            <div class="car-grid">
+                <div class="car-item"><img src="altis.png"></div>
+                <div class="car-item"><img src="suv.png"></div>
+                <div class="car-item"><img src="van.png"></div>
+            </div>
+            <a href="https://line.me/R/ti/p/@775hjmvl" class="btn-line">🟢 จองผ่าน LINE</a>
         </div>
-
     </div>
-
-    <footer>
-        <img src="logo_01.png">
-        <p><strong>ThaiRide Travel</strong></p>
-        <p>Professional Transport Service in Thailand</p>
-        <p style="margin-top: 10px; font-size: 11px; opacity: 0.5;">© 2026 All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // ระบบสลับภาพแบนเนอร์อัตโนมัติ
-        let index = 0;
-        const slides = document.querySelectorAll('.slide');
-        if(slides.length > 1) {
-            setInterval(() => {
-                slides[index].classList.remove('active');
-                index = (index + 1) % slides.length;
-                slides[index].classList.add('active');
-            }, 4000);
-        }
-    </script>
-
+    <footer><p>© 2026 ThaiRide Travel</p></footer>
 </body>
 </html>
