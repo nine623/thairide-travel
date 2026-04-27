@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ThaiRide Travel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ThaiRide Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&family=Prompt:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ================= CSS จาก BBC (ล็อคขอบจอ) ================= */
+/* ================= 1. ล็อคขอบจอแบบเด็ดขาด ================= */
 * {
   margin: 0;
   padding: 0;
@@ -17,71 +17,88 @@
 html, body {
   width: 100%;
   max-width: 100vw;
-  overflow-x: hidden !important; 
-  background: #0f172a; 
+  overflow-x: hidden !important; /* ห้ามเลื่อนซ้ายขวา */
+  background: #121212; /* พื้นหลังดำ */
   color: #eeeeee;
   font-family: 'Sarabun', sans-serif;
 }
 
-/* NAVBAR BBC Style */
+/* ================= 2. NAVBAR ================= */
 .navbar {
   width: 100%;
   background: #0a2c6d;
   padding: 15px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
-.brand-name { font-family: 'Prompt'; font-weight: 600; color: #38bdf8; font-size: 1.2rem; }
-.nav-links { font-size: 11px; color: #fff; text-align: right; line-height: 1.4; }
+.navbar img { width: 35px; border-radius: 50%; }
 
-/* HERO BBC Style (กันล้น) */
-.hero-box {
+/* ================= 3. HERO (จุดที่แก้รูปล้น) ================= */
+.hero-container {
   width: 100%;
   background: #000;
   overflow: hidden;
-  line-height: 0;
+  line-height: 0; /* กันช่องว่างใต้รูป */
 }
-.hero-box img {
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  /* 🔥 ไม้ตาย: บังคับกว้างเท่าจอเสมอ และย่อความสูงตามสัดส่วนรูปจริง */
   width: 100%;
   height: auto; 
   display: block;
 }
 
-/* CONTAINER & CARD BBC Style */
-.container { padding: 15px; width: 100%; }
+/* ================= 4. CONTENT AREA ================= */
+.container {
+  padding: 15px;
+  width: 100%;
+}
 
 .card {
-  background: #1e293b;
+  background: #1e1e1e;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.card h2 { color: #facc15; font-family: 'Prompt'; margin-bottom: 10px; font-size: 1.1rem; }
+.card h2 { color: #4dabff; font-family: 'Prompt'; margin-bottom: 10px; }
 
-/* DASHBOARD / STAT BOX จาก BBC */
-.dashboard { display: flex; gap: 8px; margin-bottom: 15px; }
+/* ================= 5. DASHBOARD & FLAG (ย้ายลงล่าง) ================= */
+.bottom-section {
+  width: 100%;
+  padding: 0 15px 20px;
+}
+
+.dashboard {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
 .stat-box {
   flex: 1;
-  background: #1e293b;
-  padding: 15px 5px;
+  background: #1e1e1e;
+  padding: 12px 5px;
   border-radius: 10px;
   text-align: center;
   border-bottom: 3px solid #0a2c6d;
 }
-.stat-box strong { font-size: 22px; color: #38bdf8; display: block; }
-.stat-box span { font-size: 11px; color: #888; }
 
-/* องค์ประกอบเสริมจากหน้าเดิม */
-.orange-bar { background: #f97316; color: #fff; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
-.btn-line { background: #06C755; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; font-weight: bold; margin-bottom: 10px; }
-input, select { width: 100%; padding: 12px; margin-top: 8px; background: #2a3347; border: 1px solid #334155; color: white; border-radius: 8px; }
-.btn-search { width: 100%; padding: 12px; background: #f97316; border: none; color: white; border-radius: 8px; font-weight: bold; margin-top: 10px; }
+.stat-box span { font-size: 11px; color: #888; display: block; margin-bottom: 2px; }
+.stat-box strong { font-size: 15px; color: #fff; }
 
-/* FOOTER BBC Style */
+/* ================= 6. FOOTER ================= */
 footer {
   background: #0a2c6d;
   color: white;
@@ -89,71 +106,94 @@ footer {
   padding: 40px 20px;
   width: 100%;
 }
+
+footer img { width: 60px; border-radius: 50%; margin-bottom: 15px; }
+
+/* ปรับฟอนต์ปุ่มและอินพุตให้พอดีมือถือ */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+}
 </style>
 </head>
 
 <body>
 
 <nav class="navbar">
-  <div class="brand-name">ThaiRide Travel</div>
-  <div class="nav-links">Home<br>Services<br>Tours<br>Gallery<br>Contact</div>
+  <img src="logo.png">
+  <span style="font-family:'Prompt'; font-weight:600;">Bangkhen Baptist Church</span>
 </nav>
 
-<div class="container" style="padding-bottom: 0;">
-    <div class="orange-bar">Bangkok Airport Transfer Available 24 Hours</div>
-    <div style="text-align:center;"><a href="https://line.me/R/ti/p/@775hjmvl" class="btn-line">Chat on LINE</a></div>
-</div>
-
-<div class="hero-box">
-  <img src="heroslide_01.png">
-</div>
-
-<div class="container" style="padding-top: 10px;">
-    <div class="orange-bar">Bangkok Airport Transfer Available 24 Hours</div>
-    <div style="text-align:center;"><a href="https://line.me/R/ti/p/@775hjmvl" class="btn-line">Chat on LINE</a></div>
+<div class="hero-container">
+  <div class="slide active"><img src="hero_01.png"></div>
+  <div class="slide"><img src="hero_02.png"></div>
+  <div class="slide"><img src="hero_03.png"></div>
 </div>
 
 <div class="container">
+  <div class="card">
+    <h2>📰 ข่าวสาร</h2>
+    <p style="color:#aaa;">ติดตามข่าวประกาศกิจกรรมที่นี่</p>
+  </div>
   
   <div class="card">
-    <h2>Search Bangkok Hotels</h2>
-    <input type="text" placeholder="Bangkok">
-    <select><option>Guests / Rooms</option></select>
-    <select><option>Check-in / Check-out</option></select>
-    <button class="btn-search">Search Hotels</button>
+    <h2>📚 บทความ</h2>
+    <p>มัทธิว 6:33 "จงแสวงหาแผ่นดินของพระเจ้าก่อน..."</p>
   </div>
 
   <div class="card" style="text-align: center;">
-    <h3 style="margin-bottom:15px; font-family:'Prompt';">🌎 Live Visitors</h3>
-    <div style="background:#38bdf8; color:#fff; padding:5px 15px; border-radius:5px; display:inline-block; margin-bottom:20px;">
-        🏃 1
-    </div>
-    <p style="font-size:14px; margin-bottom:15px; font-weight:bold;">Visitors Around The World</p>
-    <img src="https://s01.flagcounter.com/count2/M2Js/bg_EEF277/txt_000000/border_CCCCCC/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" style="max-width:100%; height:auto;">
-    <div style="margin-top:15px; font-size: 13px;">📈 Online Now : 3</div>
+    <h3 style="color:#4dabff; margin-bottom:12px;">LINE QR Code</h3>
+    <img src="line-qr.png" style="width:180px; max-width:80%; border-radius:10px;">
   </div>
+</div>
 
+<div class="bottom-section">
   <div class="dashboard">
-    <div class="stat-box"><strong>0</strong><span>Tours</span></div>
-    <div class="stat-box"><strong>0</strong><span>Drivers</span></div>
-    <div class="stat-box"><strong>4.9★</strong><span>Rating</span></div>
+    <div class="stat-box"><span>ผู้ลงทะเบียน</span><strong>1,250</strong></div>
+    <div class="stat-box"><span>นมัสการ</span><strong>450</strong></div>
+    <div class="stat-box"><span>ศึกษา</span><strong>85</strong></div>
   </div>
 
-  <div class="card">
-    <h3 style="margin-bottom:10px; font-family:'Prompt';">Customer Reviews</h3>
-    <div style="border-left: 3px solid #38bdf8; padding-left: 15px; font-size: 13px; color: #cbd5e1; font-style: italic;">
-        "Highly Recommended! Professional and safe service."
-    </div>
+  <div style="display:flex; justify-content:center; padding:10px 0;">
+    <img src="https://s01.flagcounter.com/count2/M2Js/bg_EEF277/txt_000000/border_CCCCCC/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" style="max-width:100%; height:auto;">
   </div>
-
 </div>
 
 <footer>
-  <strong>© 2026 ThaiRide Travel</strong><br>
+  <img src="logo.png"><br>
+  <strong>@2026 Bangkhen Baptist Church</strong><br>
   <p style="margin-top:10px; font-size: 13px; opacity: 0.8;">
-    Professional Airport Transfer & Private Tour
+    ร่วมนมัสการ เวลา 9.00 am - 12.00 pm
   </p>
 </footer>
+
+<script>
+  let cur = 0;
+  const slides = document.querySelectorAll('.slide');
+  function next() {
+    if(slides.length < 2) return;
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+  }
+  setInterval(next, 5000);
+</script>
 
 </body>
 </html>
