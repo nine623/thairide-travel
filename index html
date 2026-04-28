@@ -1,89 +1,156 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThaiRide Travel | บริการรถรับส่งสนามบิน และนำเที่ยวทั่วไทย</title>
-    <meta name="description" content="ThaiRide Travel บริการรถตู้ VIP, SUV, Sedan รับส่งสนามบินสุวรรณภูมิ ดอนเมือง และบริการนำเที่ยวทั่วประเทศไทย มั่นใจ ปลอดภัย บริการ 24 ชม.">
-    <meta name="keywords" content="รถรับจ้าง, รถตู้ VIP, รถ SUV, รับส่งสนามบิน, เที่ยวไทย, ThaiRide Travel, จองรถล่วงหน้า">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThaiRide Travel | บริการรถรับจ้าง รถตู้ SUV Sedan รับส่งสนามบินทั่วไทย</title>
+  
+  <meta name="description" content="ThaiRide Travel บริการรถรับส่งสนามบิน รถเช่าพร้อมคนขับ รถตู้ VIP, SUV, Sedan นำเที่ยวทั่วไทย บริการสุภาพ ปลอดภัย 24 ชั่วโมง">
+  <meta name="keywords" content="รถรับจ้าง, รถตู้ VIP, รถรับส่งสนามบิน, เช่ารถพร้อมคนขับ, ThaiRide Travel, เที่ยวไทย, สุวรรณภูมิ, ดอนเมือง">
+  <meta name="author" content="ThaiRide Travel">
+
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ใช้ CSS ที่คุณให้มาทั้งหมด */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; max-width: 100vw; overflow-x: hidden !important; background: #121212; color: #eeeeee; font-family: 'Sarabun', sans-serif; }
     
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    .navbar { width: 100%; background: #0a2c6d; padding: 15px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 1000; }
+    .navbar img { width: 35px; border-radius: 50%; }
+    .navbar h1 { font-size: 18px; font-family: 'Prompt'; color: white; }
+
+    .hero-container { width: 100%; background: #000; overflow: hidden; line-height: 0; }
+    .slide { width: 100%; display: none; }
+    .slide.active { display: block; }
+    .slide img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px; }
+
+    .container { padding: 15px; width: 100%; }
+    .card { background: #1e1e1e; padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border-left: 4px solid #0a2c6d; }
+    .card h2 { color: #4dabff; font-family: 'Prompt'; margin-bottom: 10px; font-size: 20px; }
+    .card p { font-size: 14px; line-height: 1.6; color: #ccc; }
+
+    .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .service-item { background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; }
+    .service-item i { font-size: 24px; color: #4dabff; display: block; margin-bottom: 5px; }
+
+    .bottom-section { width: 100%; padding: 0 15px 20px; }
+    .dashboard { display: flex; gap: 10px; margin-bottom: 20px; }
+    .stat-box { flex: 1; background: #1e1e1e; padding: 12px 5px; border-radius: 10px; text-align: center; border-bottom: 3px solid #0a2c6d; }
+    .stat-box span { font-size: 11px; color: #888; display: block; margin-bottom: 2px; }
+    .stat-box strong { font-size: 15px; color: #fff; }
+
+    .line-btn { background: #06c755; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; padding: 15px; border-radius: 50px; font-weight: bold; margin-top: 20px; font-family: 'Prompt'; transition: 0.3s; }
+    .line-btn:hover { background: #05a346; transform: scale(1.02); }
+
+    footer { background: #0a2c6d; color: white; text-align: center; padding: 40px 20px; width: 100%; }
+    footer img { width: 80px; border-radius: 50%; margin-bottom: 15px; border: 3px solid #fff; }
     
-    <link rel="stylesheet" href="style.css">
+    .flag-counter { margin-top: 20px; background: #fff; padding: 10px; border-radius: 5px; display: inline-block; }
+  </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <img src="https://via.placeholder.com/50" alt="ThaiRide Travel Logo">
-        <h1 style="font-family: 'Prompt'; font-size: 1.2rem;">ThaiRide Travel</h1>
-    </nav>
+  <nav class="navbar">
+    <img src="https://via.placeholder.com/100/0a2c6d/ffffff?text=TR" alt="ThaiRide Logo">
+    <h1>ThaiRide Travel</h1>
+  </nav>
 
-    <header class="hero-container">
-        <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200" alt="รถตู้ VIP นำเที่ยว">
+  <div class="hero-container">
+    <div class="slide active">
+      <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200" alt="บริการรถตู้ VIP">
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1559297434-2d8a134a042e?q=80&w=1200" alt="รับส่งสนามบิน">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>ThaiRide Travel</h2>
+      <p>เราคือผู้เชี่ยวชาญด้านการเดินทางในประเทศไทย ให้บริการรถรับส่งสนามบินสุวรรณภูมิ ดอนเมือง และบริการรถเห่านำเที่ยวทั่วประเทศ ด้วยรถยนต์หลากหลายประเภทที่ตอบโจทย์ทุกการเดินทางของคุณ</p>
+      
+      <a href="https://lin.ee/77ixmf5" class="line-btn">
+        จองรถผ่าน LINE คลิกเลย!
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>ประเภทรถที่ให้บริการ</h2>
+      <div class="service-grid">
+        <div class="service-item">
+          <strong>Sedan</strong>
+          <p style="font-size: 11px;">1-3 ท่าน</p>
         </div>
-        </header>
-
-    <main class="container">
-        
-        <section class="card">
-            <h2>บริการของเรา (Our Services)</h2>
-            <p>ThaiRide Travel พร้อมให้บริการรถรับส่งส่วนตัว ครอบคลุมทุกความต้องการ</p>
-            <ul style="margin-top: 15px; list-style: none;">
-                <li>✅ <strong>VIP Van:</strong> รถตู้ 9-10 ที่นั่ง เบาะนุ่ม นั่งสบาย</li>
-                <li>✅ <strong>SUV & Sedan:</strong> สำหรับเดินทางแบบส่วนตัวหรือครอบครัว</li>
-                <li>✅ <strong>Airport Transfer:</strong> รับ-ส่ง สุวรรณภูมิ และ ดอนเมือง 24 ชม.</li>
-                <li>✅ <strong>Sightseeing:</strong> พาเที่ยวทะเล ภูเขา วัดวาอาราม ทั่วไทย</li>
-            </ul>
-        </section>
-
-        <section class="card">
-            <h2>ทำไมต้องเลือก ThaiRide Travel?</h2>
-            <p>คนขับมืออาชีพ ชำนาญเส้นทาง รถสะอาด และตรงเวลา คือหัวใจสำคัญของเรา</p>
-            <a href="https://lin.ee/77ixmf5" target="_blank">
-                <button style="background: #00b900;">สอบถาม/จองรถผ่าน LINE</button>
-            </a>
-        </section>
-
-        <div class="bottom-section">
-            <h3 style="margin-bottom: 10px; font-family: 'Prompt'; color: #4dabff; font-size: 14px;">ข้อมูลสถิติผู้เข้าชม</h3>
-            <div class="dashboard">
-                <div class="stat-box">
-                    <span>ประเภทรถ</span>
-                    <strong>4 Styles</strong>
-                </div>
-                <div class="stat-box">
-                    <span>บริการ</span>
-                    <strong>24 Hrs</strong>
-                </div>
-                <div class="stat-box">
-                    <span>ความพึงพอใจ</span>
-                    <strong>100%</strong>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 10px;">
-                <p style="font-size: 12px; color: #888; margin-bottom: 5px;">Visitors Worldwide</p>
-                <a href="https://info.flagcounter.com/XXXX">
-                    <img src="https://s11.flagcounter.com/count2/XXXX/bg_121212/txt_EEEEEE/border_333333/columns_4/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0">
-                </a>
-            </div>
+        <div class="service-item">
+          <strong>SUV</strong>
+          <p style="font-size: 11px;">4-5 ท่าน</p>
         </div>
-
-    </main>
-
-    <footer>
-        <img src="https://via.placeholder.com/80" alt="ThaiRide Logo">
-        <h2 style="font-family: 'Prompt'; margin-bottom: 10px;">ThaiRide Travel</h2>
-        <p>บริการด้วยใจ ปลอดภัยทุกเส้นทาง</p>
-        <p style="margin-top: 10px; font-size: 14px;">
-            ติดต่อ: 0XX-XXX-XXXX<br>
-            LINE ID: @ThaiRide
-        </p>
-        <div style="margin-top: 20px;">
-            <a href="https://lin.ee/77ixmf5" style="color: #4dabff; text-decoration: none;">แชทผ่าน LINE คลิกที่นี่</a>
+        <div class="service-item">
+          <strong>VIP Van</strong>
+          <p style="font-size: 11px;">9-12 ท่าน</p>
         </div>
-    </footer>
+        <div class="service-item">
+          <strong>Private Car</strong>
+          <p style="font-size: 11px;">ส่วนตัว</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>ทำไมต้องเลือกเรา?</h2>
+      <ul style="list-style: none; font-size: 14px; color: #ccc;">
+        <li style="margin-bottom: 10px;">✅ คนขับสุภาพ ผ่านการตรวจสอบประวัติ</li>
+        <li style="margin-bottom: 10px;">✅ รถสะอาด บำรุงรักษาตามระยะ</li>
+        <li style="margin-bottom: 10px;">✅ ตรงต่อเวลา ถึงที่หมายปลอดภัย</li>
+        <li>✅ ราคามาตรฐาน ไม่มีบวกเพิ่มหน้างาน</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="dashboard">
+      <div class="stat-box">
+        <span>Booking</span>
+        <strong>24/7</strong>
+      </div>
+      <div class="stat-box">
+        <span>Safe Rate</span>
+        <strong>100%</strong>
+      </div>
+      <div class="stat-box">
+        <span>Experience</span>
+        <strong>10+ Yrs</strong>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="https://via.placeholder.com/150/ffffff/0a2c6d?text=ThaiRide" alt="ThaiRide Travel">
+    <h3 style="font-family: 'Prompt';">ThaiRide Travel</h3>
+    <p style="font-size: 12px; margin-top: 10px; opacity: 0.8;">
+      Contact us via Line: @ThaiRide<br>
+      © 2026 ThaiRide Travel. All rights reserved.
+    </p>
+
+    <div class="flag-counter">
+      <a href="https://info.flagcounter.com/7vY3"><img src="https://s11.flagcounter.com/count2/7vY3/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+    </div>
+  </footer>
+
+  <script>
+    // Script สำหรับเปลี่ยนรูป Slide
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    
+    setInterval(nextSlide, 3000); // เปลี่ยนรูปทุก 3 วินาที
+  </script>
 
 </body>
 </html>
