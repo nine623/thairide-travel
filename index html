@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ThaiRide Travel | รถตู้ SUV Sedan รับส่งสนามบิน เที่ยวทั่วไทย</title>
+    <meta name="description" content="บริการรถรับจ้าง รถตู้ VIP, SUV, Sedan รับส่งสนามบินสุวรรณภูมิ ดอนเมือง และพาเที่ยวทั่วไทย บริการสุภาพ ปลอดภัย 24 ชม.">
+    <meta name="keywords" content="รถรับจ้าง, รถตู้สนามบิน, รถ SUV รับจ้าง, รถเช่าพร้อมคนขับ, รับส่งสนามบิน, ThaiRide Travel">
+    <meta name="author" content="ThaiRide Travel">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="https://via.placeholder.com/50" alt="Logo"> <strong style="font-family: 'Prompt'; font-size: 1.2rem;">ThaiRide Travel</strong>
+    </nav>
+
+    <section class="hero-container">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200" alt="บริการรถตู้ VIP">
+        </div>
+        </section>
+
+    <main class="container">
+        
+        <article class="card">
+            <h2>บริการของเรา</h2>
+            <p>ยินดีต้อนรับสู่ **ThaiRide Travel** เราให้บริการรถรับส่งที่ครอบคลุมทุกความต้องการของคุณ</p>
+            <ul style="margin-top: 15px; list-style: none;">
+                <li>✅ <strong>รถตู้ VIP:</strong> สำหรับกรุ๊ปสัมมนาหรือครอบครัว</li>
+                <li>✅ <strong>รถ SUV / Sedan:</strong> รับส่งสนามบินแบบส่วนตัว</li>
+                <li>✅ <strong>นำเที่ยว:</strong> บริการพาเที่ยวทั่วไทยตามแผนของคุณ</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>จองรถง่ายๆ ผ่าน LINE</h2>
+            <p>สอบถามเช็คราคา หรือจองคิวรถล่วงหน้าได้ตลอด 24 ชั่วโมง</p>
+            <a href="https://lin.ee/77ixmf5" target="_blank" style="text-decoration: none;">
+                <button style="background: #06C755;">📱 ติดต่อเราทาง LINE</button>
+            </a>
+        </article>
+
+        <section class="bottom-section">
+            <div class="dashboard">
+                <div class="stat-box">
+                    <span>รถพร้อมบริการ</span>
+                    <strong>20+ คัน</strong>
+                </div>
+                <div class="stat-box">
+                    <span>ความพึงพอใจ</span>
+                    <strong>100%</strong>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <h2 style="font-size: 1rem;">ผู้เข้าชมจากทั่วโลก</h2>
+                <a href="https://info.flagcounter.com/XXXX">
+                    <img src="https://s11.flagcounter.com/map/XXXX/size_m/txt_ffffff/border_cccccc/pageviews_1/viewers_0/" alt="Flag Counter" border="0" style="max-width: 100%;">
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <img src="https://via.placeholder.com/80" alt="ThaiRide">
+        <h3>ThaiRide Travel</h3>
+        <p>บริการด้วยใจ ถึงที่หมายปลอดภัยทุกเส้นทาง</p>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: #888;">© 2026 ThaiRide Travel. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
