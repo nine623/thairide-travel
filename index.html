@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
   
   <style>
-    /* ใช้ CSS ที่คุณให้มาทั้งหมด */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100%; max-width: 100vw; overflow-x: hidden !important; background: #121212; color: #eeeeee; font-family: 'Sarabun', sans-serif; }
     
@@ -20,10 +19,30 @@
     .navbar img { width: 35px; border-radius: 50%; }
     .navbar h1 { font-size: 18px; font-family: 'Prompt'; color: white; }
 
-    .hero-container { width: 100%; background: #000; overflow: hidden; line-height: 0; }
-    .slide { width: 100%; display: none; }
-    .slide.active { display: block; }
-    .slide img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px; }
+    /* --- ส่วนที่แก้ไข: Hero Slider --- */
+    .hero-container { 
+      width: 100%; 
+      height: 300px; /* กำหนดความสูงให้คงที่เพื่อให้ดูเนียนตา */
+      background: #000; 
+      position: relative; 
+      overflow: hidden; 
+    }
+    .slide { 
+      width: 100%; 
+      height: 100%;
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      opacity: 0; 
+      transition: opacity 1s ease-in-out; /* เพิ่มความนุ่มนวลตอนเปลี่ยนภาพ */
+    }
+    .slide.active { opacity: 1; }
+    .slide img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+    }
+    /* ------------------------------ */
 
     .container { padding: 15px; width: 100%; }
     .card { background: #1e1e1e; padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border-left: 4px solid #0a2c6d; }
@@ -56,13 +75,17 @@
     <h1>ThaiRide Travel</h1>
   </nav>
 
-  <div class="hero-container">
-    <div class="slide active">
-      <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200" alt="บริการรถตู้ VIP">
-    </div>
-    <div class="slide">
-      <img src="https://images.unsplash.com/photo-1559297434-2d8a134a042e?q=80&w=1200" alt="รับส่งสนามบิน">
-    </div>
+  <!-- แก้ไข: เพิ่มรูปภาพ 01-09 (เปลี่ยน URL รูปภาพตามความจริง) -->
+  <div class="hero-container" id="hero-slider">
+    <div class="slide active"><img src="images/hero_01.jpg" alt="ThaiRide 01"></div>
+    <div class="slide"><img src="images/hero_02.jpg" alt="ThaiRide 02"></div>
+    <div class="slide"><img src="images/hero_03.jpg" alt="ThaiRide 03"></div>
+    <div class="slide"><img src="images/hero_04.jpg" alt="ThaiRide 04"></div>
+    <div class="slide"><img src="images/hero_05.jpg" alt="ThaiRide 05"></div>
+    <div class="slide"><img src="images/hero_06.jpg" alt="ThaiRide 06"></div>
+    <div class="slide"><img src="images/hero_07.jpg" alt="ThaiRide 07"></div>
+    <div class="slide"><img src="images/hero_08.jpg" alt="ThaiRide 08"></div>
+    <div class="slide"><img src="images/hero_09.jpg" alt="ThaiRide 09"></div>
   </div>
 
   <div class="container">
@@ -139,17 +162,30 @@
   </footer>
 
   <script>
-    // Script สำหรับเปลี่ยนรูป Slide
+    // ปรับปรุง Script สำหรับเปลี่ยนรูป 01-09
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
     
-    function nextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
+    function showSlides() {
+      // เอา class active ออกจากทุกรูป
+      slides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // เพิ่มความนุ่มนวลด้วยการเลื่อน index
+      currentSlide++;
+      if (currentSlide > totalSlides) { currentSlide = 1 }
+      
+      // แสดงรูปภาพปัจจุบัน
+      slides[currentSlide - 1].classList.add('active');
+      
+      // ตั้งเวลาเปลี่ยนภาพ (3000 = 3 วินาที)
+      setTimeout(showSlides, 3000);
     }
-    
-    setInterval(nextSlide, 3000); // เปลี่ยนรูปทุก 3 วินาที
+
+    // เริ่มการทำงาน
+    showSlides();
   </script>
 
 </body>
